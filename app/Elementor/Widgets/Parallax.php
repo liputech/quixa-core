@@ -5,11 +5,11 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Css_Filter;
-use RT\NewsFitCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Abstracts\ElementorBase;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Parallax extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name = esc_html__( 'RT Parallax Animation', 'newsfit-core' );
+		$this->rt_name = esc_html__( 'RT Parallax Animation', 'quixa-core' );
 		$this->rt_base = 'rt-parallax';
 		parent::__construct( $data, $args );
 	}
@@ -27,7 +27,7 @@ class Parallax extends ElementorBase {
 		$this->start_controls_section(
 			'sec_general',
 			[
-				'label' => esc_html__( 'General', 'newsfit-core' ),
+				'label' => esc_html__( 'General', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -35,12 +35,12 @@ class Parallax extends ElementorBase {
 		$this->add_control(
 			'follow_parent',
 			[
-				'label'   => __( 'Follow Parent Element', 'newsfit-core' ),
+				'label'   => __( 'Follow Parent Element', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'follow-current-element',
 				'options' => [
-					'follow-main-wrapper' => __( 'Follow Main Wrapper', 'newsfit-core' ),
-					'follow-current-element'     => __( 'Follow Current Element', 'newsfit-core' ),
+					'follow-main-wrapper' => __( 'Follow Main Wrapper', 'quixa-core' ),
+					'follow-current-element'     => __( 'Follow Current Element', 'quixa-core' ),
 				],
 				'prefix_class' => 'rt-parallax-',
 			]
@@ -52,7 +52,7 @@ class Parallax extends ElementorBase {
 		$repeater->add_control(
 			'animated_image',
 			[
-				'label'   => __( 'Animated Image', 'newsfit-core' ),
+				'label'   => __( 'Animated Image', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -63,14 +63,14 @@ class Parallax extends ElementorBase {
 		$repeater->add_control(
 			'image_animation',
 			[
-				'label'   => __( 'Choose Animation', 'newsfit-core' ),
+				'label'   => __( 'Choose Animation', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					''                  => __( 'No Animation', 'newsfit-core' ),
-					'follow-with-mouse' => __( 'Follow with Mouse', 'newsfit-core' ),
-					'left-to-right'     => __( 'Left to Right', 'newsfit-core' ),
-					'top-to-bottom'     => __( 'Top to Bottom', 'newsfit-core' ),
-					'fa-spin'     => __( 'Spin Animation', 'newsfit-core' ),
+					''                  => __( 'No Animation', 'quixa-core' ),
+					'follow-with-mouse' => __( 'Follow with Mouse', 'quixa-core' ),
+					'left-to-right'     => __( 'Left to Right', 'quixa-core' ),
+					'top-to-bottom'     => __( 'Top to Bottom', 'quixa-core' ),
+					'fa-spin'     => __( 'Spin Animation', 'quixa-core' ),
 				],
 			]
 		);
@@ -78,7 +78,7 @@ class Parallax extends ElementorBase {
 		$repeater->add_control(
 			'follow_position',
 			[
-				'label'      => __( 'Mouse Follow Position', 'newsfit-core' ),
+				'label'      => __( 'Mouse Follow Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -101,7 +101,7 @@ class Parallax extends ElementorBase {
 		$repeater->add_responsive_control(
 			'img_top_position',
 			[
-				'label'      => __( 'Image Top Position', 'newsfit-core' ),
+				'label'      => __( 'Image Top Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -124,7 +124,7 @@ class Parallax extends ElementorBase {
 		$repeater->add_responsive_control(
 			'img_left_position',
 			[
-				'label'      => __( 'Image Left Position', 'newsfit-core' ),
+				'label'      => __( 'Image Left Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -147,7 +147,7 @@ class Parallax extends ElementorBase {
 		$repeater->add_responsive_control(
 			'img_right_position',
 			[
-				'label'      => __( 'Image Right Position', 'newsfit-core' ),
+				'label'      => __( 'Image Right Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -170,7 +170,7 @@ class Parallax extends ElementorBase {
 		$repeater->add_responsive_control(
 			'img_bottom_position',
 			[
-				'label'      => __( 'Image Bottom Position', 'newsfit-core' ),
+				'label'      => __( 'Image Bottom Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -193,7 +193,7 @@ class Parallax extends ElementorBase {
 		$repeater->add_control(
 			'animation_duration',
 			[
-				'label'      => __( 'Animation Duration', 'newsfit-core' ),
+				'label'      => __( 'Animation Duration', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -227,7 +227,7 @@ class Parallax extends ElementorBase {
 		$this->add_control(
 			'animation_list',
 			[
-				'label'  => __( 'Animated Image List', 'newsfit-core' ),
+				'label'  => __( 'Animated Image List', 'quixa-core' ),
 				'type'   => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 			]
@@ -240,7 +240,7 @@ class Parallax extends ElementorBase {
 		$this->start_controls_section(
 			'paralax_settings',
 			[
-				'label' => esc_html__( 'Parallax Settings', 'newsfit-core' ),
+				'label' => esc_html__( 'Parallax Settings', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -249,7 +249,7 @@ class Parallax extends ElementorBase {
 		$this->add_responsive_control(
 			'image_wrap_width',
 			[
-				'label'          => __( 'Wrapper Width', 'newsfit-core' ),
+				'label'          => __( 'Wrapper Width', 'quixa-core' ),
 				'type'           => Controls_Manager::SLIDER,
 				'size_units'     => [ 'px', '%' ],
 				'range'          => [
@@ -271,11 +271,11 @@ class Parallax extends ElementorBase {
 		$this->add_control(
 			'wrapper_float',
 			[
-				'label'   => __( 'Float', 'newsfit-core' ),
+				'label'   => __( 'Float', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'newsfit-core' ),
-					'right'     => __( 'Right', 'newsfit-core' ),
+					'left' => __( 'Left', 'quixa-core' ),
+					'right'     => __( 'Right', 'quixa-core' ),
 				],
 				'selectors'      => [
 					'{{WRAPPER}}' => 'float: {{VALUE}}',

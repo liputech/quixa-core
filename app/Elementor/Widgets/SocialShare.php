@@ -5,10 +5,10 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
-use RT\NewsFitCore\Abstracts\ElementorWidgetBase;
-use RT\NewsFitCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorWidgetBase;
+use RT\QuixaCore\Helper\Fns;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,8 +34,8 @@ class SocialShare extends ElementorWidgetBase {
 	 * @param mixed $args default arg.
 	 */
 	public function __construct( $data = [], $args = null ) {
-		$this->newsfit_name = esc_html__( 'Social Share', 'newsfit-core' );
-		$this->newsfit_base = 'rtsb-social-share';
+		$this->quixa_name = esc_html__( 'Social Share', 'quixa-core' );
+		$this->quixa_base = 'rtsb-social-share';
 		parent::__construct( $data, $args );
 	}
 
@@ -72,7 +72,7 @@ class SocialShare extends ElementorWidgetBase {
 	 */
 	protected function content_tab() {
 		$fields['layout_section'] = $this->start_section(
-			esc_html__( 'Presets', 'newsfit-core' ),
+			esc_html__( 'Presets', 'quixa-core' ),
 			'CONTENT'
 		);
 
@@ -110,14 +110,14 @@ class SocialShare extends ElementorWidgetBase {
 
 		$fields['layout_direction'] = [
 			'type'    => 'choose',
-			'label'   => esc_html__( 'Layout Direction', 'newsfit-core' ),
+			'label'   => esc_html__( 'Layout Direction', 'quixa-core' ),
 			'options' => [
 				'horizontal' => [
-					'title' => esc_html__( 'Horizontal', 'newsfit-core' ),
+					'title' => esc_html__( 'Horizontal', 'quixa-core' ),
 					'icon'  => 'eicon-navigation-horizontal',
 				],
 				'vertical'   => [
-					'title' => esc_html__( 'Vertical', 'newsfit-core' ),
+					'title' => esc_html__( 'Vertical', 'quixa-core' ),
 					'icon'  => 'eicon-navigation-vertical',
 				],
 			],
@@ -139,7 +139,7 @@ class SocialShare extends ElementorWidgetBase {
 	 */
 	protected function style_tab() {
 		$fields['style_section'] = $this->start_section(
-			esc_html__( 'Presets', 'newsfit-core' ),
+			esc_html__( 'Presets', 'quixa-core' ),
 			'STYLE'
 		);
 
@@ -152,18 +152,18 @@ class SocialShare extends ElementorWidgetBase {
 		$fields['alignment'] = [
 			'mode'      => 'responsive',
 			'type'      => 'choose',
-			'label'     => esc_html__( 'Alignment', 'newsfit-core' ),
+			'label'     => esc_html__( 'Alignment', 'quixa-core' ),
 			'options'   => [
 				'left'   => [
-					'title' => esc_html__( 'Left', 'newsfit-core' ),
+					'title' => esc_html__( 'Left', 'quixa-core' ),
 					'icon'  => 'eicon-text-align-left',
 				],
 				'center' => [
-					'title' => esc_html__( 'Center', 'newsfit-core' ),
+					'title' => esc_html__( 'Center', 'quixa-core' ),
 					'icon'  => 'eicon-text-align-center',
 				],
 				'right'  => [
-					'title' => esc_html__( 'Right', 'newsfit-core' ),
+					'title' => esc_html__( 'Right', 'quixa-core' ),
 					'icon'  => 'eicon-text-align-right',
 				],
 			],
@@ -174,7 +174,7 @@ class SocialShare extends ElementorWidgetBase {
 
 		$fields['color'] = [
 			'type'      => 'color',
-			'label'     => esc_html__( 'Color', 'newsfit-core' ),
+			'label'     => esc_html__( 'Color', 'quixa-core' ),
 			'separator' => 'default',
 			'selectors' => [
 				'{{WRAPPER}}'
@@ -184,11 +184,11 @@ class SocialShare extends ElementorWidgetBase {
 		$fields['rtsb_el_border'] = [
 			'mode'           => 'group',
 			'type'           => 'border',
-			'label'          => esc_html__( 'Border', 'newsfit-core' ),
+			'label'          => esc_html__( 'Border', 'quixa-core' ),
 			'selector'       => '{{WRAPPER}}',
 			'fields_options' => [
 				'color' => [
-					'label' => esc_html__( 'Border Color', 'newsfit-core' ),
+					'label' => esc_html__( 'Border Color', 'quixa-core' ),
 				],
 			],
 			'separator'      => 'default',
@@ -197,7 +197,7 @@ class SocialShare extends ElementorWidgetBase {
 		$fields['padding'] = [
 			'mode'       => 'responsive',
 			'type'       => 'dimensions',
-			'label'      => esc_html__( 'Padding', 'newsfit-core' ),
+			'label'      => esc_html__( 'Padding', 'quixa-core' ),
 			'size_units' => [ 'px', '%', 'em' ],
 			'selector'   => '{{WRAPPER}}',
 			'separator'  => 'default',
@@ -205,46 +205,46 @@ class SocialShare extends ElementorWidgetBase {
 
 		$fields['show_share_pre_text'] = [
 			'type'        => 'switch',
-			'label'       => esc_html__( 'Show Header Text?', 'newsfit-core' ),
-			'description' => esc_html__( 'Switch on to show social sharing text before icons.', 'newsfit-core' ),
-			'label_on'    => esc_html__( 'On', 'newsfit-core' ),
-			'label_off'   => esc_html__( 'Off', 'newsfit-core' ),
+			'label'       => esc_html__( 'Show Header Text?', 'quixa-core' ),
+			'description' => esc_html__( 'Switch on to show social sharing text before icons.', 'quixa-core' ),
+			'label_on'    => esc_html__( 'On', 'quixa-core' ),
+			'label_off'   => esc_html__( 'Off', 'quixa-core' ),
 			'separator'   => 'default',
 		];
 		$fields['share_pre_text']      = [
 			'type'        => 'text',
-			'label'       => esc_html__( 'Header Text', 'newsfit-core' ),
-			'description' => esc_html__( 'Enter the text to show before icons.', 'newsfit-core' ),
-			'default'     => esc_html__( 'Share:', 'newsfit-core' ),
+			'label'       => esc_html__( 'Header Text', 'quixa-core' ),
+			'description' => esc_html__( 'Enter the text to show before icons.', 'quixa-core' ),
+			'default'     => esc_html__( 'Share:', 'quixa-core' ),
 			'label_block' => true,
 			'condition'   => [ 'show_share_pre_text' => [ 'yes' ] ],
 		];
 
 		$fields['share_toggle_icon'] = [
 			'type'        => 'icons',
-			'label'       => esc_html__( 'Choose Toggle Icon', 'newsfit-core' ),
-			'description' => esc_html__( 'Please choose the share toggle icon.', 'newsfit-core' ),
+			'label'       => esc_html__( 'Choose Toggle Icon', 'quixa-core' ),
+			'description' => esc_html__( 'Please choose the share toggle icon.', 'quixa-core' ),
 			'condition'   => [ 'share_toggle' => [ 'yes' ] ],
 		];
 
 		$fields['share_platforms'] = [
 			'type'        => 'repeater',
 			'mode'        => 'repeater',
-			'label'       => esc_html__( 'Add Sharing Platforms', 'newsfit-core' ),
+			'label'       => esc_html__( 'Add Sharing Platforms', 'quixa-core' ),
 			'separator'   => 'default',
 			'title_field' => '{{{ share_items }}}',
 			'fields'      => [
 				'share_items' => [
-					'label'     => esc_html__( 'Platform Name', 'newsfit-core' ),
+					'label'     => esc_html__( 'Platform Name', 'quixa-core' ),
 					'type'      => 'select',
 					'separator' => 'default',
 					'options'   => [
-						'opt1' => esc_html__( 'Opt1', 'newsfit-core' ),
-						'opt2' => esc_html__( 'Opt2', 'newsfit-core' ),
+						'opt1' => esc_html__( 'Opt1', 'quixa-core' ),
+						'opt2' => esc_html__( 'Opt2', 'quixa-core' ),
 					],
 				],
 				'share_text'  => [
-					'label' => esc_html__( 'Sharing Text', 'newsfit-core' ),
+					'label' => esc_html__( 'Sharing Text', 'quixa-core' ),
 					'type'  => 'text',
 				],
 			],
@@ -257,21 +257,21 @@ class SocialShare extends ElementorWidgetBase {
 
 		//TODO: Tab Start
 		$fields['color_tabs'] = $this->start_tab_group();
-		$fields['color_tab']  = $this->start_tab( esc_html__( 'Normal', 'newsfit-core' ) );
+		$fields['color_tab']  = $this->start_tab( esc_html__( 'Normal', 'quixa-core' ) );
 
 		$fields['color1'] = [
 			'type'      => 'color',
-			'label'     => esc_html__( 'Color', 'newsfit-core' ),
+			'label'     => esc_html__( 'Color', 'quixa-core' ),
 			'selector'  => '{{WRAPPER}}',
 			'separator' => 'default',
 		];
 
 		$fields['color_tab_end']   = $this->end_tab();
-		$fields['hover_color_tab'] = $this->start_tab( esc_html__( 'Hover', 'newsfit-core' ) );
+		$fields['hover_color_tab'] = $this->start_tab( esc_html__( 'Hover', 'quixa-core' ) );
 
 		$fields['color2'] = [
 			'type'      => 'color',
-			'label'     => esc_html__( 'Hover Color', 'newsfit-core' ),
+			'label'     => esc_html__( 'Hover Color', 'quixa-core' ),
 			'selector'  => '{{WRAPPER}}',
 			'separator' => 'default',
 		];

@@ -5,9 +5,9 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Hooks;
+namespace RT\QuixaCore\Hooks;
 
-use RT\NewsFitCore\Traits\SingletonTraits;
+use RT\QuixaCore\Traits\SingletonTraits;
 
 class ActionHooks {
 	use SingletonTraits;
@@ -19,7 +19,7 @@ class ActionHooks {
 
 	//Remove admin bar
 	function remove_admin_bar() {
-		if ( newsfit_option('rt_remove_admin_bar') && ! current_user_can( 'administrator' ) && ! is_admin() ) {
+		if ( quixa_option('rt_remove_admin_bar') && ! current_user_can( 'administrator' ) && ! is_admin() ) {
 			show_admin_bar( false );
 		}
 	}

@@ -1,10 +1,10 @@
 <?php
 
-namespace RT\NewsFitCore\Builder;
+namespace RT\QuixaCore\Builder;
 
 use Elementor\Plugin;
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Helper\FnsBuilder;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Helper\FnsBuilder;
 
 class Builder {
 

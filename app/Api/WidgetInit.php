@@ -5,12 +5,13 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Api;
+namespace RT\QuixaCore\Api;
 
-use RT\NewsFitCore\Traits\SingletonTraits;
-use RT\NewsFitCore\Api\Widgets\About_Widget;
-use RT\NewsFitCore\Api\Widgets\Contact_Widget;
-use RT\NewsFitCore\Api\Widgets\Post_Widget;
+use RT\QuixaCore\Traits\SingletonTraits;
+use RT\QuixaCore\Api\Widgets\About_Widget;
+use RT\QuixaCore\Api\Widgets\Contact_Widget;
+use RT\QuixaCore\Api\Widgets\Post_Widget;
+use RT\QuixaCore\Api\Widgets\Search_Widget;
 
 class WidgetInit {
 	use SingletonTraits;
@@ -24,6 +25,7 @@ class WidgetInit {
 			About_Widget::class,
 			Contact_Widget::class,
 			Post_Widget::class,
+			Search_Widget::class,
 		];
 
 		add_action( 'widgets_init', [ $this, 'custom_widgets' ] );

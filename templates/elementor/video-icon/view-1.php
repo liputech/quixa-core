@@ -7,7 +7,7 @@
 
 
 $box_shadow         = '';
-$shadow_color       = str_replace( ',', '', newsfit_hex2rgb( $animation_border1_color ) );
+$shadow_color       = str_replace( ',', '', quixa_hex2rgb( $animation_border1_color ) );
 $animation_opacity1 = $animation_opacity ?? 30;
 $animation_opacity2 = $animation_opacity1 - 10;
 $animation_opacity3 = $animation_opacity1 - 20;

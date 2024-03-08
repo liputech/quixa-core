@@ -5,9 +5,9 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Controllers;
+namespace RT\QuixaCore\Controllers;
 use \FW_Ext_Backups_Demo;
-use RT\NewsFitCore\Traits\SingletonTraits;
+use RT\QuixaCore\Traits\SingletonTraits;
 
 class DemoImportController {
 	use SingletonTraits;
@@ -22,7 +22,7 @@ class DemoImportController {
 
 	public function add_action_links( $links ) {
 		$mylinks = array(
-			'<a href="' . esc_url( admin_url( 'tools.php?page=fw-backups-demo-content' ) ) . '">' . __( 'Install Demo Contents', 'newsfit-core' ) . '</a>',
+			'<a href="' . esc_url( admin_url( 'tools.php?page=fw-backups-demo-content' ) ) . '">' . __( 'Install Demo Contents', 'quixa-core' ) . '</a>',
 		);
 
 		return array_merge( $links, $mylinks );
@@ -30,7 +30,7 @@ class DemoImportController {
 
 	public function data_loss_warning( $links ) {
 		$html = '<div style="margin-top:20px;color:#f00;font-size:17px;line-height:1.3;font-weight:600;margin-bottom:40px;border-color: #f00;border-style: dashed;border-width: 1px 0;padding:10px 0;">';
-		$html .= __( 'Warning: All your old data will be lost if you install One Click demo data from here, so it is suitable only for a new website.', 'newsfit-core' );
+		$html .= __( 'Warning: All your old data will be lost if you install One Click demo data from here, so it is suitable only for a new website.', 'quixa-core' );
 		$html .= '</div>';
 
 		return $html;
@@ -39,38 +39,38 @@ class DemoImportController {
 	public function demo_config( $demos ) {
 		$demos_array = array(
 			'demo1' => array(
-				'title'        => __( 'Home 1', 'newsfit-core' ),
+				'title'        => __( 'Home 1', 'quixa-core' ),
 				'screenshot'   => plugins_url( 'screenshots/1.png', dirname( __FILE__ ) ),
-				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/newsfit/',
+				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/quixa/',
 			),
 			'demo2' => array(
-				'title'        => __( 'Home 2', 'newsfit-core' ),
+				'title'        => __( 'Home 2', 'quixa-core' ),
 				'screenshot'   => plugins_url( 'screenshots/2.png', dirname( __FILE__ ) ),
-				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/newsfit/home-2/',
+				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/quixa/home-2/',
 			),
 			'demo3' => array(
-				'title'        => __( 'Home 3', 'newsfit-core' ),
+				'title'        => __( 'Home 3', 'quixa-core' ),
 				'screenshot'   => plugins_url( 'screenshots/3.png', dirname( __FILE__ ) ),
-				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/newsfit/home-3/',
+				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/quixa/home-3/',
 			),
 			'demo4' => array(
-				'title'        => __( 'Home 4', 'newsfit-core' ),
+				'title'        => __( 'Home 4', 'quixa-core' ),
 				'screenshot'   => plugins_url( 'screenshots/4.png', dirname( __FILE__ ) ),
-				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/newsfit/home-4/',
+				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/quixa/home-4/',
 			),
 			'demo5' => array(
-				'title'        => __( 'Home 5', 'newsfit-core' ),
+				'title'        => __( 'Home 5', 'quixa-core' ),
 				'screenshot'   => plugins_url( 'screenshots/5.png', dirname( __FILE__ ) ),
-				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/newsfit/home-5/',
+				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/quixa/home-5/',
 			),
 			'demo6' => array(
-				'title'        => __( 'Home 6', 'newsfit-core' ),
+				'title'        => __( 'Home 6', 'quixa-core' ),
 				'screenshot'   => plugins_url( 'screenshots/6.png', dirname( __FILE__ ) ),
-				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/newsfit/home-6/',
+				'preview_link' => 'https://www.radiustheme.com/demo/wordpress/themes/quixa/home-6/',
 			),
 		);
 
-		$download_url = 'http://demo.radiustheme.com/wordpress/demo-content/newsfit/';
+		$download_url = 'http://demo.radiustheme.com/wordpress/demo-content/quixa/';
 
 		foreach ( $demos_array as $id => $data ) {
 			$demo = new FW_Ext_Backups_Demo( $id, 'piecemeal', array(
@@ -119,6 +119,6 @@ class DemoImportController {
 		$wpdb->query( $query );
 
 		// Import Users
-		new \Newsfit_Core_Demo_User_Import();
+		new \Quixa_Core_Demo_User_Import();
 	}
 }

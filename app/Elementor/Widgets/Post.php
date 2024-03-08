@@ -5,11 +5,11 @@
  * @version 1.2
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -18,14 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Post extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name      = esc_html__( 'RT Post', 'newsfit-core' );
+		$this->rt_name      = esc_html__( 'RT Post', 'quixa-core' );
 		$this->rt_base      = 'rt-post';
 		$this->rt_translate = [
 			'cols' => [
-				'3'  => __( '4 Columns', 'newsfit-core' ),
-				'4'  => __( '3 Columns', 'newsfit-core' ),
-				'6'  => __( '2 Columns', 'newsfit-core' ),
-				'12' => __( '1 Columns', 'newsfit-core' ),
+				'3'  => __( '4 Columns', 'quixa-core' ),
+				'4'  => __( '3 Columns', 'quixa-core' ),
+				'6'  => __( '2 Columns', 'quixa-core' ),
+				'12' => __( '1 Columns', 'quixa-core' ),
 			],
 		];
 		parent::__construct( $data, $args );
@@ -36,7 +36,7 @@ class Post extends ElementorBase {
 		$this->start_controls_section(
 			'rt_post_grid',
 			[
-				'label' => esc_html__( 'Post Grid', 'newsfit-core' ),
+				'label' => esc_html__( 'Post Grid', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -44,13 +44,13 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'layout',
 			[
-				'label'   => esc_html__( 'Style', 'newsfit-core' ),
+				'label'   => esc_html__( 'Style', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'style1',
 				'options' => [
-					'style1' => __( 'Style 1', 'newsfit-core' ),
-					'style2' => __( 'Style 2', 'newsfit-core' ),
-					'style3' => __( 'Style 3', 'newsfit-core' ),
+					'style1' => __( 'Style 1', 'quixa-core' ),
+					'style2' => __( 'Style 2', 'quixa-core' ),
+					'style3' => __( 'Style 3', 'quixa-core' ),
 				],
 
 			]
@@ -59,10 +59,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'gridcolumn-popover-toggle',
 			[
-				'label'        => __( 'Grid Column', 'newsfit-core' ),
+				'label'        => __( 'Grid Column', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'newsfit-core' ),
-				'label_on'     => __( 'Custom', 'newsfit-core' ),
+				'label_off'    => __( 'Default', 'quixa-core' ),
+				'label_on'     => __( 'Custom', 'quixa-core' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -72,7 +72,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'gird_column_desktop',
 			[
-				'label'   => esc_html__( 'Grid Column for Desktop', 'newsfit-core' ),
+				'label'   => esc_html__( 'Grid Column for Desktop', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => '4',
 				'options' => $this->rt_translate['cols'],
@@ -83,7 +83,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'gird_column_tab',
 			[
-				'label'   => esc_html__( 'Grid Column for Tab', 'newsfit-core' ),
+				'label'   => esc_html__( 'Grid Column for Tab', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => '6',
 				'options' => $this->rt_translate['cols'],
@@ -94,7 +94,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'gird_column_mobile',
 			[
-				'label'   => esc_html__( 'Grid Column for Mobile', 'newsfit-core' ),
+				'label'   => esc_html__( 'Grid Column for Mobile', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => '12',
 				'options' => $this->rt_translate['cols'],
@@ -124,10 +124,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'post_limit',
 			[
-				'label'       => __( 'Post Limit', 'newsfit-core' ),
+				'label'       => __( 'Post Limit', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Post Limit', 'newsfit-core' ),
-				'description' => __( 'Enter number of post to show.', 'newsfit-core' ),
+				'placeholder' => __( 'Enter Post Limit', 'quixa-core' ),
+				'description' => __( 'Enter number of post to show.', 'quixa-core' ),
 				'default'     => '12',
 			]
 		);
@@ -135,23 +135,23 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'post_source',
 			[
-				'label'       => __( 'Post Source', 'newsfit-core' ),
+				'label'       => __( 'Post Source', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
-					'most_recent' => __( 'From all recent post', 'newsfit-core' ),
-					'by_category' => __( 'By Category', 'newsfit-core' ),
-					'by_tags'     => __( 'By Tags', 'newsfit-core' ),
-					'by_id'       => __( 'By Post ID', 'newsfit-core' ),
+					'most_recent' => __( 'From all recent post', 'quixa-core' ),
+					'by_category' => __( 'By Category', 'quixa-core' ),
+					'by_tags'     => __( 'By Tags', 'quixa-core' ),
+					'by_id'       => __( 'By Post ID', 'quixa-core' ),
 				],
 				'default'     => [ 'most_recent' ],
-				'description' => __( 'Select posts source that you like to show.', 'newsfit-core' ),
+				'description' => __( 'Select posts source that you like to show.', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'categories',
 			[
-				'label'       => __( 'Choose Categories', 'newsfit-core' ),
+				'label'       => __( 'Choose Categories', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::SELECT2,
 				'multiple'    => true,
 				'options'     => rt_category_list(),
@@ -159,14 +159,14 @@ class Post extends ElementorBase {
 				'condition'   => [
 					'post_source' => 'by_category',
 				],
-				'description' => __( 'Select post category\'s.', 'newsfit-core' ),
+				'description' => __( 'Select post category\'s.', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'tags',
 			[
-				'label'       => __( 'Choose Tags', 'newsfit-core' ),
+				'label'       => __( 'Choose Tags', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::SELECT2,
 				'multiple'    => true,
 				'options'     => rt_tag_list(),
@@ -174,16 +174,16 @@ class Post extends ElementorBase {
 				'condition'   => [
 					'post_source' => 'by_tags',
 				],
-				'description' => __( 'Select post tag\'s.', 'newsfit-core' ),
+				'description' => __( 'Select post tag\'s.', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'post_id',
 			[
-				'label'       => __( 'Enter post IDs', 'newsfit-core' ),
+				'label'       => __( 'Enter post IDs', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Enter the post IDs separated by comma', 'newsfit-core' ),
+				'description' => __( 'Enter the post IDs separated by comma', 'quixa-core' ),
 				'label_block' => 'true',
 				'condition'   => [
 					'post_source' => 'by_id',
@@ -194,40 +194,40 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'offset',
 			[
-				'label'       => __( 'Post offset', 'newsfit-core' ),
+				'label'       => __( 'Post offset', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Post offset', 'newsfit-core' ),
-				'description' => __( 'Number of post to displace or pass over. The offset parameter is ignored when post limit => -1 (show all posts) is used.', 'newsfit-core' ),
+				'placeholder' => __( 'Enter Post offset', 'quixa-core' ),
+				'description' => __( 'Number of post to displace or pass over. The offset parameter is ignored when post limit => -1 (show all posts) is used.', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'exclude',
 			[
-				'label'       => __( 'Exclude posts', 'newsfit-core' ),
+				'label'       => __( 'Exclude posts', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => 'true',
-				'description' => __( 'Enter the post IDs separated by comma for exclude', 'newsfit-core' ),
+				'description' => __( 'Enter the post IDs separated by comma for exclude', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'orderby',
 			[
-				'label'   => __( 'Order by', 'newsfit-core' ),
+				'label'   => __( 'Order by', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					'date'           => __( 'Date', 'newsfit-core' ),
-					'ID'             => __( 'Order by post ID', 'newsfit-core' ),
-					'author'         => __( 'Author', 'newsfit-core' ),
-					'title'          => __( 'Title', 'newsfit-core' ),
-					'modified'       => __( 'Last modified date', 'newsfit-core' ),
-					'parent'         => __( 'Post parent ID', 'newsfit-core' ),
-					'comment_count'  => __( 'Number of comments', 'newsfit-core' ),
-					'menu_order'     => __( 'Menu order', 'newsfit-core' ),
-					'meta_value'     => __( 'Meta value', 'newsfit-core' ),
-					'meta_value_num' => __( 'Meta value number', 'newsfit-core' ),
-					'rand'           => __( 'Random order', 'newsfit-core' ),
+					'date'           => __( 'Date', 'quixa-core' ),
+					'ID'             => __( 'Order by post ID', 'quixa-core' ),
+					'author'         => __( 'Author', 'quixa-core' ),
+					'title'          => __( 'Title', 'quixa-core' ),
+					'modified'       => __( 'Last modified date', 'quixa-core' ),
+					'parent'         => __( 'Post parent ID', 'quixa-core' ),
+					'comment_count'  => __( 'Number of comments', 'quixa-core' ),
+					'menu_order'     => __( 'Menu order', 'quixa-core' ),
+					'meta_value'     => __( 'Meta value', 'quixa-core' ),
+					'meta_value_num' => __( 'Meta value number', 'quixa-core' ),
+					'rand'           => __( 'Random order', 'quixa-core' ),
 				],
 			]
 		);
@@ -235,11 +235,11 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'order',
 			[
-				'label'   => __( 'Sort order', 'newsfit-core' ),
+				'label'   => __( 'Sort order', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					'ASC'  => __( 'ASC', 'newsfit-core' ),
-					'DESC' => __( 'DESC', 'newsfit-core' ),
+					'ASC'  => __( 'ASC', 'quixa-core' ),
+					'DESC' => __( 'DESC', 'quixa-core' ),
 				],
 			]
 		);
@@ -252,7 +252,7 @@ class Post extends ElementorBase {
 		$this->start_controls_section(
 			'thumbnail_style',
 			[
-				'label' => __( 'Thumbnail Style', 'newsfit-core' ),
+				'label' => __( 'Thumbnail Style', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -260,15 +260,15 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'thumbnail_visibility',
 			[
-				'label'   => __( 'Thumbnail Visibility', 'newsfit-core' ),
+				'label'   => __( 'Thumbnail Visibility', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'visible' => [
-						'title' => __( 'Visible', 'newsfit-core' ),
+						'title' => __( 'Visible', 'quixa-core' ),
 						'icon'  => 'eicon-check',
 					],
 					'hidden'  => [
-						'title' => __( 'Hidden', 'newsfit-core' ),
+						'title' => __( 'Hidden', 'quixa-core' ),
 						'icon'  => 'eicon-editor-close',
 					],
 				],
@@ -280,7 +280,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'project_thumbnail_size',
 			[
-				'label'     => esc_html__( 'Image Size', 'newsfit-core' ),
+				'label'     => esc_html__( 'Image Size', 'quixa-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => rt_get_all_image_sizes(),
 				'condition' => [
@@ -292,7 +292,7 @@ class Post extends ElementorBase {
 		$this->add_responsive_control(
 			'image_height',
 			[
-				'label'      => __( 'Image Height Ratio', 'newsfit-core' ),
+				'label'      => __( 'Image Height Ratio', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -314,10 +314,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'thumb_overlay_visibility',
 			[
-				'label'        => __( 'Show Thumbnail Overlay', 'newsfit-core' ),
+				'label'        => __( 'Show Thumbnail Overlay', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => false,
 				'condition'    => [
@@ -329,13 +329,13 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'overlay_type',
 			[
-				'label'     => __( 'Overlay Type', 'newsfit-core' ),
+				'label'     => __( 'Overlay Type', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => 'always',
 				'options'   => [
-					'always'        => __( 'Show Always', 'newsfit-core' ),
-					'hide-on-hover' => __( 'Hide on hover', 'newsfit-core' ),
-					'show-on-hover' => __( 'Show on hover', 'newsfit-core' ),
+					'always'        => __( 'Show Always', 'quixa-core' ),
+					'hide-on-hover' => __( 'Hide on hover', 'quixa-core' ),
+					'show-on-hover' => __( 'Show on hover', 'quixa-core' ),
 				],
 				'condition' => [
 					'thumbnail_visibility'     => 'visible',
@@ -348,10 +348,10 @@ class Post extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'           => 'background',
-				'label'          => __( 'Overlay BG', 'newsfit-core' ),
+				'label'          => __( 'Overlay BG', 'quixa-core' ),
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Overlay Background', 'newsfit-core' ),
+						'label' => esc_html__( 'Overlay Background', 'quixa-core' ),
 					],
 				],
 				'types'          => [ 'classic', 'gradient' ],
@@ -366,7 +366,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'thumb_box_radius',
 			[
-				'label'      => __( 'Thumbnail Radius', 'newsfit-core' ),
+				'label'      => __( 'Thumbnail Radius', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -383,7 +383,7 @@ class Post extends ElementorBase {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title Style', 'newsfit-core' ),
+				'label' => __( 'Title Style', 'quixa-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -400,7 +400,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'title_spacing',
 			[
-				'label'              => __( 'Title Spacing', 'newsfit-core' ),
+				'label'              => __( 'Title Spacing', 'quixa-core' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => [ 'px' ],
 				'selectors'          => [
@@ -424,14 +424,14 @@ class Post extends ElementorBase {
 		$this->start_controls_tab(
 			'title_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Title Color', 'newsfit-core' ),
+				'label'     => __( 'Title Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .post-title a' => 'color: {{VALUE}}',
@@ -444,14 +444,14 @@ class Post extends ElementorBase {
 		$this->start_controls_tab(
 			'title_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'title_hover_color',
 			[
-				'label'     => __( 'Title Hover Color', 'newsfit-core' ),
+				'label'     => __( 'Title Hover Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .post-title a:hover' => 'color: {{VALUE}} !important',
@@ -472,7 +472,7 @@ class Post extends ElementorBase {
 		$this->start_controls_section(
 			'content_style',
 			[
-				'label' => __( 'Excerpt Style', 'newsfit-core' ),
+				'label' => __( 'Excerpt Style', 'quixa-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -480,15 +480,15 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'content_visibility',
 			[
-				'label'   => __( 'Excerpt Visibility', 'newsfit-core' ),
+				'label'   => __( 'Excerpt Visibility', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'visible' => [
-						'title' => __( 'Visible', 'newsfit-core' ),
+						'title' => __( 'Visible', 'quixa-core' ),
 						'icon'  => 'eicon-check',
 					],
 					'hidden'  => [
-						'title' => __( 'Hidden', 'newsfit-core' ),
+						'title' => __( 'Hidden', 'quixa-core' ),
 						'icon'  => 'eicon-editor-close',
 					],
 				],
@@ -501,7 +501,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'content_limit',
 			[
-				'label'     => __( 'Excerpt Limit', 'newsfit-core' ),
+				'label'     => __( 'Excerpt Limit', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::TEXT,
 				'default'   => '15',
 				'condition' => [
@@ -524,7 +524,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'content_spacing',
 			[
-				'label'              => __( 'Excerpt Spacing', 'newsfit-core' ),
+				'label'              => __( 'Excerpt Spacing', 'quixa-core' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => [ 'px' ],
 				'selectors'          => [
@@ -547,7 +547,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'content_color',
 			[
-				'label'     => __( 'Content Color', 'newsfit-core' ),
+				'label'     => __( 'Content Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-excerpt' => 'color: {{VALUE}}',
@@ -566,7 +566,7 @@ class Post extends ElementorBase {
 		$this->start_controls_section(
 			'meta_info_style',
 			[
-				'label' => __( 'Meta Info Style', 'newsfit-core' ),
+				'label' => __( 'Meta Info Style', 'quixa-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -574,12 +574,12 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'is_dots',
 			[
-				'label'   => __( 'Left Dots', 'newsfit-core' ),
+				'label'   => __( 'Left Dots', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'is_dots',
 				'options' => [
-					'is_dots' => __( 'Enable', 'newsfit-core' ),
-					'no_dots' => __( 'Disable', 'newsfit-core' ),
+					'is_dots' => __( 'Enable', 'quixa-core' ),
+					'no_dots' => __( 'Disable', 'quixa-core' ),
 				],
 			]
 		);
@@ -599,7 +599,7 @@ class Post extends ElementorBase {
 		$this->start_controls_tab(
 			'post_meta_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -607,7 +607,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'post_meta_color',
 			[
-				'label'     => __( 'Meta Color', 'newsfit-core' ),
+				'label'     => __( 'Meta Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .post-meta ul > li a' => 'color: {{VALUE}}',
@@ -620,14 +620,14 @@ class Post extends ElementorBase {
 		$this->start_controls_tab(
 			'post_meta_hover_tab',
 			[
-				'label' => __( 'Box Hover', 'newsfit-core' ),
+				'label' => __( 'Box Hover', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'post_meta_color_hover',
 			[
-				'label'     => __( 'Meta Color Hover', 'newsfit-core' ),
+				'label'     => __( 'Meta Color Hover', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .post-meta ul > li a:hover' => 'color: {{VALUE}}',
@@ -649,10 +649,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'author_visibility',
 			[
-				'label'        => __( 'Author Visibility', 'newsfit-core' ),
+				'label'        => __( 'Author Visibility', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => false,
 			]
@@ -661,13 +661,13 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'author_avatar',
 			[
-				'label'     => __( 'Author Avatar Style', 'newsfit-core' ),
+				'label'     => __( 'Author Avatar Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => 'image',
 				'options'   => [
-					'icon'      => __( 'Author Icon', 'newsfit-core' ),
-					'image'     => __( 'Author Image', 'newsfit-core' ),
-					'no-avatar' => __( 'No Avatar', 'newsfit-core' ),
+					'icon'      => __( 'Author Icon', 'quixa-core' ),
+					'image'     => __( 'Author Image', 'quixa-core' ),
+					'no-avatar' => __( 'No Avatar', 'quixa-core' ),
 				],
 				'condition' => [
 					'author_visibility' => 'yes',
@@ -678,10 +678,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'author_bottom_visibility',
 			[
-				'label'        => __( 'Author Bottom Visibility', 'newsfit-core' ),
+				'label'        => __( 'Author Bottom Visibility', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => false,
 			]
@@ -690,13 +690,13 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'author_bottom_avatar',
 			[
-				'label'     => __( 'Author Avatar Style', 'newsfit-core' ),
+				'label'     => __( 'Author Avatar Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => 'image',
 				'options'   => [
-					'icon'      => __( 'Author Icon', 'newsfit-core' ),
-					'image'     => __( 'Author Image', 'newsfit-core' ),
-					'no-avatar' => __( 'No Avatar', 'newsfit-core' ),
+					'icon'      => __( 'Author Icon', 'quixa-core' ),
+					'image'     => __( 'Author Image', 'quixa-core' ),
+					'no-avatar' => __( 'No Avatar', 'quixa-core' ),
 				],
 				'condition' => [
 					'author_bottom_visibility' => 'yes',
@@ -707,10 +707,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'cat_visibility',
 			[
-				'label'        => __( 'Category Visibility', 'newsfit-core' ),
+				'label'        => __( 'Category Visibility', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -719,10 +719,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'date_visibility',
 			[
-				'label'        => __( 'Date Visibility', 'newsfit-core' ),
+				'label'        => __( 'Date Visibility', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -731,12 +731,12 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'p_date_format',
 			[
-				'label'     => __( 'Date Format', 'newsfit-core' ),
+				'label'     => __( 'Date Format', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => 'time_ago',
 				'options'   => [
-					'default'  => __( 'Default From Settings', 'newsfit-core' ),
-					'time_ago' => __( 'Time Ago Format', 'newsfit-core' ),
+					'default'  => __( 'Default From Settings', 'quixa-core' ),
+					'time_ago' => __( 'Time Ago Format', 'quixa-core' ),
 				],
 				'condition' => [
 					'date_visibility' => 'yes',
@@ -748,7 +748,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'date_bg_color',
 			[
-				'label'     => __( 'Date Color', 'newsfit-core' ),
+				'label'     => __( 'Date Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .thumbnail-date .popup-date' => 'background-color: {{VALUE}}',
@@ -763,7 +763,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'reading_suffix',
 			[
-				'label'       => esc_html__( 'Reading Suffix', 'newsfit-core' ),
+				'label'       => esc_html__( 'Reading Suffix', 'quixa-core' ),
 				'type'        => Controls_Manager::TEXT,
 				'description' => 'If you need, you can use reading time suffix. NB: to Read',
 				'condition'   => [
@@ -775,10 +775,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'comment_visibility',
 			[
-				'label'        => __( 'Comment Visibility', 'newsfit-core' ),
+				'label'        => __( 'Comment Visibility', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => false,
 			]
@@ -794,7 +794,7 @@ class Post extends ElementorBase {
 		$this->start_controls_section(
 			'readmore_style',
 			[
-				'label' => __( 'Read More Style', 'newsfit-core' ),
+				'label' => __( 'Read More Style', 'quixa-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -802,15 +802,15 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'readmore_visibility',
 			[
-				'label'   => __( 'Read More Visibility', 'newsfit-core' ),
+				'label'   => __( 'Read More Visibility', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'visible' => [
-						'title' => __( 'Visible', 'newsfit-core' ),
+						'title' => __( 'Visible', 'quixa-core' ),
 						'icon'  => 'eicon-check',
 					],
 					'hidden'  => [
-						'title' => __( 'Hidden', 'newsfit-core' ),
+						'title' => __( 'Hidden', 'quixa-core' ),
 						'icon'  => 'eicon-editor-close',
 					],
 				],
@@ -822,10 +822,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'readmore_text',
 			[
-				'label'       => __( 'Button Text', 'newsfit-core' ),
+				'label'       => __( 'Button Text', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'default'     => __( 'Read More', 'newsfit-core' ),
-				'placeholder' => __( 'Type your title here', 'newsfit-core' ),
+				'default'     => __( 'Read More', 'quixa-core' ),
+				'placeholder' => __( 'Type your title here', 'quixa-core' ),
 				'condition'   => [
 					'readmore_visibility' => [ 'visible' ],
 				],
@@ -846,7 +846,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'readmore_spacing',
 			[
-				'label'              => __( 'Button Spacing', 'newsfit-core' ),
+				'label'              => __( 'Button Spacing', 'quixa-core' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => [ 'px' ],
 				'allowed_dimensions' => 'vertical',
@@ -869,7 +869,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'readmore_padding',
 			[
-				'label'      => __( 'Button Padding', 'newsfit-core' ),
+				'label'      => __( 'Button Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -884,7 +884,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'border_radius',
 			[
-				'label'      => __( 'Radius', 'newsfit-core' ),
+				'label'      => __( 'Radius', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -910,10 +910,10 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'show_btn_icon',
 			[
-				'label'        => __( 'Show Button Icon', 'newsfit-core' ),
+				'label'        => __( 'Show Button Icon', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'condition'    => [
@@ -925,7 +925,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'btn_icon',
 			[
-				'label'     => __( 'Choose Icon', 'newsfit-core' ),
+				'label'     => __( 'Choose Icon', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::ICONS,
 				'default'   => [
 					'value'   => 'fas fa-angle-right',
@@ -941,7 +941,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'icon_size',
 			[
-				'label'      => __( 'Icon Size', 'newsfit-core' ),
+				'label'      => __( 'Icon Size', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -965,7 +965,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'icon_y_position',
 			[
-				'label'      => __( 'Icon Position-Y', 'newsfit-core' ),
+				'label'      => __( 'Icon Position-Y', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -997,14 +997,14 @@ class Post extends ElementorBase {
 		$this->start_controls_tab(
 			'readmore_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'readmore_color',
 			[
-				'label'     => __( 'Font Color', 'newsfit-core' ),
+				'label'     => __( 'Font Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .item-btn' => 'color: {{VALUE}}',
@@ -1015,7 +1015,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'icon_color',
 			[
-				'label'     => __( 'Icon Color', 'newsfit-core' ),
+				'label'     => __( 'Icon Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .item-btn i' => 'color: {{VALUE}}',
@@ -1026,7 +1026,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'readmore_bg',
 			[
-				'label'     => __( 'Background Color', 'newsfit-core' ),
+				'label'     => __( 'Background Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .item-btn' => 'background-color: {{VALUE}}',
@@ -1037,7 +1037,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'readmore_icon_margin',
 			[
-				'label'              => __( 'Icon Spacing', 'newsfit-core' ),
+				'label'              => __( 'Icon Spacing', 'quixa-core' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => [ 'px' ],
 				'allowed_dimensions' => 'horizontal',
@@ -1063,14 +1063,14 @@ class Post extends ElementorBase {
 		$this->start_controls_tab(
 			'readmore_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'readmore_color_hover',
 			[
-				'label'     => __( 'Font Color hover', 'newsfit-core' ),
+				'label'     => __( 'Font Color hover', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .item-btn:hover' => 'color: {{VALUE}}',
@@ -1081,7 +1081,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'icon_color_hover',
 			[
-				'label'     => __( 'Icon Color Hover', 'newsfit-core' ),
+				'label'     => __( 'Icon Color Hover', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .item-btn:hover i' => 'color: {{VALUE}}',
@@ -1092,7 +1092,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'readmore_bg_hover',
 			[
-				'label'     => __( 'Background Color hover', 'newsfit-core' ),
+				'label'     => __( 'Background Color hover', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .blog-grid .blog-box .post-content .item-btn:hover' => 'background-color: {{VALUE}}',
@@ -1103,7 +1103,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'readmore_icon_margin_hover',
 			[
-				'label'              => __( 'Icon Spacing Hover', 'newsfit-core' ),
+				'label'              => __( 'Icon Spacing Hover', 'quixa-core' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => [ 'px' ],
 				'allowed_dimensions' => 'horizontal',
@@ -1136,7 +1136,7 @@ class Post extends ElementorBase {
 		$this->start_controls_section(
 			'post_card_style',
 			[
-				'label' => __( 'Post Card Style', 'newsfit-core' ),
+				'label' => __( 'Post Card Style', 'quixa-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1145,7 +1145,7 @@ class Post extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow',
-				'label'    => __( 'Box Shadow', 'newsfit-core' ),
+				'label'    => __( 'Box Shadow', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-el-post-wrapper.blog-grid .blog-box.grid-style',
 			]
 		);
@@ -1153,7 +1153,7 @@ class Post extends ElementorBase {
 		$this->add_control(
 			'main_box_radius',
 			[
-				'label'      => __( 'Main Box Radius', 'newsfit-core' ),
+				'label'      => __( 'Main Box Radius', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -1230,7 +1230,7 @@ class Post extends ElementorBase {
 			<?php if ( $query->have_posts() ) : ?>
                 <div class="row">
 					<?php while ( $query->have_posts() ) : $query->the_post();
-						echo '<article class="newsfit-post-card ' . esc_attr( $col_class ) . '">';
+						echo '<article class="quixa-post-card ' . esc_attr( $col_class ) . '">';
 						Fns::get_template( "elementor/post/$template", $data );
 						echo '</article>';
 					endwhile; ?>

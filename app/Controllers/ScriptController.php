@@ -1,8 +1,8 @@
 <?php
 
-namespace RT\NewsFitCore\Controllers;
+namespace RT\QuixaCore\Controllers;
 
-use RT\NewsFitCore\Traits\SingletonTraits;
+use RT\QuixaCore\Traits\SingletonTraits;
 
 /**
  * Enqueue.
@@ -23,8 +23,8 @@ class ScriptController {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		//wp_register_script( 'pannellum', NEWSFIT_CORE_BASE_URL . 'assets/js/pannellum.js', '', '2.5.6', true );
-		//wp_register_style( 'pannellum', NEWSFIT_CORE_BASE_URL . 'assets/css/pannellum.css', '', '2.5.6' );
+		//wp_register_script( 'pannellum', QUIXA_CORE_BASE_URL . 'assets/js/pannellum.js', '', '2.5.6', true );
+		//wp_register_style( 'pannellum', QUIXA_CORE_BASE_URL . 'assets/css/pannellum.css', '', '2.5.6' );
 		//wp_enqueue_style( 'pannellum' );
 		//wp_enqueue_script( 'pannellum' );
 	}

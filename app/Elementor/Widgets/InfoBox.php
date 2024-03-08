@@ -5,12 +5,12 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class InfoBox extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name = esc_html__( 'Info Box', 'newsfit-core' );
+		$this->rt_name = esc_html__( 'Info Box', 'quixa-core' );
 		$this->rt_base = 'rt-info-box';
 		parent::__construct( $data, $args );
 	}
@@ -28,7 +28,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_section(
 			'rt_info_box',
 			[
-				'label' => esc_html__( 'Info Box Settings', 'newsfit-core' ),
+				'label' => esc_html__( 'Info Box Settings', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -36,14 +36,14 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'layout',
 			[
-				'label'   => esc_html__( 'Style', 'newsfit-core' ),
+				'label'   => esc_html__( 'Style', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'style1',
 				'options' => [
-					'style1' => __( 'Style 1', 'newsfit-core' ),
-					'style2' => __( 'Style 2', 'newsfit-core' ),
-					'style3' => __( 'Style 3', 'newsfit-core' ),
-					'style4' => __( 'Style 4', 'newsfit-core' ),
+					'style1' => __( 'Style 1', 'quixa-core' ),
+					'style2' => __( 'Style 2', 'quixa-core' ),
+					'style3' => __( 'Style 3', 'quixa-core' ),
+					'style4' => __( 'Style 4', 'quixa-core' ),
 				],
 
 			]
@@ -52,12 +52,12 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'icon_type',
 			[
-				'label'   => __( 'Icon Type', 'newsfit-core' ),
+				'label'   => __( 'Icon Type', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'icon',
 				'options' => [
-					'icon'  => __( 'Icon', 'newsfit-core' ),
-					'image' => __( 'Image', 'newsfit-core' ),
+					'icon'  => __( 'Icon', 'quixa-core' ),
+					'image' => __( 'Image', 'quixa-core' ),
 				],
 			]
 		);
@@ -65,7 +65,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'newsfit-core' ),
+				'label'       => esc_html__( 'Title', 'quixa-core' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => 'Welcome To Greenova',
 				'label_block' => true,
@@ -75,7 +75,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'sub_title',
 			[
-				'label'       => esc_html__( 'Sub Title', 'newsfit-core' ),
+				'label'       => esc_html__( 'Sub Title', 'quixa-core' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'default'     => 'I am Info Text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
 				'label_block' => true,
@@ -88,7 +88,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'info_icon',
 			[
-				'label'            => __( 'Choose Icon', 'newsfit-core' ),
+				'label'            => __( 'Choose Icon', 'quixa-core' ),
 				'type'             => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'default'          => [
@@ -104,10 +104,10 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'show_readmore_btn',
 			[
-				'label'        => __( 'Read More Button', 'newsfit-core' ),
+				'label'        => __( 'Read More Button', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'On', 'newsfit-core' ),
-				'label_off'    => __( 'Off', 'newsfit-core' ),
+				'label_on'     => __( 'On', 'quixa-core' ),
+				'label_off'    => __( 'Off', 'quixa-core' ),
 				'return_value' => 'is-readmore',
 			]
 		);
@@ -115,7 +115,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'read_more_btn_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'newsfit-core' ),
+				'label'       => esc_html__( 'Button Text', 'quixa-core' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => 'Read More',
 				'label_block' => true,
@@ -128,9 +128,9 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'link',
 			[
-				'label'         => __( 'Link', 'newsfit-core' ),
+				'label'         => __( 'Link', 'quixa-core' ),
 				'type'          => \Elementor\Controls_Manager::URL,
-				'placeholder'   => __( 'https://your-link.com', 'newsfit-core' ),
+				'placeholder'   => __( 'https://your-link.com', 'quixa-core' ),
 				'show_external' => true,
 				'dynamic'       => [
 					'active' => true,
@@ -146,7 +146,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'image_icon',
 			[
-				'label'     => __( 'Choose Image', 'newsfit-core' ),
+				'label'     => __( 'Choose Image', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::MEDIA,
 				'default'   => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -160,19 +160,19 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'icon_position',
 			[
-				'label'     => __( 'Icon Position', 'newsfit-core' ),
+				'label'     => __( 'Icon Position', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'options'   => [
 					'icon-left'                                                      => [
-						'title' => __( 'Left', 'newsfit-core' ),
+						'title' => __( 'Left', 'quixa-core' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'float: none; display: block; padding: 0;'                       => [
-						'title' => __( 'Top', 'newsfit-core' ),
+						'title' => __( 'Top', 'quixa-core' ),
 						'icon'  => 'eicon-v-align-top',
 					],
 					'float: right !important; padding-right: 0; padding-left: 30px;' => [
-						'title' => __( 'Right', 'newsfit-core' ),
+						'title' => __( 'Right', 'quixa-core' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -189,19 +189,19 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'text_align',
 			[
-				'label'     => __( 'Alignment', 'newsfit-core' ),
+				'label'     => __( 'Alignment', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'   => [
-						'title' => __( 'Left', 'newsfit-core' ),
+						'title' => __( 'Left', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'newsfit-core' ),
+						'title' => __( 'Center', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'newsfit-core' ),
+						'title' => __( 'Right', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -216,12 +216,12 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'icon_animation',
 			[
-				'label'   => __( 'Icon/Image Animation', 'newsfit-core' ),
+				'label'   => __( 'Icon/Image Animation', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					''            => __( 'Select Animation', 'newsfit-core' ),
-					'toptobottom' => __( 'Top to Bottom', 'newsfit-core' ),
-					'bottomtotop' => __( 'Bottom to Top', 'newsfit-core' ),
+					''            => __( 'Select Animation', 'quixa-core' ),
+					'toptobottom' => __( 'Top to Bottom', 'quixa-core' ),
+					'bottomtotop' => __( 'Bottom to Top', 'quixa-core' ),
 				],
 			]
 		);
@@ -233,7 +233,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_section(
 			'title_settings',
 			[
-				'label' => esc_html__( 'Title Settings', 'newsfit-core' ),
+				'label' => esc_html__( 'Title Settings', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -242,7 +242,7 @@ class InfoBox extends ElementorBase {
 			'title_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .info-title'   => 'color: {{VALUE}}',
 					'{{WRAPPER}} .rt-info-box .info-title a' => 'color: {{VALUE}}',
@@ -254,7 +254,7 @@ class InfoBox extends ElementorBase {
 			'title_hover_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Hover Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Hover Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box:hover .info-title'   => 'color: {{VALUE}} !important',
 					'{{WRAPPER}} .rt-info-box:hover .info-title a' => 'color: {{VALUE}} !important',
@@ -266,7 +266,7 @@ class InfoBox extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'label'    => esc_html__( 'Typography', 'newsfit-core' ),
+				'label'    => esc_html__( 'Typography', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .info-title',
 			]
 		);
@@ -274,7 +274,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'              => __( 'Title Spacing', 'newsfit-core' ),
+				'label'              => __( 'Title Spacing', 'quixa-core' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => [ 'px' ],
 				'allowed_dimensions' => 'vertical',
@@ -291,7 +291,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_section(
 			'sub_title_settings',
 			[
-				'label'     => esc_html__( 'Sub Title Settings', 'newsfit-core' ),
+				'label'     => esc_html__( 'Sub Title Settings', 'quixa-core' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout' => [ 'style1', 'style2', 'style3' ],
@@ -303,7 +303,7 @@ class InfoBox extends ElementorBase {
 			'sub_title_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .content-holder p' => 'color: {{VALUE}}',
 				],
@@ -314,7 +314,7 @@ class InfoBox extends ElementorBase {
 			'sub_title_hover_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Hover Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Hover Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box:hover .content-holder p' => 'color: {{VALUE}}',
 				],
@@ -325,7 +325,7 @@ class InfoBox extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'sub_title_typography',
-				'label'    => esc_html__( 'Typography', 'newsfit-core' ),
+				'label'    => esc_html__( 'Typography', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .content-holder p',
 			]
 		);
@@ -333,7 +333,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'sub_title_spacing',
 			[
-				'label'              => __( 'Sub Title Spacing', 'newsfit-core' ),
+				'label'              => __( 'Sub Title Spacing', 'quixa-core' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => [ 'px' ],
 				'allowed_dimensions' => 'vertical',
@@ -350,7 +350,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_section(
 			'icon_settings',
 			[
-				'label'     => esc_html__( 'Icon Settings', 'newsfit-core' ),
+				'label'     => esc_html__( 'Icon Settings', 'quixa-core' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'icon_type' => [ 'icon' ],
@@ -362,7 +362,7 @@ class InfoBox extends ElementorBase {
 			'icon_width_height',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Icon Width & Height', 'newsfit-core' ),
+				'label'      => esc_html__( 'Icon Width & Height', 'quixa-core' ),
 				'size_units' => [ 'px' ],
 				'range'      => [
 					'px' => [
@@ -382,7 +382,7 @@ class InfoBox extends ElementorBase {
 			'icon_line_height',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Icon Line Height', 'newsfit-core' ),
+				'label'      => esc_html__( 'Icon Line Height', 'quixa-core' ),
 				'size_units' => [ 'px' ],
 				'range'      => [
 					'px' => [
@@ -402,7 +402,7 @@ class InfoBox extends ElementorBase {
 			'icon_size',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Icon Font Size', 'newsfit-core' ),
+				'label'      => esc_html__( 'Icon Font Size', 'quixa-core' ),
 				'size_units' => [ 'px' ],
 				'range'      => [
 					'px' => [
@@ -423,7 +423,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'icon_spacing',
 			[
-				'label'      => __( 'Icon Spacing / Padding', 'newsfit-core' ),
+				'label'      => __( 'Icon Spacing / Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -435,7 +435,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'icon_margin',
 			[
-				'label'      => __( 'Icon Margin', 'newsfit-core' ),
+				'label'      => __( 'Icon Margin', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'default'    => [
@@ -455,7 +455,7 @@ class InfoBox extends ElementorBase {
 			'icon_border_radius',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Border Radius', 'newsfit-core' ),
+				'label'      => esc_html__( 'Border Radius', 'quixa-core' ),
 				'size_units' => [ '%' ],
 				'range'      => [
 					'%' => [
@@ -475,7 +475,7 @@ class InfoBox extends ElementorBase {
 			'icon_rotation',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Icon Border Rotation', 'newsfit-core' ),
+				'label'      => esc_html__( 'Icon Border Rotation', 'quixa-core' ),
 				'size_units' => [ '%' ],
 				'range'      => [
 					'%' => [
@@ -500,14 +500,14 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_tab(
 			'icon_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 		$this->add_control(
 			'icon_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .icon-holder i'                                          => 'color: {{VALUE}}',
 					'{{WRAPPER}} .rt-info-box .icon-holder svg path'                                   => 'fill: {{VALUE}}',
@@ -521,7 +521,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'     => 'icon_bg',
-				'label'    => __( 'Background', 'newsfit-core' ),
+				'label'    => __( 'Background', 'quixa-core' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .rt-info-box .icon-holder i, {{WRAPPER}} .rt-info-box.icon-el-style-2 .icon-holder span',
 			]
@@ -531,7 +531,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'icon-border',
-				'label'    => __( 'Icon Border', 'newsfit-core' ),
+				'label'    => __( 'Icon Border', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box:not(.icon-el-style-2) .icon-holder i, {{WRAPPER}} .rt-info-box.icon-el-style-2 .icon-holder span',
 			]
 		);
@@ -542,7 +542,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_tab(
 			'icon_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -550,7 +550,7 @@ class InfoBox extends ElementorBase {
 			'icon_hover_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box:hover .icon-holder i'                      => 'color: {{VALUE}}',
 					'{{WRAPPER}} .icon-el-style-2.rt-info-box .service-box:hover span i' => 'color: {{VALUE}} !important',
@@ -562,7 +562,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'     => 'icon_bg_hover',
-				'label'    => __( 'Background', 'newsfit-core' ),
+				'label'    => __( 'Background', 'quixa-core' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .rt-info-box:hover .icon-holder i, {{WRAPPER}} .rt-info-box.icon-el-style-2:hover .icon-holder span',
 			]
@@ -572,7 +572,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'           => 'icon-border-hover',
-				'label'          => __( 'Icon Border on Hover', 'newsfit-core' ),
+				'label'          => __( 'Icon Border on Hover', 'quixa-core' ),
 				'fields_options' => [
 					'color' => [
 						'dynamic' => [],
@@ -595,7 +595,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_section(
 			'image_settings',
 			[
-				'label'     => esc_html__( 'Image Settings', 'newsfit-core' ),
+				'label'     => esc_html__( 'Image Settings', 'quixa-core' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'icon_type' => [ 'image' ],
@@ -606,7 +606,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'image_wrap_margin_bottom',
 			[
-				'label'      => __( 'Image Wrapper Margin Bottom', 'newsfit-core' ),
+				'label'      => __( 'Image Wrapper Margin Bottom', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -626,7 +626,7 @@ class InfoBox extends ElementorBase {
 			'image_icon_width',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Image Width', 'newsfit-core' ),
+				'label'      => esc_html__( 'Image Width', 'quixa-core' ),
 				'size_units' => [ 'px' ],
 				'range'      => [
 					'px' => [
@@ -647,7 +647,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'image_wrap_width',
 			[
-				'label'      => __( 'Image Wrapper Width / Height', 'newsfit-core' ),
+				'label'      => __( 'Image Wrapper Width / Height', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -666,7 +666,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'image_spacing',
 			[
-				'label'      => __( 'Image Spacing / Margin', 'newsfit-core' ),
+				'label'      => __( 'Image Spacing / Margin', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -678,7 +678,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'image_padding',
 			[
-				'label'      => __( 'Image padding', 'newsfit-core' ),
+				'label'      => __( 'Image padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -691,7 +691,7 @@ class InfoBox extends ElementorBase {
 			'image_border_radius',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Border Radius', 'newsfit-core' ),
+				'label'      => esc_html__( 'Border Radius', 'quixa-core' ),
 				'size_units' => [ '%' ],
 				'range'      => [
 					'%' => [
@@ -710,7 +710,7 @@ class InfoBox extends ElementorBase {
 			'image_rotation',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Icon Border Rotation', 'newsfit-core' ),
+				'label'      => esc_html__( 'Icon Border Rotation', 'quixa-core' ),
 				'size_units' => [ '%' ],
 				'range'      => [
 					'%' => [
@@ -729,12 +729,12 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'image_invert',
 			[
-				'label'   => __( 'Image Invert', 'newsfit-core' ),
+				'label'   => __( 'Image Invert', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					''                   => __( 'Select', 'newsfit-core' ),
-					'image_invert'       => __( 'Always', 'newsfit-core' ),
-					'image_invert_hover' => __( 'On Hover', 'newsfit-core' ),
+					''                   => __( 'Select', 'quixa-core' ),
+					'image_invert'       => __( 'Always', 'quixa-core' ),
+					'image_invert_hover' => __( 'On Hover', 'quixa-core' ),
 				],
 			]
 		);
@@ -748,7 +748,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_tab(
 			'image_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -756,10 +756,10 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'           => 'image_bg',
-				'label'          => __( 'Background', 'newsfit-core' ),
+				'label'          => __( 'Background', 'quixa-core' ),
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Background', 'newsfit-core' ),
+						'label' => esc_html__( 'Background', 'quixa-core' ),
 					],
 				],
 
@@ -772,7 +772,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'           => 'image-border',
-				'label'          => __( 'Image Border', 'newsfit-core' ),
+				'label'          => __( 'Image Border', 'quixa-core' ),
 				'selector'       => '{{WRAPPER}} .rt-info-box .icon-holder .img-wrap',
 				'fields_options' => [
 					'color' => [
@@ -786,7 +786,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'image_box_shadow',
-				'label'    => __( 'Box Shadow', 'newsfit-core' ),
+				'label'    => __( 'Box Shadow', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .icon-holder .img-wrap',
 			]
 		);
@@ -797,7 +797,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_tab(
 			'image_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -805,10 +805,10 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'           => 'image_bg_hover',
-				'label'          => __( 'Background', 'newsfit-core' ),
+				'label'          => __( 'Background', 'quixa-core' ),
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Background - Hover', 'newsfit-core' ),
+						'label' => esc_html__( 'Background - Hover', 'quixa-core' ),
 					],
 				],
 				'types'          => [ 'classic', 'gradient' ],
@@ -820,7 +820,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'image-border-hover',
-				'label'    => __( 'Icon Border on Hover', 'newsfit-core' ),
+				'label'    => __( 'Icon Border on Hover', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box:hover .icon-holder .img-wrap',
 			]
 		);
@@ -829,7 +829,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'image_box_shadow_hover',
-				'label'    => __( 'Box Shadow', 'newsfit-core' ),
+				'label'    => __( 'Box Shadow', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box:hover .icon-holder .img-wrap',
 			]
 		);
@@ -842,15 +842,15 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'bg_animation',
 			[
-				'label'   => __( 'Background Animation', 'newsfit-core' ),
+				'label'   => __( 'Background Animation', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					''               => __( 'Select Animation', 'newsfit-core' ),
-					'hue-animation'  => __( 'Hue Rotation', 'newsfit-core' ),
-					'zoom-in'        => __( 'Zoom In', 'newsfit-core' ),
-					'animation-both' => __( 'Both', 'newsfit-core' ),
-					'to-top'         => __( 'To Top', 'newsfit-core' ),
-					'to-bottom'      => __( 'To Bottom', 'newsfit-core' ),
+					''               => __( 'Select Animation', 'quixa-core' ),
+					'hue-animation'  => __( 'Hue Rotation', 'quixa-core' ),
+					'zoom-in'        => __( 'Zoom In', 'quixa-core' ),
+					'animation-both' => __( 'Both', 'quixa-core' ),
+					'to-top'         => __( 'To Top', 'quixa-core' ),
+					'to-bottom'      => __( 'To Bottom', 'quixa-core' ),
 				],
 			]
 		);
@@ -858,12 +858,12 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'bg_animation_2',
 			[
-				'label'     => __( 'Background Animation 2', 'newsfit-core' ),
+				'label'     => __( 'Background Animation 2', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'options'   => [
-					''               => __( 'Select Animation', 'newsfit-core' ),
-					'bg-animation-2' => __( 'Enable', 'newsfit-core' ),
-					''               => __( 'Disable', 'newsfit-core' ),
+					''               => __( 'Select Animation', 'quixa-core' ),
+					'bg-animation-2' => __( 'Enable', 'quixa-core' ),
+					''               => __( 'Disable', 'quixa-core' ),
 				],
 				'condition' => [
 					'layout' => 'style3',
@@ -878,7 +878,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_section(
 			'read_more_settings',
 			[
-				'label'     => esc_html__( 'Read More Button Settings', 'newsfit-core' ),
+				'label'     => esc_html__( 'Read More Button Settings', 'quixa-core' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_readmore_btn' => [ 'is-readmore' ],
@@ -889,12 +889,12 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'read_more_btn_visibility',
 			[
-				'label'   => __( 'Button Visibility', 'newsfit-core' ),
+				'label'   => __( 'Button Visibility', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'always-show',
 				'options' => [
-					'always-show' => __( 'Always Show', 'newsfit-core' ),
-					'show-hover'  => __( 'Show on Hover', 'newsfit-core' ),
+					'always-show' => __( 'Always Show', 'quixa-core' ),
+					'show-hover'  => __( 'Show on Hover', 'quixa-core' ),
 				],
 			]
 		);
@@ -903,7 +903,7 @@ class InfoBox extends ElementorBase {
 			'readmore_border_radius',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Border Radius', 'newsfit-core' ),
+				'label'      => esc_html__( 'Border Radius', 'quixa-core' ),
 				'size_units' => [ 'px' ],
 				'range'      => [
 					'px' => [
@@ -926,7 +926,7 @@ class InfoBox extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'readmore_btn_typography',
-				'label'    => esc_html__( 'Typography', 'newsfit-core' ),
+				'label'    => esc_html__( 'Typography', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .button-el .button-text',
 			]
 		);
@@ -934,7 +934,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'readmore_padding_spacing',
 			[
-				'label'      => __( 'Read More Padding', 'newsfit-core' ),
+				'label'      => __( 'Read More Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -947,7 +947,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'button_icon_heading',
 			[
-				'label'     => __( 'Button Icon Settings', 'newsfit-core' ),
+				'label'     => __( 'Button Icon Settings', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -956,10 +956,10 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'show_btn_icon',
 			[
-				'label'        => __( 'Show Button Icon', 'newsfit-core' ),
+				'label'        => __( 'Show Button Icon', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => false,
 			]
@@ -968,12 +968,12 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'btn_icon_position',
 			[
-				'label'     => __( 'Icon Positioin', 'newsfit-core' ),
+				'label'     => __( 'Icon Positioin', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => 'right',
 				'options'   => [
-					'left'  => __( 'Left', 'newsfit-core' ),
-					'right' => __( 'Right', 'newsfit-core' ),
+					'left'  => __( 'Left', 'quixa-core' ),
+					'right' => __( 'Right', 'quixa-core' ),
 				],
 				'condition' => [
 					'show_btn_icon' => 'yes',
@@ -984,7 +984,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'button_icon',
 			[
-				'label'     => __( 'Button Icon', 'newsfit-core' ),
+				'label'     => __( 'Button Icon', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::ICONS,
 				'default'   => [
 					'value'   => 'fas fa-chevron-circle-right',
@@ -999,7 +999,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'btn_icon_y_postion',
 			[
-				'label'      => __( 'Icon Y Position', 'newsfit-core' ),
+				'label'      => __( 'Icon Y Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -1025,7 +1025,7 @@ class InfoBox extends ElementorBase {
 		$this->add_control(
 			'btn_icon_font_size',
 			[
-				'label'      => __( 'Icon Size', 'newsfit-core' ),
+				'label'      => __( 'Icon Size', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -1057,7 +1057,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_tab(
 			'read_more_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -1065,7 +1065,7 @@ class InfoBox extends ElementorBase {
 			'read_more_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .button-el .button-text' => 'color: {{VALUE}}',
 				],
@@ -1076,7 +1076,7 @@ class InfoBox extends ElementorBase {
 			'read_more_icon_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Icon Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Icon Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .button-el .button-text i'        => 'color: {{VALUE}}',
 					'{{WRAPPER}} .rt-info-box .button-el .button-text svg path' => 'fill: {{VALUE}}',
@@ -1088,7 +1088,7 @@ class InfoBox extends ElementorBase {
 			'read_more_bg',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Background', 'newsfit-core' ),
+				'label'     => esc_html__( 'Background', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .button-el .button-text' => 'background-color: {{VALUE}}',
 				],
@@ -1099,7 +1099,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'button_box_shadow',
-				'label'    => __( 'Box Shadow', 'newsfit-core' ),
+				'label'    => __( 'Box Shadow', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .button-el .button-text',
 			]
 		);
@@ -1108,7 +1108,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'read_more_border',
-				'label'    => __( 'Border', 'newsfit-core' ),
+				'label'    => __( 'Border', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .button-el .button-text',
 			]
 		);
@@ -1119,7 +1119,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_tab(
 			'read_more_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -1127,7 +1127,7 @@ class InfoBox extends ElementorBase {
 			'read_more_hover_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .button-el:hover .button-text' => 'color: {{VALUE}}',
 				],
@@ -1138,7 +1138,7 @@ class InfoBox extends ElementorBase {
 			'read_more_icon_color_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Icon Color Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Icon Color Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .button-el:hover .button-text i'        => 'color: {{VALUE}}',
 					'{{WRAPPER}} .rt-info-box .button-el:hover .button-text svg path' => 'fill: {{VALUE}}',
@@ -1150,7 +1150,7 @@ class InfoBox extends ElementorBase {
 			'read_more_bg_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Background on Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Background on Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .button-el:hover .button-text' => 'background-color: {{VALUE}}',
 				],
@@ -1161,7 +1161,7 @@ class InfoBox extends ElementorBase {
 			'read_more_bg_animation_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Animation on Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Animation on Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-info-box .button-el:hover .button-text::before' => 'background-color: {{VALUE}}',
 				],
@@ -1172,7 +1172,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'button_box_shadow_hover',
-				'label'    => __( 'Box Shadow Hover', 'newsfit-core' ),
+				'label'    => __( 'Box Shadow Hover', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .button-el:hover .button-text',
 			]
 		);
@@ -1181,7 +1181,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'read_more_border_hover',
-				'label'    => __( 'Border', 'newsfit-core' ),
+				'label'    => __( 'Border', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .button-el:hover .button-text',
 			]
 		);
@@ -1197,7 +1197,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_section(
 			'box_settings',
 			[
-				'label' => esc_html__( 'Box Settings', 'newsfit-core' ),
+				'label' => esc_html__( 'Box Settings', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1206,7 +1206,7 @@ class InfoBox extends ElementorBase {
 			'box_height',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Box Height', 'newsfit-core' ),
+				'label'      => esc_html__( 'Box Height', 'quixa-core' ),
 				'size_units' => [ 'px' ],
 				'range'      => [
 					'px' => [
@@ -1224,7 +1224,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label'      => __( 'Border Radius', 'newsfit-core' ),
+				'label'      => __( 'Border Radius', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -1236,7 +1236,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label'      => __( 'Box Padding', 'newsfit-core' ),
+				'label'      => __( 'Box Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -1248,7 +1248,7 @@ class InfoBox extends ElementorBase {
 		$this->add_responsive_control(
 			'box_margin',
 			[
-				'label'      => __( 'Box Margin', 'newsfit-core' ),
+				'label'      => __( 'Box Margin', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'default'    => [
@@ -1271,7 +1271,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_tab(
 			'box_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -1279,7 +1279,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow',
-				'label'    => __( 'Box Shadow', 'newsfit-core' ),
+				'label'    => __( 'Box Shadow', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .service-box',
 			]
 		);
@@ -1288,10 +1288,10 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'           => 'box_bg',
-				'label'          => __( 'Background', 'newsfit-core' ),
+				'label'          => __( 'Background', 'quixa-core' ),
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Box Background', 'newsfit-core' ),
+						'label' => esc_html__( 'Box Background', 'quixa-core' ),
 					],
 				],
 				'types'          => [ 'classic', 'gradient' ],
@@ -1304,7 +1304,7 @@ class InfoBox extends ElementorBase {
 		$this->start_controls_tab(
 			'box_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -1312,7 +1312,7 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow_hover',
-				'label'    => __( 'Box Shadow Hover', 'newsfit-core' ),
+				'label'    => __( 'Box Shadow Hover', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-info-box .service-box:hover',
 			]
 		);
@@ -1321,10 +1321,10 @@ class InfoBox extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'           => 'box_bg_hover',
-				'label'          => __( 'Background Hover', 'newsfit-core' ),
+				'label'          => __( 'Background Hover', 'quixa-core' ),
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Box Background - Hover', 'newsfit-core' ),
+						'label' => esc_html__( 'Box Background - Hover', 'quixa-core' ),
 					],
 				],
 				'types'          => [ 'classic', 'gradient' ],

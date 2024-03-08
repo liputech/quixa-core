@@ -6,7 +6,7 @@
  */
 
 
-namespace RT\NewsFitCore\Abstracts;
+namespace RT\QuixaCore\Abstracts;
 
 use Elementor\Plugin;
 use Elementor\Repeater;
@@ -18,8 +18,8 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Text_Stroke;
-use RT\NewsFitCore\Elementor\Controls\ImageSelectorControl;
-use RT\NewsFitCore\Elementor\Controls\Select2AjaxControl;
+use RT\QuixaCore\Elementor\Controls\ImageSelectorControl;
+use RT\QuixaCore\Elementor\Controls\Select2AjaxControl;
 
 
 // Do not allow directly accessing this file.
@@ -42,28 +42,28 @@ abstract class ElementorWidgetBase extends Widget_Base {
 	 *
 	 * @var String
 	 */
-	public $newsfit_name;
+	public $quixa_name;
 
 	/**
 	 * Widget name.
 	 *
 	 * @var String
 	 */
-	public $newsfit_base;
+	public $quixa_base;
 
 	/**
 	 * Widget categories.
 	 *
 	 * @var String
 	 */
-	public $newsfit_category;
+	public $quixa_category;
 
 	/**
 	 * Widget icon class
 	 *
 	 * @var String
 	 */
-	public $newsfit_icon;
+	public $quixa_icon;
 
 	/**
 	 * PRO Label HTML.
@@ -101,8 +101,8 @@ abstract class ElementorWidgetBase extends Widget_Base {
 	 */
 	public function __construct( $data = [], $args = null ) {
 		parent::__construct( $data, $args );
-		$this->newsfit_category = NEWSFIT_CORE_PREFIX . '-widgets'; // Category /@dev
-		$this->newsfit_icon     = 'rdtheme-el-custom';
+		$this->quixa_category = QUIXA_CORE_PREFIX . '-widgets'; // Category /@dev
+		$this->quixa_icon     = 'rdtheme-el-custom';
 	}
 
 
@@ -123,7 +123,7 @@ abstract class ElementorWidgetBase extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return $this->newsfit_base;
+		return $this->quixa_base;
 	}
 
 
@@ -137,7 +137,7 @@ abstract class ElementorWidgetBase extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return $this->newsfit_name;
+		return $this->quixa_name;
 	}
 
 	/**
@@ -150,7 +150,7 @@ abstract class ElementorWidgetBase extends Widget_Base {
 	 * @access public
 	 */
 	public function get_icon() {
-		return $this->newsfit_icon;
+		return $this->quixa_icon;
 	}
 
 	/**
@@ -163,7 +163,7 @@ abstract class ElementorWidgetBase extends Widget_Base {
 	 * @access public
 	 */
 	public function get_categories() {
-		return [ $this->newsfit_category ];
+		return [ $this->quixa_category ];
 	}
 
 
@@ -184,7 +184,7 @@ abstract class ElementorWidgetBase extends Widget_Base {
 		}
 
 		foreach ( $fields as $id => $field ) {
-			$field['classes'] = ! empty( $field['classes'] ) ? $field['classes'] . ' elementor-control-newsfit_el' : ' elementor-control-newsfit_el';
+			$field['classes'] = ! empty( $field['classes'] ) ? $field['classes'] . ' elementor-control-quixa_el' : ' elementor-control-quixa_el';
 
 			if ( ! empty( $field['type'] ) ) {
 				$field['type'] = self::field_type( $field['type'] );
@@ -257,7 +257,7 @@ abstract class ElementorWidgetBase extends Widget_Base {
 			}
 		}
 
-		do_action( 'newsfit/after/register/controls' );
+		do_action( 'quixa/after/register/controls' );
 	}
 
 	/**

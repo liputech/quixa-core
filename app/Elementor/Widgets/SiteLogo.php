@@ -5,12 +5,12 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use RT\NewsFitCore\Abstracts\ElementorBase;
-use RT\NewsFitCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class SiteLogo extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name = __( 'RT Site Logo', 'newsfit-core' );
+		$this->rt_name = __( 'RT Site Logo', 'quixa-core' );
 		$this->rt_base = 'rt-site-logo';
 		parent::__construct( $data, $args );
 	}
@@ -28,7 +28,7 @@ class SiteLogo extends ElementorBase {
 		$this->start_controls_section(
 			'sec_general',
 			[
-				'label' => esc_html__( 'General', 'newsfit-core' ),
+				'label' => esc_html__( 'General', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -38,7 +38,7 @@ class SiteLogo extends ElementorBase {
 			'important_note',
 			[
 				'type' => Controls_Manager::RAW_HTML,
-				'raw' => esc_html__( 'This widget works depending on the logo setting from [Customize > Site Identity].', 'newsfit-core' ),
+				'raw' => esc_html__( 'This widget works depending on the logo setting from [Customize > Site Identity].', 'quixa-core' ),
 				'content_classes' => 'elementor-panel-notice elementor-panel-alert elementor-panel-alert-info',
 			]
 		);
@@ -47,10 +47,10 @@ class SiteLogo extends ElementorBase {
 			'logo_title',
 			[
 				'type'    => Controls_Manager::TEXT,
-				'label'   => esc_html__( 'Logo Title', 'newsfit-core' ),
+				'label'   => esc_html__( 'Logo Title', 'quixa-core' ),
 				'default' => '',
 				'content_classes' => 'elementor-panel-notice elementor-panel-alert elementor-panel-alert-info',
-				'desciption' => esc_html__('If you don\'t upload logo from the Customize this title will display as a text logo.', 'newsfit-core'),
+				'desciption' => esc_html__('If you don\'t upload logo from the Customize this title will display as a text logo.', 'quixa-core'),
 			]
 		);
 
@@ -58,19 +58,19 @@ class SiteLogo extends ElementorBase {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label'     => __( 'Alignment', 'newsfit-core' ),
+				'label'     => __( 'Alignment', 'quixa-core' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'   => [
-						'title' => __( 'Left', 'newsfit-core' ),
+						'title' => __( 'Left', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'newsfit-core' ),
+						'title' => __( 'Center', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'newsfit-core' ),
+						'title' => __( 'Right', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -86,7 +86,7 @@ class SiteLogo extends ElementorBase {
 		$this->start_controls_section(
 			'section_box',
 			[
-				'label' => __( 'Logo Style', 'newsfit-core' ),
+				'label' => __( 'Logo Style', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -95,8 +95,8 @@ class SiteLogo extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'        => 'title_typo',
-				'label'       => esc_html__( 'Typography', 'newsfit-core' ),
-				'description' => esc_html__( 'This option will work for text logo only', 'newsfit-core' ),
+				'label'       => esc_html__( 'Typography', 'quixa-core' ),
+				'description' => esc_html__( 'This option will work for text logo only', 'quixa-core' ),
 				'selector'    => '{{WRAPPER}} .site-branding h1 a',
 			]
 		);
@@ -105,7 +105,7 @@ class SiteLogo extends ElementorBase {
 			'logo_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .site-branding h1 a' => 'color: {{VALUE}}',
 				],
@@ -115,7 +115,7 @@ class SiteLogo extends ElementorBase {
 			'logo_color_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .site-branding h1 a:hover' => 'color: {{VALUE}}',
 				],

@@ -5,12 +5,12 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use RT\NewsFitCore\Abstracts\ElementorBase;
-use RT\NewsFitCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class SiteMenu extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name = __( 'RT Site Menu', 'newsfit-core' );
+		$this->rt_name = __( 'RT Site Menu', 'quixa-core' );
 		$this->rt_base = 'rt-site-menu';
 		parent::__construct( $data, $args );
 	}
@@ -28,7 +28,7 @@ class SiteMenu extends ElementorBase {
 		$this->start_controls_section(
 			'sec_general',
 			[
-				'label' => esc_html__( 'General', 'newsfit-core' ),
+				'label' => esc_html__( 'General', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -36,7 +36,7 @@ class SiteMenu extends ElementorBase {
 		$this->add_control(
 			'nav_menu',
 			[
-				'label'       => esc_html__( 'Choose Menu', 'newsfit-core' ),
+				'label'       => esc_html__( 'Choose Menu', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '0',
 				'options'     => Fns::nav_menu_list(),
@@ -47,24 +47,24 @@ class SiteMenu extends ElementorBase {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label'     => __( 'Alignment', 'newsfit-core' ),
+				'label'     => __( 'Alignment', 'quixa-core' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'flex-start' => [
-						'title' => __( 'Left', 'newsfit-core' ),
+						'title' => __( 'Left', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'     => [
-						'title' => __( 'Center', 'newsfit-core' ),
+						'title' => __( 'Center', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'flex-end'   => [
-						'title' => __( 'Right', 'newsfit-core' ),
+						'title' => __( 'Right', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .newsfit-navigation' => 'justify-content: {{VALUE}};justify-content: {{VALUE}};',
+					'{{WRAPPER}} .quixa-navigation' => 'justify-content: {{VALUE}};justify-content: {{VALUE}};',
 				],
 				'separator' => 'before',
 			]
@@ -75,7 +75,7 @@ class SiteMenu extends ElementorBase {
 		$this->start_controls_section(
 			'section_box',
 			[
-				'label' => __( 'Logo Style', 'newsfit-core' ),
+				'label' => __( 'Logo Style', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -84,8 +84,8 @@ class SiteMenu extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'menu_typo',
-				'label'    => esc_html__( 'Menu Typography', 'newsfit-core' ),
-				'selector' => '{{WRAPPER}} .newsfit-navigation ul li a',
+				'label'    => esc_html__( 'Menu Typography', 'quixa-core' ),
+				'selector' => '{{WRAPPER}} .quixa-navigation ul li a',
 			]
 		);
 
@@ -93,8 +93,8 @@ class SiteMenu extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'sub_menu_typo',
-				'label'    => esc_html__( 'Submenu Typography', 'newsfit-core' ),
-				'selector' => '{{WRAPPER}} .newsfit-navigation ul li ul li a',
+				'label'    => esc_html__( 'Submenu Typography', 'quixa-core' ),
+				'selector' => '{{WRAPPER}} .quixa-navigation ul li ul li a',
 			]
 		);
 
@@ -106,7 +106,7 @@ class SiteMenu extends ElementorBase {
 		$this->start_controls_tab(
 			'style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -114,9 +114,9 @@ class SiteMenu extends ElementorBase {
 			'menu_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Menu item color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Menu item color', 'quixa-core' ),
 				'selectors' => [
-					'{{WRAPPER}} .newsfit-navigation ul li a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quixa-navigation ul li a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -124,9 +124,9 @@ class SiteMenu extends ElementorBase {
 			'sub_menu_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Sub menu item color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Sub menu item color', 'quixa-core' ),
 				'selectors' => [
-					'{{WRAPPER}} .newsfit-navigation ul li ul li a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quixa-navigation ul li ul li a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -135,9 +135,9 @@ class SiteMenu extends ElementorBase {
 			'arrow_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Menu arrow color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Menu arrow color', 'quixa-core' ),
 				'selectors' => [
-					'{{WRAPPER}} .newsfit-navigation ul li a .caret svg' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .quixa-navigation ul li a .caret svg' => 'fill: {{VALUE}}',
 				],
 			]
 		);
@@ -146,7 +146,7 @@ class SiteMenu extends ElementorBase {
 		$this->start_controls_tab(
 			'style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -154,9 +154,9 @@ class SiteMenu extends ElementorBase {
 			'menu_color_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Menu item color:hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Menu item color:hover', 'quixa-core' ),
 				'selectors' => [
-					'{{WRAPPER}} .newsfit-navigation ul li a:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quixa-navigation ul li a:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -164,9 +164,9 @@ class SiteMenu extends ElementorBase {
 			'sub_menu_color_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Sub menu item color:hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Sub menu item color:hover', 'quixa-core' ),
 				'selectors' => [
-					'{{WRAPPER}} .newsfit-navigation ul li ul li a:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quixa-navigation ul li ul li a:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -175,9 +175,9 @@ class SiteMenu extends ElementorBase {
 			'arrow_color_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Menu arrow color:hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Menu arrow color:hover', 'quixa-core' ),
 				'selectors' => [
-					'{{WRAPPER}} .newsfit-navigation ul li a:hover .caret svg' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .quixa-navigation ul li a:hover .caret svg' => 'fill: {{VALUE}}',
 				],
 			]
 		);
@@ -190,10 +190,10 @@ class SiteMenu extends ElementorBase {
 			'dropdown_bg',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Dropdown wrap background', 'newsfit-core' ),
+				'label'     => esc_html__( 'Dropdown wrap background', 'quixa-core' ),
 				'separator'  => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .newsfit-navigation ul > li > ul' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .quixa-navigation ul > li > ul' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -201,11 +201,11 @@ class SiteMenu extends ElementorBase {
 		$this->add_responsive_control(
 			'heading_margin',
 			[
-				'label'      => __( 'Menu item padding', 'newsfit-core' ),
+				'label'      => __( 'Menu item padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
-					'{{WRAPPER}} .newsfit-navigation .newsfit-navbar > li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+					'{{WRAPPER}} .quixa-navigation .quixa-navbar > li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
 				],
 			]
 		);
@@ -213,7 +213,7 @@ class SiteMenu extends ElementorBase {
 		$this->add_responsive_control(
 			'dropdown_width',
 			[
-				'label'      => __( 'Dropdown Width', 'newsfit-core' ),
+				'label'      => __( 'Dropdown Width', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -228,7 +228,7 @@ class SiteMenu extends ElementorBase {
 					'size' => 210,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .newsfit-navigation ul > li > ul' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quixa-navigation ul > li > ul' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -236,7 +236,7 @@ class SiteMenu extends ElementorBase {
 		$this->add_responsive_control(
 			'arrow_size',
 			[
-				'label'      => __( 'Arrow Size', 'newsfit-core' ),
+				'label'      => __( 'Arrow Size', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -247,7 +247,7 @@ class SiteMenu extends ElementorBase {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .newsfit-navigation ul li a .caret svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quixa-navigation ul li a .caret svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

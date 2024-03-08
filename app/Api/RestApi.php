@@ -5,10 +5,10 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Api;
+namespace RT\QuixaCore\Api;
 
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Traits\SingletonTraits;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Traits\SingletonTraits;
 
 class RestApi {
 	use SingletonTraits;

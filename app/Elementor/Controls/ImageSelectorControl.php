@@ -5,10 +5,10 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Controls;
+namespace RT\QuixaCore\Elementor\Controls;
 
 use Elementor\Base_Data_Control;
-use RT\NewsFitCore\Helper\Fns;
+use RT\QuixaCore\Helper\Fns;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,7 +38,7 @@ class ImageSelectorControl extends Base_Data_Control {
 	 * Enqueue control scripts and styles.
 	 */
 	public function enqueue() {
-		wp_enqueue_style( 'newsfit-image-selector', Fns::get_assets_url('css/elementor-image-selector.css'), [], '1.0' );
+		wp_enqueue_style( 'quixa-image-selector', Fns::get_assets_url('css/elementor-image-selector.css'), [], '1.0' );
 	}
 
 	/**

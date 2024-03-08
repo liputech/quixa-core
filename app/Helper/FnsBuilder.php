@@ -1,6 +1,6 @@
 <?php
 
-namespace RT\NewsFitCore\Helper;
+namespace RT\QuixaCore\Helper;
 
 class FnsBuilder {
 
@@ -11,37 +11,37 @@ class FnsBuilder {
 	public static function get_builder_type() {
 
 		$allPost = [
-			'post' => __( 'Post', 'newsfit-core' ),
-			'page' => __( 'Post', 'newsfit-core' ),
+			'post' => __( 'Post', 'quixa-core' ),
+			'page' => __( 'Post', 'quixa-core' ),
 		];
-		if ( defined( 'NEWSFIT_CORE' ) ) {
+		if ( defined( 'QUIXA_CORE' ) ) {
 			$allPost = Fns::get_post_types();
 		}
 
 		$default_pages = [
-			'is_front_page' => __( 'Front Page', 'newsfit-core' ),
-			'is_home'       => __( 'Blog / Posts Page', 'newsfit-core' ),
-			'is_search'     => __( 'Search Page', 'newsfit-core' ),
-			'is_archive'    => __( 'Archive', 'newsfit-core' ),
-			'is_404'        => __( '404 Page', 'newsfit-core' ),
+			'is_front_page' => __( 'Front Page', 'quixa-core' ),
+			'is_home'       => __( 'Blog / Posts Page', 'quixa-core' ),
+			'is_search'     => __( 'Search Page', 'quixa-core' ),
+			'is_archive'    => __( 'Archive', 'quixa-core' ),
+			'is_404'        => __( '404 Page', 'quixa-core' ),
 		];
 
 		if ( class_exists( 'WooCommerce' ) ) {
-			$default_pages['is_shop'] = __( 'WooCommerce Shop Page', 'newsfit-core' );
+			$default_pages['is_shop'] = __( 'WooCommerce Shop Page', 'quixa-core' );
 		}
 
 		$selection_options = [
 			'sitewide' => [
-				'label' => __( 'Sitewide', 'newsfit-core' ),
+				'label' => __( 'Sitewide', 'quixa-core' ),
 				'value' => [
-					'sitewide-global'    => __( 'Entire Website', 'newsfit-core' ),
-					'sitewide-singulars' => __( 'All Singulars', 'newsfit-core' ),
-					'sitewide-archives'  => __( 'All Archives', 'newsfit-core' ),
+					'sitewide-global'    => __( 'Entire Website', 'quixa-core' ),
+					'sitewide-singulars' => __( 'All Singulars', 'quixa-core' ),
+					'sitewide-archives'  => __( 'All Archives', 'quixa-core' ),
 				],
 			],
 
 			'default-pages' => [
-				'label' => __( 'Default Pages', 'newsfit-core' ),
+				'label' => __( 'Default Pages', 'quixa-core' ),
 				'value' => $default_pages,
 			],
 		];
@@ -50,11 +50,11 @@ class FnsBuilder {
 		foreach ( $allPost as $post_type => $post_type_name ) {
 			$pTypeVal = [];
 			if ( $post_type == 'page' ) {
-				$pTypeVal['single|page'] = __( "All Pages", "newsfit-core" );
+				$pTypeVal['single|page'] = __( "All Pages", "quixa-core" );
 			} else {
 				$pTypeVal = [
-					"single-$post_type"  => sprintf( __( 'All %s Single', 'newsfit-core' ), $post_type_name ),
-					"archive-$post_type" => sprintf( __( 'All %s Archive', 'newsfit-core' ), $post_type_name ),
+					"single-$post_type"  => sprintf( __( 'All %s Single', 'quixa-core' ), $post_type_name ),
+					"archive-$post_type" => sprintf( __( 'All %s Archive', 'quixa-core' ), $post_type_name ),
 				];
 			}
 
@@ -80,13 +80,13 @@ class FnsBuilder {
 
 		/*//Custom Page / Post
 		$selection_options['custom'] = [
-			'label' => __( 'Custom Page / Post', 'newsfit-core' ),
+			'label' => __( 'Custom Page / Post', 'quixa-core' ),
 			'value' => [
-				'custom' => __( 'Choose custom page / post', 'newsfit-core' )
+				'custom' => __( 'Choose custom page / post', 'quixa-core' )
 			]
 		];*/
 
-		return apply_filters( 'newsfit_builder_type', $selection_options );
+		return apply_filters( 'quixa_builder_type', $selection_options );
 
 	}
 
@@ -184,7 +184,7 @@ class FnsBuilder {
 	 */
 	public static function get_template_type( $type ) {
 		return get_posts( [
-			'post_type'      => 'elementor-newsfit',
+			'post_type'      => 'elementor-quixa',
 			'posts_per_page' => - 1,
 			'post_status'    => 'publish',
 			'fields'         => 'ids',

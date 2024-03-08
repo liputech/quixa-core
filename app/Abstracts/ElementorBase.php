@@ -5,7 +5,7 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Abstracts;
+namespace RT\QuixaCore\Abstracts;
 
 use Elementor\Widget_Base;
 
@@ -22,7 +22,7 @@ abstract class ElementorBase extends Widget_Base {
 	public $rt_translate;
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_category = NEWSFIT_CORE_PREFIX . '-widgets'; // Category /@dev
+		$this->rt_category = QUIXA_CORE_PREFIX . '-widgets'; // Category /@dev
 		$this->rt_icon     = 'rdtheme-el-custom';
 		parent::__construct( $data, $args );
 	}

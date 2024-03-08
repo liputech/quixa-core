@@ -5,12 +5,12 @@
  * Every function, hook and action is properly divided and organized inside related folders and files
  * Use the file `config/custom/custom.php` to write your custom functions
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\NewsFitCore;
+namespace RT\QuixaCore;
 
-use RT\NewsFitCore\Traits\SingletonTraits;
+use RT\QuixaCore\Traits\SingletonTraits;
 
 final class Init {
 
@@ -20,7 +20,7 @@ final class Init {
 	 * Class constructor
 	 */
 	public function __construct() {
-		add_action( 'newsfit_theme_init', [ $this, 'after_theme_loaded' ] );
+		add_action( 'quixa_theme_init', [ $this, 'after_theme_loaded' ] );
 		add_action( 'plugins_loaded', [ $this, 'load_textdomain' ], 20 );
 		add_action( 'plugins_loaded', [ $this, 'demo_importer' ], 17 );
 	}
@@ -33,9 +33,10 @@ final class Init {
 		Hooks\FilterHooks::instance();
 		Hooks\ActionHooks::instance();
 		Controllers\ScriptController::instance();
-		Controllers\PostTypeController::instance();
+		Modules\WidgetOverwrite::instance();
 		Api\RestApi::instance();
 		if ( defined( 'RT_FRAMEWORK_VERSION' ) ) {
+			Controllers\PostTypeController::instance();
 			Controllers\PostMetaController::instance();
 			Api\WidgetInit::instance();
 		}
@@ -46,7 +47,7 @@ final class Init {
 	}
 
 	public function load_textdomain() {
-		load_plugin_textdomain( 'newsfit-core', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'quixa-core', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	public function demo_importer() {

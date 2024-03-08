@@ -51,11 +51,11 @@ $slider_data = json_encode( $slider_data );
 			?>
 			<div class="elementor-swiper-button elementor-swiper-button-prev rt-prev">
 				<i class="eicon-chevron-left" aria-hidden="true"></i>
-				<span class="elementor-screen-only"><?php _e( 'Previous', 'newsfit-core' ); ?></span>
+				<span class="elementor-screen-only"><?php _e( 'Previous', 'quixa-core' ); ?></span>
 			</div>
 			<div class="elementor-swiper-button elementor-swiper-button-next rt-next">
 				<i class="eicon-chevron-right" aria-hidden="true"></i>
-				<span class="elementor-screen-only"><?php _e( 'Next', 'newsfit-core' ); ?></span>
+				<span class="elementor-screen-only"><?php _e( 'Next', 'quixa-core' ); ?></span>
 			</div>
 		<?php endif; ?>
 	</div>

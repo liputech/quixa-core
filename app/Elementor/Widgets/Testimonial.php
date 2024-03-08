@@ -5,13 +5,13 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Css_Filter;
 use Elementor\Group_Control_Typography;
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Testimonial extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name = esc_html__( 'Testimonial Carousel', 'newsfit-core' );
+		$this->rt_name = esc_html__( 'Testimonial Carousel', 'quixa-core' );
 		$this->rt_base = 'rt-testimonial-carousel';
 		parent::__construct( $data, $args );
 	}
@@ -29,7 +29,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_section(
 			'sec_general',
 			[
-				'label' => esc_html__( 'General', 'newsfit-core' ),
+				'label' => esc_html__( 'General', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -37,14 +37,14 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'layout',
 			[
-				'label'   => __( 'Style', 'newsfit-core' ),
+				'label'   => __( 'Style', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'style1',
 				'options' => [
-					'style1' => __( 'Style # 01', 'newsfit-core' ),
-					'style2' => __( 'Style # 02', 'newsfit-core' ),
-					'style3' => __( 'Style # 03', 'newsfit-core' ),
-					'style4' => __( 'Style # 04', 'newsfit-core' ),
+					'style1' => __( 'Style # 01', 'quixa-core' ),
+					'style2' => __( 'Style # 02', 'quixa-core' ),
+					'style3' => __( 'Style # 03', 'quixa-core' ),
+					'style4' => __( 'Style # 04', 'quixa-core' ),
 				],
 			]
 		);
@@ -55,7 +55,7 @@ class Testimonial extends ElementorBase {
 		$repeater->add_control(
 			'image',
 			[
-				'label'   => __( 'Choose Image', 'newsfit-core' ),
+				'label'   => __( 'Choose Image', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -66,9 +66,9 @@ class Testimonial extends ElementorBase {
 		$repeater->add_control(
 			'name',
 			[
-				'label'       => __( 'Name', 'newsfit-core' ),
+				'label'       => __( 'Name', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'default'     => __( 'Enter Name', 'newsfit-core' ),
+				'default'     => __( 'Enter Name', 'quixa-core' ),
 				'label_block' => true,
 			]
 		);
@@ -76,9 +76,9 @@ class Testimonial extends ElementorBase {
 		$repeater->add_control(
 			'designation',
 			[
-				'label'       => __( 'Designation', 'newsfit-core' ),
+				'label'       => __( 'Designation', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'default'     => __( 'Enter Designation', 'newsfit-core' ),
+				'default'     => __( 'Enter Designation', 'quixa-core' ),
 				'label_block' => true,
 			]
 		);
@@ -86,35 +86,35 @@ class Testimonial extends ElementorBase {
 		$repeater->add_control(
 			'content',
 			[
-				'label'   => __( 'Content', 'newsfit-core' ),
+				'label'   => __( 'Content', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::TEXTAREA,
-				'default' => __( 'Enter Designation', 'newsfit-core' ),
+				'default' => __( 'Enter Designation', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'items',
 			[
-				'label'       => __( 'Testimonial List', 'newsfit-core' ),
+				'label'       => __( 'Testimonial List', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'name'        => __( 'Maria Zokatti', 'newsfit-core' ),
-						'designation' => __( 'CEO, PSDBOSS', 'newsfit-core' ),
+						'name'        => __( 'Maria Zokatti', 'quixa-core' ),
+						'designation' => __( 'CEO, PSDBOSS', 'quixa-core' ),
 						'content'     => __( 'Engage with our professional real estate agents sell Following buy or rent your home.Get emails directly to your area reach inbox and manage the lead with.',
-							'newsfit-core' ),
+							'quixa-core' ),
 					],
 					[
-						'name'        => __( 'John Doe', 'newsfit-core' ),
-						'designation' => __( 'WordPress Developer', 'newsfit-core' ),
+						'name'        => __( 'John Doe', 'quixa-core' ),
+						'designation' => __( 'WordPress Developer', 'quixa-core' ),
 						'content'     => __( 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid expedita recusandae ipsam quas fugit aperiam nihil nemo delectus laudantium? Enim est quibusdam dicta a',
-							'newsfit-core' ),
+							'quixa-core' ),
 					],
 					[
-						'name'        => __( 'Kent Odeldan', 'newsfit-core' ),
-						'designation' => __( 'Web Designer', 'newsfit-core' ),
-						'content'     => __( 'Aliquid expedita recusandae ipsam quas fugit aperiam nihil nemo delectus laudantium? Enim est quibusdam dicta a', 'newsfit-core' ),
+						'name'        => __( 'Kent Odeldan', 'quixa-core' ),
+						'designation' => __( 'Web Designer', 'quixa-core' ),
+						'content'     => __( 'Aliquid expedita recusandae ipsam quas fugit aperiam nihil nemo delectus laudantium? Enim est quibusdam dicta a', 'quixa-core' ),
 					],
 
 				],
@@ -125,10 +125,10 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'rating',
 			[
-				'label'        => __( 'Rating', 'newsfit-core' ),
+				'label'        => __( 'Rating', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -141,7 +141,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_section(
 			'carousel_settings',
 			[
-				'label' => esc_html__( 'Carousel Settings', 'newsfit-core' ),
+				'label' => esc_html__( 'Carousel Settings', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -149,12 +149,12 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'slider_animation',
 			[
-				'label'   => __( 'Slider Animation', 'newsfit-core' ),
+				'label'   => __( 'Slider Animation', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'fade',
 				'options' => [
-					'slide' => __( 'Slide', 'newsfit-core' ),
-					'fade'  => __( 'Fade', 'newsfit-core' ),
+					'slide' => __( 'Slide', 'quixa-core' ),
+					'fade'  => __( 'Fade', 'quixa-core' ),
 				],
 			]
 		);
@@ -162,10 +162,10 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'arrows',
 			[
-				'label'        => __( 'Arrow', 'newsfit-core' ),
+				'label'        => __( 'Arrow', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -174,10 +174,10 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'dots',
 			[
-				'label'        => __( 'Dots', 'newsfit-core' ),
+				'label'        => __( 'Dots', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -186,10 +186,10 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'infinite',
 			[
-				'label'        => __( 'Infinite', 'newsfit-core' ),
+				'label'        => __( 'Infinite', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'newsfit-core' ),
-				'label_off'    => __( 'No', 'newsfit-core' ),
+				'label_on'     => __( 'Yes', 'quixa-core' ),
+				'label_off'    => __( 'No', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -198,10 +198,10 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'        => __( 'Autoplay', 'newsfit-core' ),
+				'label'        => __( 'Autoplay', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'newsfit-core' ),
-				'label_off'    => __( 'No', 'newsfit-core' ),
+				'label_on'     => __( 'Yes', 'quixa-core' ),
+				'label_off'    => __( 'No', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => false,
 			]
@@ -210,7 +210,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'autoplaySpeed',
 			[
-				'label'     => __( 'Autoplay Speed', 'newsfit-core' ),
+				'label'     => __( 'Autoplay Speed', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
 				'min'       => 1000,
 				'max'       => 5000,
@@ -225,10 +225,10 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'adaptiveHeight',
 			[
-				'label'        => __( 'Adaptive Height', 'newsfit-core' ),
+				'label'        => __( 'Adaptive Height', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'newsfit-core' ),
-				'label_off'    => __( 'No', 'newsfit-core' ),
+				'label_on'     => __( 'Yes', 'quixa-core' ),
+				'label_off'    => __( 'No', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -237,7 +237,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'speed',
 			[
-				'label'   => __( 'Speed', 'newsfit-core' ),
+				'label'   => __( 'Speed', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'min'     => 100,
 				'max'     => 3000,
@@ -249,7 +249,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'slidesToShow',
 			[
-				'label'   => __( 'Slides To Show', 'newsfit-core' ),
+				'label'   => __( 'Slides To Show', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'min'     => 1,
 				'max'     => 3,
@@ -261,7 +261,7 @@ class Testimonial extends ElementorBase {
 		$this->add_responsive_control(
 			'image_height',
 			[
-				'label'          => __( 'Image Height', 'newsfit-core' ),
+				'label'          => __( 'Image Height', 'quixa-core' ),
 				'type'           => Controls_Manager::SLIDER,
 				'default'        => [
 					'unit' => 'px',
@@ -303,7 +303,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_section(
 			'content_style',
 			[
-				'label' => esc_html__( 'Content Style', 'newsfit-core' ),
+				'label' => esc_html__( 'Content Style', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -311,7 +311,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'thumb_style_heading',
 			[
-				'label' => __( 'Thumb Style', 'newsfit-core' ),
+				'label' => __( 'Thumb Style', 'quixa-core' ),
 				'type'  => \Elementor\Controls_Manager::HEADING,
 				//				'separator' => 'before',
 			]
@@ -320,7 +320,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'thumb_size',
 			[
-				'label'      => __( 'Thumb Size', 'newsfit-core' ),
+				'label'      => __( 'Thumb Size', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -340,7 +340,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'name_style_heading',
 			[
-				'label'     => __( 'Name Style', 'newsfit-core' ),
+				'label'     => __( 'Name Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -350,7 +350,7 @@ class Testimonial extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typo',
-				'label'    => esc_html__( 'Name Typography', 'newsfit-core' ),
+				'label'    => esc_html__( 'Name Typography', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .slide-wrap .slider-item .item-title',
 			]
 		);
@@ -359,7 +359,7 @@ class Testimonial extends ElementorBase {
 			'title_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Name Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Name Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .slide-wrap .slider-item .item-title' => 'color: {{VALUE}}',
 				],
@@ -369,7 +369,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'designation_style_heading',
 			[
-				'label'     => __( 'Designation Style', 'newsfit-core' ),
+				'label'     => __( 'Designation Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -379,7 +379,7 @@ class Testimonial extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'designation_typo',
-				'label'    => esc_html__( 'Designation', 'newsfit-core' ),
+				'label'    => esc_html__( 'Designation', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .slide-wrap .slider-item .item-subtitle',
 			]
 		);
@@ -388,7 +388,7 @@ class Testimonial extends ElementorBase {
 			'designation_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Designation', 'newsfit-core' ),
+				'label'     => esc_html__( 'Designation', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .slide-wrap .slider-item .item-subtitle' => 'color: {{VALUE}}',
 				],
@@ -398,10 +398,10 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'des_dots',
 			[
-				'label'        => __( 'Before Dots', 'newsfit-core' ),
+				'label'        => __( 'Before Dots', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'newsfit-core' ),
-				'label_off'    => __( 'Hide', 'newsfit-core' ),
+				'label_on'     => __( 'Show', 'quixa-core' ),
+				'label_off'    => __( 'Hide', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'prefix_class' => 'is-dots-',
@@ -412,7 +412,7 @@ class Testimonial extends ElementorBase {
 			'des_dots_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Dots Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Dots Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-el-testimonial-carousel .slide-wrap .slider-item .item-subtitle::before' => 'background-color: {{VALUE}}',
 				],
@@ -425,7 +425,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'content_style_heading',
 			[
-				'label'     => __( 'Content Style', 'newsfit-core' ),
+				'label'     => __( 'Content Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -435,7 +435,7 @@ class Testimonial extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'content_typo',
-				'label'    => esc_html__( 'Content', 'newsfit-core' ),
+				'label'    => esc_html__( 'Content', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .slide-wrap .slider-item .rtin-content',
 			]
 		);
@@ -444,7 +444,7 @@ class Testimonial extends ElementorBase {
 			'content_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Content', 'newsfit-core' ),
+				'label'     => esc_html__( 'Content', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .slide-wrap .slider-item .rtin-content' => 'color: {{VALUE}}',
 				],
@@ -454,7 +454,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'quote_style_heading',
 			[
-				'label'     => __( 'Quote Icon Style', 'newsfit-core' ),
+				'label'     => __( 'Quote Icon Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -464,7 +464,7 @@ class Testimonial extends ElementorBase {
 			'quote_sign_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Quote Icon', 'newsfit-core' ),
+				'label'     => esc_html__( 'Quote Icon', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .slide-wrap:after' => 'color: {{VALUE}}',
 				],
@@ -489,10 +489,10 @@ class Testimonial extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'     => 'quote_background',
-				'label'    => __( 'Quote Icon Background', 'newsfit-core' ),
+				'label'    => __( 'Quote Icon Background', 'quixa-core' ),
 				'fields_options'  => [
 					'background' => [
-						'label' => esc_html__( 'Quote Icon Background', 'newsfit-core' ),
+						'label' => esc_html__( 'Quote Icon Background', 'quixa-core' ),
 					],
 				],
 				'types'    => [ 'gradient' ],
@@ -503,7 +503,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'rating_style_heading',
 			[
-				'label'     => __( 'Rating Style', 'newsfit-core' ),
+				'label'     => __( 'Rating Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -516,7 +516,7 @@ class Testimonial extends ElementorBase {
 			'rating_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Content', 'newsfit-core' ),
+				'label'     => esc_html__( 'Content', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-el-testimonial-carousel .star-rating i' => 'color: {{VALUE}}',
 				],
@@ -529,7 +529,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'rating_size',
 			[
-				'label'     => __( 'Font Size', 'newsfit-core' ),
+				'label'     => __( 'Font Size', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
 				'min'       => 10,
 				'max'       => 50,
@@ -550,7 +550,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_section(
 			'carousel_control',
 			[
-				'label' => __( 'Slider Control Style', 'newsfit-core' ),
+				'label' => __( 'Slider Control Style', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -558,7 +558,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'arrow_style_heading',
 			[
-				'label'     => __( 'Arrow Style', 'newsfit-core' ),
+				'label'     => __( 'Arrow Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'condition' => [
 					'arrows' => 'yes',
@@ -569,7 +569,7 @@ class Testimonial extends ElementorBase {
 		$this->add_responsive_control(
 			'arrow_border_radius',
 			[
-				'label'      => __( 'Arrow Radius', 'newsfit-core' ),
+				'label'      => __( 'Arrow Radius', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -596,7 +596,7 @@ class Testimonial extends ElementorBase {
 		$this->add_responsive_control(
 			'arrow_width_height',
 			[
-				'label'      => __( 'Arrow Width/Height', 'newsfit-core' ),
+				'label'      => __( 'Arrow Width/Height', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -618,7 +618,7 @@ class Testimonial extends ElementorBase {
 		$this->add_responsive_control(
 			'arrow_position',
 			[
-				'label'      => __( 'Arrow X Position', 'newsfit-core' ),
+				'label'      => __( 'Arrow X Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -645,7 +645,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_tab(
 			'arrow_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -653,7 +653,7 @@ class Testimonial extends ElementorBase {
 			'arrow_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Arrow Icon Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Arrow Icon Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .elementor-swiper-button i' => 'color: {{VALUE}}',
 				],
@@ -667,7 +667,7 @@ class Testimonial extends ElementorBase {
 			'arrow_arrow_bg_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Arrow Background', 'newsfit-core' ),
+				'label'     => esc_html__( 'Arrow Background', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .elementor-swiper-button i' => 'background-color: {{VALUE}}',
 				],
@@ -682,7 +682,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_tab(
 			'arrow_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -690,7 +690,7 @@ class Testimonial extends ElementorBase {
 			'arrow_hover_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Arrow Icon Color Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Arrow Icon Color Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .elementor-swiper-button i:hover' => 'color: {{VALUE}}',
 				],
@@ -704,7 +704,7 @@ class Testimonial extends ElementorBase {
 			'arrow_bg_hover_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Arrow Background Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Arrow Background Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .elementor-swiper-button i:hover' => 'background-color: {{VALUE}}',
 				],
@@ -723,7 +723,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'dot_style_heading',
 			[
-				'label'     => __( 'Dots Style', 'newsfit-core' ),
+				'label'     => __( 'Dots Style', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -735,7 +735,7 @@ class Testimonial extends ElementorBase {
 		$this->add_responsive_control(
 			'dots_border_radius',
 			[
-				'label'      => __( 'Dots Radius', 'newsfit-core' ),
+				'label'      => __( 'Dots Radius', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -762,7 +762,7 @@ class Testimonial extends ElementorBase {
 		$this->add_responsive_control(
 			'dots_width_height',
 			[
-				'label'      => __( 'Dots Width/Height', 'newsfit-core' ),
+				'label'      => __( 'Dots Width/Height', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -784,7 +784,7 @@ class Testimonial extends ElementorBase {
 		$this->add_responsive_control(
 			'dots_position',
 			[
-				'label'      => __( 'Dots Y Position', 'newsfit-core' ),
+				'label'      => __( 'Dots Y Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -810,7 +810,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_tab(
 			'dots_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -818,7 +818,7 @@ class Testimonial extends ElementorBase {
 			'dots_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Dots Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Dots Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-el-testimonial-carousel .swiper-pagination span' => 'background-color: {{VALUE}}',
 				],
@@ -834,7 +834,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_tab(
 			'dots_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -842,7 +842,7 @@ class Testimonial extends ElementorBase {
 			'dots_hover_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Hover/Active Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Hover/Active Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .rt-el-testimonial-carousel .swiper-pagination span.swiper-pagination-bullet-active' => 'background-color: {{VALUE}}',
 					'{{WRAPPER}} .rt-el-testimonial-carousel .swiper-pagination span:hover'        => 'background-color: {{VALUE}}',
@@ -864,7 +864,7 @@ class Testimonial extends ElementorBase {
 		$this->start_controls_section(
 			'section_box',
 			[
-				'label' => __( 'Box', 'newsfit-core' ),
+				'label' => __( 'Box', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -873,7 +873,7 @@ class Testimonial extends ElementorBase {
 			'box_style_normal_bg_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => __( 'Background Color', 'newsfit-core' ),
+				'label'     => __( 'Background Color', 'quixa-core' ),
 				'separator' => '',
 				'selectors' => [
 					'{{WRAPPER}} .rt-el-testimonial-carousel .slide-wrap' => 'background-color: {{VALUE}};',
@@ -888,7 +888,7 @@ class Testimonial extends ElementorBase {
 			'box_style2_normal_bg_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => __( 'Background Color', 'newsfit-core' ),
+				'label'     => __( 'Background Color', 'quixa-core' ),
 				'separator' => '',
 				'selectors' => [
 					'{{WRAPPER}} .rt-el-testimonial-carousel.style2 .slick-list' => 'background-color: {{VALUE}};',
@@ -902,7 +902,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'box_border_radius',
 			[
-				'label'     => __( 'Border Radius', 'newsfit-core' ),
+				'label'     => __( 'Border Radius', 'quixa-core' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [
 					'size' => 6,
@@ -924,7 +924,7 @@ class Testimonial extends ElementorBase {
 		$this->add_control(
 			'box_border_radius2',
 			[
-				'label'     => __( 'Border Radius', 'newsfit-core' ),
+				'label'     => __( 'Border Radius', 'quixa-core' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [
 					'size' => 6,
@@ -947,7 +947,7 @@ class Testimonial extends ElementorBase {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label'      => __( 'Padding', 'newsfit-core' ),
+				'label'      => __( 'Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [

@@ -3,7 +3,7 @@
  * SingletonTraits
  */
 
-namespace RT\NewsFitCore\Traits;
+namespace RT\QuixaCore\Traits;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {

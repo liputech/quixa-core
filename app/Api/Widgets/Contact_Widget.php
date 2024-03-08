@@ -5,7 +5,7 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Api\Widgets;
+namespace RT\QuixaCore\Api\Widgets;
 
 use \WP_Widget;
 use \RT_Widget_Fields;
@@ -17,10 +17,10 @@ use \RT_Widget_Fields;
 class Contact_Widget extends WP_Widget {
 
 	public function __construct() {
-		$id    = NEWSFIT_CORE_PREFIX . '_contact';
-		$title = __( 'NewsFit: Contact', 'newsfit-core' );
+		$id    = QUIXA_CORE_PREFIX . '_contact';
+		$title = __( 'Quixa: Contact', 'quixa-core' );
 		$args  = [
-			'description' => esc_html__( 'Displays Contact Info', 'newsfit-core' )
+			'description' => esc_html__( 'Displays Contact Info', 'quixa-core' )
 		];
 		parent::__construct( $id, $title, $args );
 	}
@@ -28,34 +28,34 @@ class Contact_Widget extends WP_Widget {
 
 	public function form( $instance ) {
 		$defaults = [
-			'title'   => __( 'Contact', 'newsfit-core' ),
-			'address' => newsfit_option( 'rt_contact_address' ),
-			'mail'    => newsfit_option( 'rt_email' ),
-			'phone'   => newsfit_option( 'rt_phone' ),
-			'website' => newsfit_option( 'rt_website' ),
+			'title'   => __( 'Contact', 'quixa-core' ),
+			'address' => quixa_option( 'rt_contact_address' ),
+			'mail'    => quixa_option( 'rt_email' ),
+			'phone'   => quixa_option( 'rt_phone' ),
+			'website' => quixa_option( 'rt_website' ),
 		];
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 		$fields = [
 			'title'   => [
-				'label' => esc_html__( 'Title', 'newsfit-core' ),
+				'label' => esc_html__( 'Title', 'quixa-core' ),
 				'type'  => 'text',
 			],
 			'address' => [
-				'label' => esc_html__( 'Address', 'newsfit-core' ),
+				'label' => esc_html__( 'Address', 'quixa-core' ),
 				'type'  => 'textarea',
 			],
 			'mail'    => [
-				'label' => esc_html__( 'Mail', 'newsfit-core' ),
+				'label' => esc_html__( 'Mail', 'quixa-core' ),
 				'type'  => 'text',
 			],
 			'phone'   => [
-				'label' => esc_html__( 'Phone', 'newsfit-core' ),
+				'label' => esc_html__( 'Phone', 'quixa-core' ),
 				'type'  => 'text',
 			],
 			'website' => [
-				'label' => esc_html__( 'Website', 'newsfit-core' ),
+				'label' => esc_html__( 'Website', 'quixa-core' ),
 				'type'  => 'text',
 			],
 		];
@@ -84,7 +84,7 @@ class Contact_Widget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-		echo newsfit_contact_render( $instance );
+		echo quixa_contact_render( $instance );
 
 		//do_shortcode( "[rt_contact address='{$_address}' mail='{$_mail}' phone='{$_phone}' website='{$_website}']" );
 		echo $args['after_widget'];

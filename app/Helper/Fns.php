@@ -1,6 +1,6 @@
 <?php
 
-namespace RT\NewsFitCore\Helper;
+namespace RT\QuixaCore\Helper;
 
 class Fns {
 
@@ -20,11 +20,11 @@ class Fns {
 	public static function locate_template( $template_name, $template_path = '', $default_path = '' ) {
 		$template_name = $template_name . ".php";
 		if ( ! $template_path ) {
-			$template_path = 'newsfit-core/';
+			$template_path = 'quixa-core/';
 		}
 
 		if ( ! $default_path ) {
-			$default_path = untrailingslashit( NEWSFIT_CORE_BASE_DIR ) . '/templates/';
+			$default_path = untrailingslashit( QUIXA_CORE_BASE_DIR ) . '/templates/';
 		}
 
 		$template_files = trailingslashit( $template_path ) . $template_name;
@@ -78,7 +78,7 @@ class Fns {
 	 * @return string
 	 */
 	public static function get_assets_url( $path = null ) {
-		return NEWSFIT_CORE_BASE_URL . 'assets/' . $path;
+		return QUIXA_CORE_BASE_URL . 'assets/' . $path;
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Fns {
 		);
 		$post_types = wp_list_pluck( $post_types, 'label', 'name' );
 
-		$exclude = [ 'attachment', 'revision', 'nav_menu_item', 'elementor_library', 'tpg_builder', 'e-landing-page', 'elementor-newsfit' ];
+		$exclude = [ 'attachment', 'revision', 'nav_menu_item', 'elementor_library', 'tpg_builder', 'e-landing-page', 'elementor-quixa' ];
 		if ( $exc ) {
 			$exclude = array_merge( $exclude, $exc );
 		}
@@ -114,7 +114,7 @@ class Fns {
 	public static function nav_menu_list() {
 		$nav_menus     = wp_get_nav_menus();
 		$nav_list      = [];
-		$nav_list['0'] = __( 'Select A Menu', 'newsfit-core' );
+		$nav_list['0'] = __( 'Select A Menu', 'quixa-core' );
 		foreach ( (array) $nav_menus as $_nav_menu ) {
 			$nav_list[ $_nav_menu->term_id ] = $_nav_menu->name;
 		}

@@ -5,13 +5,13 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Css_Filter;
 use Elementor\Group_Control_Typography;
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Slider extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name = esc_html__( 'RT Slider', 'newsfit-core' );
+		$this->rt_name = esc_html__( 'RT Slider', 'quixa-core' );
 		$this->rt_base = 'rt-main-slider';
 		parent::__construct( $data, $args );
 	}
@@ -35,19 +35,19 @@ class Slider extends ElementorBase {
 		$this->start_controls_section(
 			'section_rt_slider',
 			[
-				'label' => __( 'RT Slider', 'newsfit-core' ),
+				'label' => __( 'RT Slider', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'layout',
 			[
-				'label'   => __( 'Slider Style', 'newsfit-core' ),
+				'label'   => __( 'Slider Style', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'style1',
 				'options' => [
-					'style1' => __( 'Style 1 : Default slider', 'newsfit-core' ),
-					'style2' => __( 'Style 2 : Logo slider', 'newsfit-core' ),
+					'style1' => __( 'Style 1 : Default slider', 'quixa-core' ),
+					'style2' => __( 'Style 2 : Logo slider', 'quixa-core' ),
 				],
 			]
 		);
@@ -57,7 +57,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'slider_image',
 			[
-				'label'   => __( 'Slider Image', 'newsfit-core' ),
+				'label'   => __( 'Slider Image', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -67,7 +67,7 @@ class Slider extends ElementorBase {
 
 		$repeater->add_control(
 			'slider_title', [
-				'label'       => __( 'Title', 'newsfit-core' ),
+				'label'       => __( 'Title', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXTAREA,
 				'default'     => 'BUILD <span>YOUR</span> BODY <span>STRONG</span>',
 				'label_block' => true,
@@ -77,9 +77,9 @@ class Slider extends ElementorBase {
 
 		$repeater->add_control(
 			'slider_subtitle', [
-				'label'       => __( 'Subtitle', 'newsfit-core' ),
+				'label'       => __( 'Subtitle', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::TEXTAREA,
-				'default'     => __( 'Trust The Grounds Guys professionals to take care of your <br> commercial or residential grounds', 'newsfit-core' ),
+				'default'     => __( 'Trust The Grounds Guys professionals to take care of your <br> commercial or residential grounds', 'quixa-core' ),
 				'label_block' => true,
 				'rows'        => 4,
 			]
@@ -88,9 +88,9 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'slider_link',
 			[
-				'label'       => __( 'Slider Link', 'newsfit-core' ),
+				'label'       => __( 'Slider Link', 'quixa-core' ),
 				'type'        => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'newsfit-core' ),
+				'placeholder' => __( 'https://your-link.com', 'quixa-core' ),
 				'show_label'  => false,
 			]
 		);
@@ -98,7 +98,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'slider_animation',
 			[
-				'label'     => __( 'Additional Settings', 'newsfit-core' ),
+				'label'     => __( 'Additional Settings', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -107,12 +107,12 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'slider_bg_animation',
 			[
-				'label'   => __( 'Background Animation', 'newsfit-core' ),
+				'label'   => __( 'Background Animation', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'zoom-in',
 				'options' => [
-					'zoom-in'  => __( 'Zoom In', 'newsfit-core' ),
-					'zoom-out' => __( 'Zoom Out', 'newsfit-core' ),
+					'zoom-in'  => __( 'Zoom In', 'quixa-core' ),
+					'zoom-out' => __( 'Zoom Out', 'quixa-core' ),
 				],
 			]
 		);
@@ -122,10 +122,10 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'slider_title_popover_toggle',
 			[
-				'label'        => __( 'Title Animation', 'newsfit-core' ),
+				'label'        => __( 'Title Animation', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'newsfit-core' ),
-				'label_on'     => __( 'Custom', 'newsfit-core' ),
+				'label_off'    => __( 'Default', 'quixa-core' ),
+				'label_on'     => __( 'Custom', 'quixa-core' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -134,7 +134,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'title_x_paralax',
 			[
-				'label'      => __( 'Title Paralax X Axix', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax X Axix', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -154,7 +154,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'title_y_paralax',
 			[
-				'label'      => __( 'Title Paralax Y Axix', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Y Axix', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -174,7 +174,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'title_paralax_scale',
 			[
-				'label'      => __( 'Title Paralax Scale', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Scale', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -194,7 +194,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'title_paralax_opacity',
 			[
-				'label'      => __( 'Title Paralax Opcaity', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Opcaity', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -214,7 +214,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'title_paralax_duration',
 			[
-				'label'      => __( 'Title Paralax Duration', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Duration', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -234,7 +234,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'title_paralax_delay',
 			[
-				'label'      => __( 'Title Paralax Delay', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Delay', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -259,10 +259,10 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'slider_subtitle_popover_toggle',
 			[
-				'label'        => __( 'Subtitle Animation', 'newsfit-core' ),
+				'label'        => __( 'Subtitle Animation', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'newsfit-core' ),
-				'label_on'     => __( 'Custom', 'newsfit-core' ),
+				'label_off'    => __( 'Default', 'quixa-core' ),
+				'label_on'     => __( 'Custom', 'quixa-core' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -271,7 +271,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'subtitle_x_paralax',
 			[
-				'label'      => __( 'Sub Title Paralax X Axix', 'newsfit-core' ),
+				'label'      => __( 'Sub Title Paralax X Axix', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -291,7 +291,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'subtitle_y_paralax',
 			[
-				'label'      => __( 'Title Paralax Y Axix', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Y Axix', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -311,7 +311,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'subtitle_paralax_scale',
 			[
-				'label'      => __( 'Title Paralax Scale', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Scale', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -331,7 +331,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'subtitle_paralax_opacity',
 			[
-				'label'      => __( 'Title Paralax Opcaity', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Opcaity', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -351,7 +351,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'subtitle_paralax_duration',
 			[
-				'label'      => __( 'Title Paralax Duration', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Duration', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -371,7 +371,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'subtitle_paralax_delay',
 			[
-				'label'      => __( 'Sub Title Paralax Delay', 'newsfit-core' ),
+				'label'      => __( 'Sub Title Paralax Delay', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -395,10 +395,10 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'slider_button_popover_toggle',
 			[
-				'label'        => __( 'Button Animation', 'newsfit-core' ),
+				'label'        => __( 'Button Animation', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'newsfit-core' ),
-				'label_on'     => __( 'Custom', 'newsfit-core' ),
+				'label_off'    => __( 'Default', 'quixa-core' ),
+				'label_on'     => __( 'Custom', 'quixa-core' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -407,7 +407,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'btn_x_paralax',
 			[
-				'label'      => __( 'Title Paralax X Axix', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax X Axix', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -427,7 +427,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'btn_y_paralax',
 			[
-				'label'      => __( 'Title Paralax Y Axix', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Y Axix', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -447,7 +447,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'btn_paralax_scale',
 			[
-				'label'      => __( 'Title Paralax Scale', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Scale', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -467,7 +467,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'btn_paralax_opacity',
 			[
-				'label'      => __( 'Title Paralax Opcaity', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Opcaity', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -487,7 +487,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'btn_paralax_duration',
 			[
-				'label'      => __( 'Title Paralax Duration', 'newsfit-core' ),
+				'label'      => __( 'Title Paralax Duration', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -507,7 +507,7 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'btn_paralax_delay',
 			[
-				'label'      => __( 'Button Paralax Delay', 'newsfit-core' ),
+				'label'      => __( 'Button Paralax Delay', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -536,19 +536,19 @@ class Slider extends ElementorBase {
 		$repeater->add_control(
 			'text_align',
 			[
-				'label'     => __( 'Alignment', 'newsfit-core' ),
+				'label'     => __( 'Alignment', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'   => [
-						'title' => __( 'Left', 'newsfit-core' ),
+						'title' => __( 'Left', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'newsfit-core' ),
+						'title' => __( 'Center', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'newsfit-core' ),
+						'title' => __( 'Right', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -563,10 +563,10 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'           => 'overlay_bg',
-				'label'          => __( 'Overlay', 'newsfit-core' ),
+				'label'          => __( 'Overlay', 'quixa-core' ),
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Overlay Type', 'newsfit-core' ),
+						'label' => esc_html__( 'Overlay Type', 'quixa-core' ),
 					],
 				],
 				'types'          => [ 'classic', 'gradient', 'video' ],
@@ -578,17 +578,17 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'sliders',
 			[
-				'label'       => __( 'Slider Items', 'newsfit-core' ),
+				'label'       => __( 'Slider Items', 'quixa-core' ),
 				'type'        => \Elementor\Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
 						'slider_title'    => 'BUILD <span>YOUR</span> BODY <span>STRONG</span>',
-						'slider_subtitle' => __( 'Ready to change your physique, but can\'t work out in the gym?', 'newsfit-core' ),
+						'slider_subtitle' => __( 'Ready to change your physique, but can\'t work out in the gym?', 'quixa-core' ),
 					],
 					[
 						'slider_title'    => 'YOUR <span>BODY</span> YOUR <span>PRIDE</span>',
-						'slider_subtitle' => __( 'Ready to change your physique, but can\'t work out in the gym?', 'newsfit-core' ),
+						'slider_subtitle' => __( 'Ready to change your physique, but can\'t work out in the gym?', 'quixa-core' ),
 					],
 				],
 				'title_field' => '{{{ slider_title }}}',
@@ -601,7 +601,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'carousel_images',
 			[
-				'label'      => esc_html__( 'Add Images', 'newsfit-core' ),
+				'label'      => esc_html__( 'Add Images', 'quixa-core' ),
 				'type'       => Controls_Manager::GALLERY,
 				'default'    => [],
 				'show_label' => false,
@@ -629,7 +629,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'slider_height',
 			[
-				'label'      => __( 'Slider Height', 'newsfit-core' ),
+				'label'      => __( 'Slider Height', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'vh' ],
 				'range'      => [
@@ -656,7 +656,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'slider_image_width_height',
 			[
-				'label'      => __( 'Image Width / Height', 'newsfit-core' ),
+				'label'      => __( 'Image Width / Height', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -683,7 +683,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'slider_padding',
 			[
-				'label'      => __( 'Content Padding', 'newsfit-core' ),
+				'label'      => __( 'Content Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -698,7 +698,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'slider_border_radius',
 			[
-				'label'      => __( 'Slider Radius', 'newsfit-core' ),
+				'label'      => __( 'Slider Radius', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -714,7 +714,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'      => 'main_slider_box_shadow',
-				'label'     => __( 'Box Shadow', 'newsfit-core' ),
+				'label'     => __( 'Box Shadow', 'quixa-core' ),
 				'selector'  => '{{WRAPPER}} .rt-main-slider-wrapper',
 				'condition' => [
 					'layout' => [ 'style1' ],
@@ -725,10 +725,10 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'enable_gallery_thumb',
 			[
-				'label'        => __( 'Enable Galelry Thumb', 'newsfit-core' ),
+				'label'        => __( 'Enable Galelry Thumb', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Enable', 'newsfit-core' ),
-				'label_off'    => __( 'Disable', 'newsfit-core' ),
+				'label_on'     => __( 'Enable', 'quixa-core' ),
+				'label_off'    => __( 'Disable', 'quixa-core' ),
 				'return_value' => 'enable',
 				'default'      => false,
 				'condition'    => [
@@ -740,10 +740,10 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'hide_all_content',
 			[
-				'label'        => __( 'Hide All Content', 'newsfit-core' ),
+				'label'        => __( 'Hide All Content', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'newsfit-core' ),
-				'label_off'    => __( 'No', 'newsfit-core' ),
+				'label_on'     => __( 'Yes', 'quixa-core' ),
+				'label_off'    => __( 'No', 'quixa-core' ),
 				'return_value' => 'yes',
 				'default'      => false,
 				'condition'    => [
@@ -759,7 +759,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_tab(
 			'img_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -774,7 +774,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'slider_image_opacity',
 			[
-				'label'      => __( 'Image Opacity', 'newsfit-core' ),
+				'label'      => __( 'Image Opacity', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -798,7 +798,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_tab(
 			'img_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -813,7 +813,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'slider_image_opacity_hover',
 			[
-				'label'      => __( 'Image Opacity Hover', 'newsfit-core' ),
+				'label'      => __( 'Image Opacity Hover', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -844,14 +844,14 @@ class Slider extends ElementorBase {
 		$this->start_controls_section(
 			'section_additional_options',
 			[
-				'label' => __( 'Additional Options', 'newsfit-core' ),
+				'label' => __( 'Additional Options', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'main_slider_heading',
 			[
-				'label'     => __( 'Main Slider', 'newsfit-core' ),
+				'label'     => __( 'Main Slider', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'after',
 			]
@@ -860,14 +860,14 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'navigation',
 			[
-				'label'   => __( 'Navigation', 'newsfit-core' ),
+				'label'   => __( 'Navigation', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'arrows',
 				'options' => [
-					'both'   => __( 'Arrows and Dots', 'newsfit-core' ),
-					'arrows' => __( 'Arrows', 'newsfit-core' ),
-					'dots'   => __( 'Dots', 'newsfit-core' ),
-					'none'   => __( 'None', 'newsfit-core' ),
+					'both'   => __( 'Arrows and Dots', 'quixa-core' ),
+					'arrows' => __( 'Arrows', 'quixa-core' ),
+					'dots'   => __( 'Dots', 'quixa-core' ),
+					'none'   => __( 'None', 'quixa-core' ),
 				],
 			]
 		);
@@ -875,12 +875,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'effect',
 			[
-				'label'   => __( 'Effect', 'newsfit-core' ),
+				'label'   => __( 'Effect', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'slide',
 				'options' => [
-					'slide' => __( 'Slide', 'newsfit-core' ),
-					'fade'  => __( 'Fade', 'newsfit-core' ),
+					'slide' => __( 'Slide', 'quixa-core' ),
+					'fade'  => __( 'Fade', 'quixa-core' ),
 				],
 			]
 		);
@@ -888,12 +888,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'direction',
 			[
-				'label'     => __( 'Direction', 'newsfit-core' ),
+				'label'     => __( 'Direction', 'quixa-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'horizontal',
 				'options'   => [
-					'horizontal' => __( 'Horizontal', 'newsfit-core' ),
-					'vertical'   => __( 'Vertical', 'newsfit-core' ),
+					'horizontal' => __( 'Horizontal', 'quixa-core' ),
+					'vertical'   => __( 'Vertical', 'quixa-core' ),
 				],
 				'condition' => [
 					'effect' => 'slide',
@@ -904,12 +904,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'   => __( 'Autoplay', 'newsfit-core' ),
+				'label'   => __( 'Autoplay', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'yes',
 				'options' => [
-					'yes' => __( 'Yes', 'newsfit-core' ),
-					'no'  => __( 'No', 'newsfit-core' ),
+					'yes' => __( 'Yes', 'quixa-core' ),
+					'no'  => __( 'No', 'quixa-core' ),
 				],
 
 			]
@@ -918,12 +918,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'pause_on_hover',
 			[
-				'label'       => __( 'Pause on Hover', 'newsfit-core' ),
+				'label'       => __( 'Pause on Hover', 'quixa-core' ),
 				'type'        => Controls_Manager::SELECT,
 				'default'     => 'yes',
 				'options'     => [
-					'yes' => __( 'Yes', 'newsfit-core' ),
-					'no'  => __( 'No', 'newsfit-core' ),
+					'yes' => __( 'Yes', 'quixa-core' ),
+					'no'  => __( 'No', 'quixa-core' ),
 				],
 				'condition'   => [
 					'autoplay' => 'yes',
@@ -935,12 +935,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'pause_on_interaction',
 			[
-				'label'     => __( 'Pause on Interaction', 'newsfit-core' ),
+				'label'     => __( 'Pause on Interaction', 'quixa-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'yes',
 				'options'   => [
-					'yes' => __( 'Yes', 'newsfit-core' ),
-					'no'  => __( 'No', 'newsfit-core' ),
+					'yes' => __( 'Yes', 'quixa-core' ),
+					'no'  => __( 'No', 'quixa-core' ),
 				],
 				'condition' => [
 					'autoplay' => 'yes',
@@ -951,7 +951,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label'       => __( 'Autoplay Speed', 'newsfit-core' ),
+				'label'       => __( 'Autoplay Speed', 'quixa-core' ),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 5000,
 				'condition'   => [
@@ -964,7 +964,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'slidesPerView',
 			[
-				'label'              => __( 'Slides Per View', 'newsfit-core' ),
+				'label'              => __( 'Slides Per View', 'quixa-core' ),
 				'type'               => Controls_Manager::NUMBER,
 				'default'            => 1,
 				'frontend_available' => true,
@@ -981,7 +981,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'spaceBetween',
 			[
-				'label'     => __( 'Space Between', 'newsfit-core' ),
+				'label'     => __( 'Space Between', 'quixa-core' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 0,
 				'condition' => [
@@ -993,12 +993,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'infinite',
 			[
-				'label'   => __( 'Infinite Loop', 'newsfit-core' ),
+				'label'   => __( 'Infinite Loop', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'yes',
 				'options' => [
-					'yes' => __( 'Yes', 'newsfit-core' ),
-					'no'  => __( 'No', 'newsfit-core' ),
+					'yes' => __( 'Yes', 'quixa-core' ),
+					'no'  => __( 'No', 'quixa-core' ),
 				],
 			]
 		);
@@ -1007,7 +1007,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'speed',
 			[
-				'label'       => __( 'Animation Speed', 'newsfit-core' ),
+				'label'       => __( 'Animation Speed', 'quixa-core' ),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 500,
 				'render_type' => 'none',
@@ -1017,12 +1017,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'animation_overflow',
 			[
-				'label'     => __( 'Animation Overflow', 'newsfit-core' ),
+				'label'     => __( 'Animation Overflow', 'quixa-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'hidden',
 				'options'   => [
-					'hidden' => __( 'Hidden', 'newsfit-core' ),
-					'none'   => __( 'None', 'newsfit-core' ),
+					'hidden' => __( 'Hidden', 'quixa-core' ),
+					'none'   => __( 'None', 'quixa-core' ),
 				],
 				'condition' => [
 					'layout' => [ 'style1' ],
@@ -1033,7 +1033,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'slider_gallery_heading',
 			[
-				'label'     => __( 'Slider Gallery Settings', 'newsfit-core' ),
+				'label'     => __( 'Slider Gallery Settings', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1046,7 +1046,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'gallery_space_between',
 			[
-				'label'     => __( 'Space Between', 'newsfit-core' ),
+				'label'     => __( 'Space Between', 'quixa-core' ),
 				'type'      => Controls_Manager::NUMBER,
 				'min'       => 0,
 				'max'       => 50,
@@ -1062,7 +1062,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'gallery_per_view',
 			[
-				'label'     => __( 'Slider Per View', 'newsfit-core' ),
+				'label'     => __( 'Slider Per View', 'quixa-core' ),
 				'type'      => Controls_Manager::NUMBER,
 				'min'       => 1,
 				'max'       => 10,
@@ -1078,12 +1078,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'gallery_infinite',
 			[
-				'label'     => __( 'Infinite Loop', 'newsfit-core' ),
+				'label'     => __( 'Infinite Loop', 'quixa-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'yes',
 				'options'   => [
-					'yes' => __( 'Yes', 'newsfit-core' ),
-					'no'  => __( 'No', 'newsfit-core' ),
+					'yes' => __( 'Yes', 'quixa-core' ),
+					'no'  => __( 'No', 'quixa-core' ),
 				],
 				'condition' => [
 					'enable_gallery_thumb' => 'enable',
@@ -1101,7 +1101,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_section(
 			'section_style_title',
 			[
-				'label'     => __( 'Title Settings', 'newsfit-core' ),
+				'label'     => __( 'Title Settings', 'quixa-core' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout'            => 'style1',
@@ -1114,7 +1114,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'label'    => __( 'Typography', 'newsfit-core' ),
+				'label'    => __( 'Typography', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-slider-wrapper .slider-title-wrap h2',
 			]
 		);
@@ -1122,7 +1122,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Title Color', 'newsfit-core' ),
+				'label'     => __( 'Title Color', 'quixa-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
@@ -1134,7 +1134,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'title_color_2',
 			[
-				'label'     => __( 'Title Color - 2', 'newsfit-core' ),
+				'label'     => __( 'Title Color - 2', 'quixa-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-slider-wrapper .slider-title-wrap h2 span' => 'color: {{VALUE}};',
@@ -1145,7 +1145,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'title_margin_bottom',
 			[
-				'label'      => __( 'Margin Bottom', 'newsfit-core' ),
+				'label'      => __( 'Margin Bottom', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -1173,7 +1173,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_section(
 			'section_style_subtitle',
 			[
-				'label'     => __( 'Sub Title Settings', 'newsfit-core' ),
+				'label'     => __( 'Sub Title Settings', 'quixa-core' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout'            => 'style1',
@@ -1186,7 +1186,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'subtitle_typography',
-				'label'    => __( 'Typography', 'newsfit-core' ),
+				'label'    => __( 'Typography', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-slider-wrapper .slider-subtitle-wrap h4',
 			]
 		);
@@ -1194,7 +1194,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'subtitle_color',
 			[
-				'label'     => __( 'Sub Title Color', 'newsfit-core' ),
+				'label'     => __( 'Sub Title Color', 'quixa-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-slider-wrapper .slider-subtitle-wrap h4' => 'color: {{VALUE}};',
@@ -1205,7 +1205,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'subtitle_margin_bottom',
 			[
-				'label'      => __( 'Margin Bottom', 'newsfit-core' ),
+				'label'      => __( 'Margin Bottom', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -1233,7 +1233,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_section(
 			'slider_button_settings',
 			[
-				'label'     => esc_html__( 'Button Settings', 'newsfit-core' ),
+				'label'     => esc_html__( 'Button Settings', 'quixa-core' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout'            => 'style1',
@@ -1245,9 +1245,9 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'button_text',
 			[
-				'label'   => __( 'Button Text', 'newsfit-core' ),
+				'label'   => __( 'Button Text', 'quixa-core' ),
 				'type'    => \Elementor\Controls_Manager::TEXT,
-				'default' => __( 'JOIN WITH US', 'newsfit-core' ),
+				'default' => __( 'JOIN WITH US', 'quixa-core' ),
 			]
 		);
 
@@ -1260,7 +1260,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_tab(
 			'btn_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -1268,7 +1268,7 @@ class Slider extends ElementorBase {
 			'btn_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .slider-dark-button' => 'color: {{VALUE}} !important',
 				],
@@ -1279,7 +1279,7 @@ class Slider extends ElementorBase {
 			'btn_bg',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Background', 'newsfit-core' ),
+				'label'     => esc_html__( 'Background', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .slider-dark-button' => 'background-color: {{VALUE}}',
 				],
@@ -1290,7 +1290,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'btn_border',
-				'label'    => __( 'Border', 'newsfit-core' ),
+				'label'    => __( 'Border', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .slider-dark-button',
 			]
 		);
@@ -1301,7 +1301,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_tab(
 			'btn_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -1309,7 +1309,7 @@ class Slider extends ElementorBase {
 			'btn_hover_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Color Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Color Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .slider-dark-button:hover, {{WRAPPER}} .slider-dark-button:before' => 'color: {{VALUE}} !important',
 				],
@@ -1320,7 +1320,7 @@ class Slider extends ElementorBase {
 			'btn_bg_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Background on Hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Background on Hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .slider-dark-button:hover' => 'background-color: {{VALUE}}',
 				],
@@ -1331,7 +1331,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'btn_border_hover',
-				'label'    => __( 'Border', 'newsfit-core' ),
+				'label'    => __( 'Border', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .slider-dark-button:hover',
 			]
 		);
@@ -1346,7 +1346,7 @@ class Slider extends ElementorBase {
 			'readmore_border_radius',
 			[
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Border Radius', 'newsfit-core' ),
+				'label'      => esc_html__( 'Border Radius', 'quixa-core' ),
 				'size_units' => [ 'px' ],
 				'range'      => [
 					'px' => [
@@ -1370,7 +1370,7 @@ class Slider extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'readmore_btn_typography',
-				'label'    => esc_html__( 'Typography', 'newsfit-core' ),
+				'label'    => esc_html__( 'Typography', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .slider-dark-button',
 			]
 		);
@@ -1378,7 +1378,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'readmore_padding_spacing',
 			[
-				'label'      => __( 'Read More Padding', 'newsfit-core' ),
+				'label'      => __( 'Read More Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -1395,7 +1395,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_section(
 			'section_style_navigation',
 			[
-				'label' => __( 'Carousel Settings', 'newsfit-core' ),
+				'label' => __( 'Carousel Settings', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1403,7 +1403,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'main_slider_style_heading',
 			[
-				'label'     => __( 'Slider Style', 'newsfit-core' ),
+				'label'     => __( 'Slider Style', 'quixa-core' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'after',
 			]
@@ -1412,11 +1412,11 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'arrow_visibility',
 			[
-				'label'     => __( 'Arrow Visibility', 'newsfit-core' ),
+				'label'     => __( 'Arrow Visibility', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'options'   => [
-					''                 => __( 'Always Visible', 'newsfit-core' ),
-					'visible-on-hover' => __( 'Visible on hover', 'newsfit-core' ),
+					''                 => __( 'Always Visible', 'quixa-core' ),
+					'visible-on-hover' => __( 'Visible on hover', 'quixa-core' ),
 				],
 				'condition' => [
 					'navigation' => [ 'arrows', 'both' ],
@@ -1427,7 +1427,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'arrow_x_position',
 			[
-				'label'          => __( 'Arrow X Position', 'newsfit-core' ),
+				'label'          => __( 'Arrow X Position', 'quixa-core' ),
 				'type'           => Controls_Manager::SLIDER,
 				'size_units'     => [ 'px' ],
 				'range'          => [
@@ -1462,7 +1462,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'arrow_y_position',
 			[
-				'label'      => __( 'Arrow Y Position', 'newsfit-core' ),
+				'label'      => __( 'Arrow Y Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'range'      => [
@@ -1489,7 +1489,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'arrows_size',
 			[
-				'label'     => __( 'Font Size', 'newsfit-core' ),
+				'label'     => __( 'Font Size', 'quixa-core' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1509,7 +1509,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'arrows_width_height',
 			[
-				'label'     => __( 'Width / Height', 'newsfit-core' ),
+				'label'     => __( 'Width / Height', 'quixa-core' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1529,7 +1529,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'arrows_radius',
 			[
-				'label'     => __( 'Border Radius', 'newsfit-core' ),
+				'label'     => __( 'Border Radius', 'quixa-core' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1554,14 +1554,14 @@ class Slider extends ElementorBase {
 		$this->start_controls_tab(
 			'arrow_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'arrows_color',
 			[
-				'label'     => __( 'Color', 'newsfit-core' ),
+				'label'     => __( 'Color', 'quixa-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-slider-wrapper .elementor-swiper-button' => 'color: {{VALUE}};',
@@ -1575,7 +1575,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'arrows_bg_color',
 			[
-				'label'     => __( 'Background Color', 'newsfit-core' ),
+				'label'     => __( 'Background Color', 'quixa-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-slider-wrapper .elementor-swiper-button' => 'background-color: {{VALUE}};',
@@ -1590,7 +1590,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'      => 'border',
-				'label'     => __( 'Arrow Border', 'newsfit-core' ),
+				'label'     => __( 'Arrow Border', 'quixa-core' ),
 				'selector'  => '{{WRAPPER}} .rt-slider-wrapper .elementor-swiper-button',
 				'condition' => [
 					'navigation' => [ 'arrows', 'both' ],
@@ -1603,14 +1603,14 @@ class Slider extends ElementorBase {
 		$this->start_controls_tab(
 			'arrow_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
 		$this->add_control(
 			'arrows_color_hover',
 			[
-				'label'     => __( 'Color', 'newsfit-core' ),
+				'label'     => __( 'Color', 'quixa-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-slider-wrapper .elementor-swiper-button:hover' => 'color: {{VALUE}};',
@@ -1624,7 +1624,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'arrows_bg_color_hover',
 			[
-				'label'     => __( 'Background Color', 'newsfit-core' ),
+				'label'     => __( 'Background Color', 'quixa-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-slider-wrapper .elementor-swiper-button:hover' => 'background-color: {{VALUE}};',
@@ -1639,7 +1639,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'      => 'border_hover',
-				'label'     => __( 'Arrow Border', 'newsfit-core' ),
+				'label'     => __( 'Arrow Border', 'quixa-core' ),
 				'selector'  => '{{WRAPPER}} .rt-slider-wrapper .elementor-swiper-button:hover',
 				'condition' => [
 					'navigation' => [ 'arrows', 'both' ],
@@ -1654,7 +1654,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'heading_style_dots',
 			[
-				'label'     => __( 'Dots', 'newsfit-core' ),
+				'label'     => __( 'Dots', 'quixa-core' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1666,12 +1666,12 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'dots_position',
 			[
-				'label'        => __( 'Position', 'newsfit-core' ),
+				'label'        => __( 'Position', 'quixa-core' ),
 				'type'         => Controls_Manager::SELECT,
 				'default'      => 'outside',
 				'options'      => [
-					'outside' => __( 'Outside', 'newsfit-core' ),
-					'inside'  => __( 'Inside', 'newsfit-core' ),
+					'outside' => __( 'Outside', 'quixa-core' ),
+					'inside'  => __( 'Inside', 'quixa-core' ),
 				],
 				'prefix_class' => 'elementor-pagination-position-',
 				'condition'    => [
@@ -1683,7 +1683,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'dots_size',
 			[
-				'label'     => __( 'Size', 'newsfit-core' ),
+				'label'     => __( 'Size', 'quixa-core' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1703,7 +1703,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'dots_color',
 			[
-				'label'     => __( 'Color', 'newsfit-core' ),
+				'label'     => __( 'Color', 'quixa-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-pagination-bullet' => 'background: {{VALUE}};',
@@ -1717,7 +1717,7 @@ class Slider extends ElementorBase {
 		$this->add_control(
 			'gallery_slider_style',
 			[
-				'label'     => __( 'Gallery Slider Style', 'newsfit-core' ),
+				'label'     => __( 'Gallery Slider Style', 'quixa-core' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'after',
 				'condition' => [
@@ -1729,7 +1729,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'gallery_height',
 			[
-				'label'      => __( 'Gallery Items Height', 'newsfit-core' ),
+				'label'      => __( 'Gallery Items Height', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -1751,7 +1751,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'gallery_radius',
 			[
-				'label'      => __( 'Galelry Border Radius', 'newsfit-core' ),
+				'label'      => __( 'Galelry Border Radius', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -1767,7 +1767,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'gallery_padding',
 			[
-				'label'      => __( 'Gallery Padding', 'newsfit-core' ),
+				'label'      => __( 'Gallery Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -1782,7 +1782,7 @@ class Slider extends ElementorBase {
 		$this->add_responsive_control(
 			'gallery_y_position',
 			[
-				'label'      => __( 'Gallery Y Position', 'newsfit-core' ),
+				'label'      => __( 'Gallery Y Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -1808,7 +1808,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_tab(
 			'gallery_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 
@@ -1816,7 +1816,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'gallery_border',
-				'label'    => __( 'Border', 'newsfit-core' ),
+				'label'    => __( 'Border', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-gallery-thumbs .swiper-slide',
 			]
 		);
@@ -1826,7 +1826,7 @@ class Slider extends ElementorBase {
 		$this->start_controls_tab(
 			'gallery_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 
@@ -1834,7 +1834,7 @@ class Slider extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'gallery_border_hover',
-				'label'    => __( 'Border Hover', 'newsfit-core' ),
+				'label'    => __( 'Border Hover', 'quixa-core' ),
 				'selector' => '{{WRAPPER}} .rt-gallery-thumbs .swiper-slide:hover, {{WRAPPER}} .rt-gallery-thumbs .swiper-slide.swiper-slide-thumb-active',
 			]
 		);

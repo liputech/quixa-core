@@ -5,11 +5,11 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Core;
+namespace RT\QuixaCore\Elementor\Core;
 
 use Elementor\Controls_Manager;
 
-use RT\NewsFitCore\Traits\SingletonTraits;
+use RT\QuixaCore\Traits\SingletonTraits;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -20,10 +20,10 @@ class ElementorCore {
 
 
 	public function __construct() {
-		add_action( 'elementor/element/before_section_end', [ $this, 'newsfit_elementor_widget_extend' ], 10, 3 );
-		add_action( 'elementor/widget/before_render_content', [ $this, 'newsfit_elementor_extend_widget_render' ] );
-		//add_action( 'elementor/widget/print_template', array($this, 'newsfit_elementor_custom_content_template_print' ), 10, 2);
-		//add_action( 'elementor/widget/render_content', array($this,'newsfit_elementor_custom_content_template_render'), 10, 2);
+		add_action( 'elementor/element/before_section_end', [ $this, 'quixa_elementor_widget_extend' ], 10, 3 );
+		add_action( 'elementor/widget/before_render_content', [ $this, 'quixa_elementor_extend_widget_render' ] );
+		//add_action( 'elementor/widget/print_template', array($this, 'quixa_elementor_custom_content_template_print' ), 10, 2);
+		//add_action( 'elementor/widget/render_content', array($this,'quixa_elementor_custom_content_template_render'), 10, 2);
 		add_action( 'elementor/element/counter/section_counter/after_section_start', [ $this, 'custom_counter_control' ], 10, 2 );
 		add_action( 'elementor/element/button/section_style/after_section_start', [ $this, 'custom_button_control' ], 10, 2 );
 		add_action( 'elementor/element/testimonial/section_testimonial/before_section_end', [ $this, 'custom_testimonial_control' ], 10, 2 );
@@ -35,10 +35,10 @@ class ElementorCore {
 		$section->add_control(
 			'rt_section_parallax',
 			[
-				'label'        => __( 'Parallax', 'newsfit-core' ),
+				'label'        => __( 'Parallax', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_off'    => __( 'Off', 'newsfit-core' ),
-				'label_on'     => __( 'On', 'newsfit-core' ),
+				'label_off'    => __( 'Off', 'quixa-core' ),
+				'label_on'     => __( 'On', 'quixa-core' ),
 				'default'      => 'no',
 				'prefix_class' => 'rt-parallax-bg-',
 			]
@@ -47,7 +47,7 @@ class ElementorCore {
 		$section->add_control(
 			'rt_parallax_speed',
 			[
-				'label'     => __( 'Speed', 'newsfit-core' ),
+				'label'     => __( 'Speed', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
 				'min'       => 0.1,
 				'max'       => 5,
@@ -62,10 +62,10 @@ class ElementorCore {
 		$section->add_control(
 			'rt_parallax_transition',
 			[
-				'label'        => __( 'Parallax Transition off?', 'newsfit-core' ),
+				'label'        => __( 'Parallax Transition off?', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_off'    => __( 'on', 'newsfit-core' ),
-				'label_on'     => __( 'Off', 'newsfit-core' ),
+				'label_off'    => __( 'on', 'quixa-core' ),
+				'label_on'     => __( 'Off', 'quixa-core' ),
 				'default'      => 'off',
 				'return_value' => 'off',
 				'prefix_class' => 'rt-parallax-transition-',
@@ -99,26 +99,26 @@ class ElementorCore {
 
 		$button->add_control( 'custom_testimonial_author_position',
 			[
-				'label'        => __( 'Author Position', 'newsfit-core' ),
+				'label'        => __( 'Author Position', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'default'      => 'footer',
 				'options'      => [
-					'footer' => __( 'Footer', 'newsfit-core' ),
-					'header' => __( 'Header', 'newsfit-core' ),
+					'footer' => __( 'Footer', 'quixa-core' ),
+					'header' => __( 'Header', 'quixa-core' ),
 				],
 				'prefix_class' => 'elementor-testimonial-author-pos-',
 			]
 		);
 		$button->add_control( 'custom_testimonial_author_alignment',
 			[
-				'label'     => __( 'Author Alignment', 'newsfit-core' ),
+				'label'     => __( 'Author Alignment', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => 'default',
 				'options'   => [
-					'default' => __( 'Default', 'newsfit-core' ),
-					'left'    => __( 'Left', 'newsfit-core' ),
-					'center'  => __( 'Center', 'newsfit-core' ),
-					'right'   => __( 'right', 'newsfit-core' ),
+					'default' => __( 'Default', 'quixa-core' ),
+					'left'    => __( 'Left', 'quixa-core' ),
+					'center'  => __( 'Center', 'quixa-core' ),
+					'right'   => __( 'right', 'quixa-core' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial-wrapper .elementor-testimonial-meta' => 'text-align: {{VALUE}};',
@@ -128,12 +128,12 @@ class ElementorCore {
 
 		$button->add_control( 'custom_testimonial_quote_visibility',
 			[
-				'label'        => __( 'Quote Icon Visibility', 'newsfit-core' ),
+				'label'        => __( 'Quote Icon Visibility', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'default'      => 'disable',
 				'options'      => [
-					'enable'        => __( 'Enable', 'newsfit-core' ),
-					'disable'       => __( 'Disable', 'newsfit-core' ),
+					'enable'        => __( 'Enable', 'quixa-core' ),
+					'disable'       => __( 'Disable', 'quixa-core' ),
 				],
 				'prefix_class' => 'elementor-testimonial-quote-',
 				'separator'    => 'before',
@@ -144,12 +144,12 @@ class ElementorCore {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'           => 'testimonial_quote_image',
-				'label'          => __( 'Choose Quote Image', 'newsfit-core' ),
+				'label'          => __( 'Choose Quote Image', 'quixa-core' ),
 				'types'          => [ 'classic'],
 				'fields_options' => [
 					'background' => [
 						'default' => 'classic',
-						'label'   => esc_html__( 'Choose Quote Image', 'newsfit-core' ),
+						'label'   => esc_html__( 'Choose Quote Image', 'quixa-core' ),
 					],
 				],
 				'exclude'        => [ 'color' ],
@@ -162,13 +162,13 @@ class ElementorCore {
 
 		$button->add_control( 'custom_testimonial_control',
 			[
-				'label'        => __( 'Start Visibility', 'newsfit-core' ),
+				'label'        => __( 'Start Visibility', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'default'      => 'disable',
 				'options'      => [
-					'enable'        => __( 'Enable to Header', 'newsfit-core' ),
-					'enable-footer' => __( 'Enable to Footer', 'newsfit-core' ),
-					'disable'       => __( 'Disable', 'newsfit-core' ),
+					'enable'        => __( 'Enable to Header', 'quixa-core' ),
+					'enable-footer' => __( 'Enable to Footer', 'quixa-core' ),
+					'disable'       => __( 'Disable', 'quixa-core' ),
 				],
 				'prefix_class' => 'elementor-testimonial-star-',
 				'separator'    => 'before',
@@ -177,13 +177,13 @@ class ElementorCore {
 
 		$button->add_control( 'custom_testimonial_alignment',
 			[
-				'label'     => __( 'Start Alignment', 'newsfit-core' ),
+				'label'     => __( 'Start Alignment', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => 'center',
 				'options'   => [
-					'left'   => __( 'Left', 'newsfit-core' ),
-					'center' => __( 'Center', 'newsfit-core' ),
-					'right'  => __( 'Right', 'newsfit-core' ),
+					'left'   => __( 'Left', 'quixa-core' ),
+					'center' => __( 'Center', 'quixa-core' ),
+					'right'  => __( 'Right', 'quixa-core' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial-wrapper::before' => 'text-align: {{VALUE}};',
@@ -197,7 +197,7 @@ class ElementorCore {
 		$button->add_control(
 			'custom_testimonial_color',
 			[
-				'label'     => __( 'Star Color', 'newsfit-core' ),
+				'label'     => __( 'Star Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -212,7 +212,7 @@ class ElementorCore {
 		$button->add_control(
 			'custom_testimonial_size',
 			[
-				'label'      => __( 'Star Size', 'newsfit-core' ),
+				'label'      => __( 'Star Size', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -239,7 +239,7 @@ class ElementorCore {
 		$button->add_control(
 			'testimonial_box_heading',
 			[
-				'label'     => __( 'Box Settings', 'newsfit-core' ),
+				'label'     => __( 'Box Settings', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -248,7 +248,7 @@ class ElementorCore {
 		$button->add_responsive_control(
 			'custom_testimonial_max_width',
 			[
-				'label'      => __( 'Box Size', 'newsfit-core' ),
+				'label'      => __( 'Box Size', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -266,14 +266,14 @@ class ElementorCore {
 
 		$button->add_control( 'custom_testimonial_wrap_alignment',
 			[
-				'label'        => __( 'Box Alignment', 'newsfit-core' ),
+				'label'        => __( 'Box Alignment', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'default'      => 'center',
 				'options'      => [
-					'left'     => __( 'Left', 'newsfit-core' ),
-					'center'   => __( 'Center', 'newsfit-core' ),
-					'right'    => __( 'Right', 'newsfit-core' ),
-					'absolute' => __( 'Absolute Center', 'newsfit-core' ),
+					'left'     => __( 'Left', 'quixa-core' ),
+					'center'   => __( 'Center', 'quixa-core' ),
+					'right'    => __( 'Right', 'quixa-core' ),
+					'absolute' => __( 'Absolute Center', 'quixa-core' ),
 				],
 				'prefix_class' => 'rt-testimonial-',
 			]
@@ -282,7 +282,7 @@ class ElementorCore {
 		$button->add_control(
 			'custom_testimonial_absolute_y_pos',
 			[
-				'label'      => __( 'Box Vertical Position', 'newsfit-core' ),
+				'label'      => __( 'Box Vertical Position', 'quixa-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -304,7 +304,7 @@ class ElementorCore {
 		$button->add_responsive_control(
 			'custom_testimonial_padding',
 			[
-				'label'      => __( 'Content Padding', 'newsfit-core' ),
+				'label'      => __( 'Content Padding', 'quixa-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors'  => [
@@ -320,12 +320,12 @@ class ElementorCore {
 	function custom_button_control( $button, $args ) {
 		$button->add_control( 'animation_btn_enable',
 			[
-				'label'        => __( 'Animation Button', 'newsfit-core' ),
+				'label'        => __( 'Animation Button', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'default'      => 'enable',
 				'options'      => [
-					'enable'  => __( 'Enable', 'newsfit-core' ),
-					'disable' => __( 'Disable', 'newsfit-core' ),
+					'enable'  => __( 'Enable', 'quixa-core' ),
+					'disable' => __( 'Disable', 'quixa-core' ),
 				],
 				'prefix_class' => 'elementor-button-animation-',
 			]
@@ -334,7 +334,7 @@ class ElementorCore {
 		$button->add_control(
 			'button_animation_color',
 			[
-				'label'     => __( 'Hover Animation Color', 'newsfit-core' ),
+				'label'     => __( 'Hover Animation Color', 'quixa-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -351,12 +351,12 @@ class ElementorCore {
 	function custom_counter_control( $counter, $args ) {
 		$counter->add_control( 'counter_style',
 			[
-				'label'        => __( 'Counter Style', 'newsfit-core' ),
+				'label'        => __( 'Counter Style', 'quixa-core' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'default'      => 'default-style',
 				'options'      => [
-					'default-style' => __( 'Default', 'newsfit-core' ),
-					'circle-style'  => __( 'Circle BG', 'newsfit-core' ),
+					'default-style' => __( 'Default', 'quixa-core' ),
+					'circle-style'  => __( 'Circle BG', 'quixa-core' ),
 				],
 				'prefix_class' => 'elementor-counter-',
 			]
@@ -365,7 +365,7 @@ class ElementorCore {
 		$counter->add_control(
 			'bg_width',
 			[
-				'label'      => __( 'BG Width', 'newsfit-core' ),
+				'label'      => __( 'BG Width', 'quixa-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -390,7 +390,7 @@ class ElementorCore {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name'      => 'background',
-				'label'     => __( 'Background', 'newsfit-core' ),
+				'label'     => __( 'Background', 'quixa-core' ),
 				'types'     => [ 'gradient' ],
 				'selector'  => '{{WRAPPER}} .elementor-widget-container::before, {{WRAPPER}} .elementor-counter::before, {{WRAPPER}} .elementor-counter::after',
 				'condition' => [
@@ -402,19 +402,19 @@ class ElementorCore {
 		$counter->add_responsive_control(
 			'alignment',
 			[
-				'label'     => __( 'Alignment', 'newsfit-core' ),
+				'label'     => __( 'Alignment', 'quixa-core' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'flex-start;text-align:left;' => [
-						'title' => __( 'Left', 'newsfit-core' ),
+						'title' => __( 'Left', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center;text-align:center;'   => [
-						'title' => __( 'Center', 'newsfit-core' ),
+						'title' => __( 'Center', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'flex-end;text-align:right;'  => [
-						'title' => __( 'Right', 'newsfit-core' ),
+						'title' => __( 'Right', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -430,7 +430,7 @@ class ElementorCore {
 	}
 
 
-	public function newsfit_elementor_widget_extend( $section, $section_id, $args ) {
+	public function quixa_elementor_widget_extend( $section, $section_id, $args ) {
 		/**
 		 * Extend Image Carousel
 		 */
@@ -439,12 +439,12 @@ class ElementorCore {
 			$section->add_control(
 				'counter_style',
 				[
-					'label'   => esc_html__( 'Counter', 'newsfit-core' ),
+					'label'   => esc_html__( 'Counter', 'quixa-core' ),
 					'type'    => \Elementor\Controls_Manager::SELECT,
 					'default' => 'default-style',
 					'options' => [
-						'default-style' => __( 'Default', 'newsfit-core' ),
-						'circle-style'  => __( 'Circle BG', 'newsfit-core' ),
+						'default-style' => __( 'Default', 'quixa-core' ),
+						'circle-style'  => __( 'Circle BG', 'quixa-core' ),
 					],
 
 				]
@@ -458,7 +458,7 @@ class ElementorCore {
 	 * render custom control output
 	 *
 	 */
-	public function newsfit_elementor_extend_widget_render( $widget ) {
+	public function quixa_elementor_extend_widget_render( $widget ) {
 		/**
 		 * Adding a new attribute to our button
 		 *

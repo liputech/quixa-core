@@ -1,8 +1,8 @@
 <?php
 
-namespace RT\NewsFitCore\Controllers;
+namespace RT\QuixaCore\Controllers;
 
-use RT\NewsFitCore\Traits\SingletonTraits;
+use RT\QuixaCore\Traits\SingletonTraits;
 use \RT_Posts;
 
 class PostTypeController {
@@ -44,14 +44,7 @@ class PostTypeController {
 	private function register_custom_taxonomy() {
 		$custom_posts = [
 			[
-				'id'        => 'team-designation',
-				'post_type' => [ 'rt-team' ],
-				'slug'      => 'team-designation',
-				'singular'  => 'Designation',
-				'plural'    => 'Designations',
-			],
-			[
-				'id'        => 'team-department',
+				'id'        => 'rt-team-department',
 				'post_type' => [ 'rt-team' ],
 				'slug'      => 'team-department',
 				'singular'  => 'Department',

@@ -13,6 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<div class="newsfit-social-share-wrapper">
+<div class="quixa-social-share-wrapper">
 Social Share
 </div>

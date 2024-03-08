@@ -5,20 +5,20 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class ProgressBar extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name = esc_html__( 'Progress Bar', 'newsfit-core' );
+		$this->rt_name = esc_html__( 'Progress Bar', 'quixa-core' );
 		$this->rt_base = 'progress';
 		parent::__construct( $data, $args );
 	}
@@ -27,19 +27,19 @@ class ProgressBar extends ElementorBase {
 		$this->start_controls_section(
 			'section_progress',
 			[
-				'label' => __( 'Progress Bar', 'newsfit-core' ),
+				'label' => __( 'Progress Bar', 'quixa-core' ),
 			]
 		);
 
         $this->add_control(
 			'layout',
 			[
-				'label'   => esc_html__( 'Style', 'newsfit-core' ),
+				'label'   => esc_html__( 'Style', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'style1',
 				'options' => [
-					'style1' => __( 'Style 1', 'newsfit-core' ),
-					'style2' => __( 'Style 2', 'newsfit-core' ),
+					'style1' => __( 'Style 1', 'quixa-core' ),
+					'style2' => __( 'Style 2', 'quixa-core' ),
 				],
 
 			]
@@ -48,12 +48,12 @@ class ProgressBar extends ElementorBase {
         $this->add_control(
 			'progress_animation',
 			[
-				'label'   => esc_html__( 'Progress Bar Animation', 'newsfit-core' ),
+				'label'   => esc_html__( 'Progress Bar Animation', 'quixa-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'select' => __( 'Select', 'newsfit-core' ),
-					'progress-bar-striped' => __( 'Striped BG', 'newsfit-core' ),
-					'progress-bar-striped progress-bar-animated' => __( 'Striped Animation', 'newsfit-core' ),
+					'select' => __( 'Select', 'quixa-core' ),
+					'progress-bar-striped' => __( 'Striped BG', 'quixa-core' ),
+					'progress-bar-striped progress-bar-animated' => __( 'Striped Animation', 'quixa-core' ),
 				],
 
 			]
@@ -62,13 +62,13 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'newsfit-core' ),
+				'label' => __( 'Title', 'quixa-core' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => __( 'Enter your title', 'newsfit-core' ),
-				'default' => __( 'My Skill', 'newsfit-core' ),
+				'placeholder' => __( 'Enter your title', 'quixa-core' ),
+				'default' => __( 'My Skill', 'quixa-core' ),
 				'label_block' => true,
 			]
 		);
@@ -76,15 +76,15 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'progress_type',
 			[
-				'label' => __( 'Type', 'newsfit-core' ),
+				'label' => __( 'Type', 'quixa-core' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
-					'' => __( 'Default', 'newsfit-core' ),
-					'info' => __( 'Info', 'newsfit-core' ),
-					'success' => __( 'Success', 'newsfit-core' ),
-					'warning' => __( 'Warning', 'newsfit-core' ),
-					'danger' => __( 'Danger', 'newsfit-core' ),
+					'' => __( 'Default', 'quixa-core' ),
+					'info' => __( 'Info', 'quixa-core' ),
+					'success' => __( 'Success', 'quixa-core' ),
+					'warning' => __( 'Warning', 'quixa-core' ),
+					'danger' => __( 'Danger', 'quixa-core' ),
 				],
 			]
 		);
@@ -92,7 +92,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'percent',
 			[
-				'label' => __( 'Percentage', 'newsfit-core' ),
+				'label' => __( 'Percentage', 'quixa-core' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 50,
@@ -105,19 +105,19 @@ class ProgressBar extends ElementorBase {
 		);
 
 		$this->add_control( 'display_percentage', [
-			'label' => __( 'Display Percentage', 'newsfit-core' ),
+			'label' => __( 'Display Percentage', 'quixa-core' ),
 			'type' => Controls_Manager::SELECT,
 			'default' => 'show',
 			'options' => [
-				'show' => __( 'Show', 'newsfit-core' ),
-				'hide' => __( 'Hide', 'newsfit-core' ),
+				'show' => __( 'Show', 'quixa-core' ),
+				'hide' => __( 'Hide', 'quixa-core' ),
 			],
 		] );
 
         $this->add_control(
 			'percent_y_position',
 			[
-				'label' => __( 'Percentage Position', 'newsfit-core' ),
+				'label' => __( 'Percentage Position', 'quixa-core' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -144,13 +144,13 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'inner_text',
 			[
-				'label' => __( 'Inner Text', 'newsfit-core' ),
+				'label' => __( 'Inner Text', 'quixa-core' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => __( 'e.g. Web Designer', 'newsfit-core' ),
-				'default' => __( 'Web Designer', 'newsfit-core' ),
+				'placeholder' => __( 'e.g. Web Designer', 'quixa-core' ),
+				'default' => __( 'Web Designer', 'quixa-core' ),
 				'label_block' => true,
 			]
 		);
@@ -158,7 +158,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'newsfit-core' ),
+				'label' => __( 'View', 'quixa-core' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			]
@@ -169,7 +169,7 @@ class ProgressBar extends ElementorBase {
 		$this->start_controls_section(
 			'section_progress_style',
 			[
-				'label' => __( 'Progress Bar', 'newsfit-core' ),
+				'label' => __( 'Progress Bar', 'quixa-core' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -177,7 +177,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'bar_color',
 			[
-				'label' => __( 'Bar Color', 'newsfit-core' ),
+				'label' => __( 'Bar Color', 'quixa-core' ),
 				'type' => Controls_Manager::COLOR,
 				'global' => [
 					'default' => Global_Colors::COLOR_PRIMARY,
@@ -191,7 +191,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'bar_bg_color',
 			[
-				'label' => __( 'Background Color', 'newsfit-core' ),
+				'label' => __( 'Background Color', 'quixa-core' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-progress-bar.style1 .elementor-progress-wrapper' => 'background-color: {{VALUE}};',
@@ -205,7 +205,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'bar2_bg_color',
 			[
-				'label' => __( 'Background Color', 'newsfit-core' ),
+				'label' => __( 'Background Color', 'quixa-core' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-progress-bar.style2 .elementor-progress-wrapper::before' => 'background-color: {{VALUE}};',
@@ -219,7 +219,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'striped_bg_color',
 			[
-				'label' => __( 'Striped Color', 'newsfit-core' ),
+				'label' => __( 'Striped Color', 'quixa-core' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-progress-bar.style2 .progress-bar-striped' => 'background-image: linear-gradient( -45deg, {{VALUE}} 25%, transparent 25%, transparent 50%, {{VALUE}} 50%, {{VALUE}} 75%, transparent 75%, transparent);',
@@ -233,7 +233,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'bar_height',
 			[
-				'label' => __( 'Height', 'newsfit-core' ),
+				'label' => __( 'Height', 'quixa-core' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .rt-progress-bar.style1 .elementor-progress-bar' => 'height: {{SIZE}}{{UNIT}}; line-height: {{SIZE}}{{UNIT}};',
@@ -247,7 +247,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'bar2_height',
 			[
-				'label' => __( 'Height', 'newsfit-core' ),
+				'label' => __( 'Height', 'quixa-core' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .rt-progress-bar.style2 .elementor-progress-bar' => 'height: {{SIZE}}{{UNIT}}; line-height: {{SIZE}}{{UNIT}};',
@@ -262,7 +262,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'bar_border_radius',
 			[
-				'label' => __( 'Border Radius', 'newsfit-core' ),
+				'label' => __( 'Border Radius', 'quixa-core' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -277,7 +277,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'bar2_border_radius',
 			[
-				'label' => __( 'Border Radius', 'newsfit-core' ),
+				'label' => __( 'Border Radius', 'quixa-core' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -293,7 +293,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'inner_text_heading',
 			[
-				'label' => __( 'Inner Text', 'newsfit-core' ),
+				'label' => __( 'Inner Text', 'quixa-core' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -302,7 +302,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'bar_inline_color',
 			[
-				'label' => __( 'Color', 'newsfit-core' ),
+				'label' => __( 'Color', 'quixa-core' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-progress-bar .elementor-progress-bar' => 'color: {{VALUE}};',
@@ -336,7 +336,7 @@ class ProgressBar extends ElementorBase {
 		$this->start_controls_section(
 			'section_title',
 			[
-				'label' => __( 'Title Style', 'newsfit-core' ),
+				'label' => __( 'Title Style', 'quixa-core' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -344,7 +344,7 @@ class ProgressBar extends ElementorBase {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'newsfit-core' ),
+				'label' => __( 'Text Color', 'quixa-core' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .rt-progress-bar .progress-title' => 'color: {{VALUE}};',

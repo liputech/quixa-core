@@ -5,12 +5,12 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
 
 if (!defined('ABSPATH')) {
 	exit;
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 class PricingTable extends ElementorBase {
 
 	public function __construct($data = [], $args = null) {
-		$this->rt_name = esc_html__('Pricing Table', 'newsfit-core');
+		$this->rt_name = esc_html__('Pricing Table', 'quixa-core');
 		$this->rt_base = 'rt-pricing-table';
 		parent::__construct($data, $args);
 	}
@@ -28,7 +28,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'rt_pricing_table',
 			[
-				'label' => esc_html__('Pricing Table Settings', 'newsfit-core'),
+				'label' => esc_html__('Pricing Table Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -36,7 +36,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'title',
 			[
-				'label' => esc_html__('Plan Name', 'newsfit-core'),
+				'label' => esc_html__('Plan Name', 'quixa-core'),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Standard',
 				'label_block' => false,
@@ -46,10 +46,10 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'is_featured',
 			[
-				'label' => __('Is Featured ?', 'newsfit-core'),
+				'label' => __('Is Featured ?', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __('Yes', 'newsfit-core'),
-				'label_off' => __('No', 'newsfit-core'),
+				'label_on' => __('Yes', 'quixa-core'),
+				'label_off' => __('No', 'quixa-core'),
 				'return_value' => 'is-featured',
 				'default' => false,
 			]
@@ -58,7 +58,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'featured_text',
 			[
-				'label' => esc_html__('Featured Text', 'newsfit-core'),
+				'label' => esc_html__('Featured Text', 'quixa-core'),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Featured',
 				'label_block' => false,
@@ -71,7 +71,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'subtitle',
 			[
-				'label' => esc_html__('Subtitle', 'newsfit-core'),
+				'label' => esc_html__('Subtitle', 'quixa-core'),
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => 'Shen an unknown printer took a galley of type and scrambled',
 				'rows' => 3,
@@ -81,7 +81,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'price',
 			[
-				'label' => esc_html__('Price', 'newsfit-core'),
+				'label' => esc_html__('Price', 'quixa-core'),
 				'type' => Controls_Manager::TEXT,
 				'default' => '$29',
 				'label_block' => false,
@@ -91,7 +91,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'period',
 			[
-				'label' => esc_html__('Period', 'newsfit-core'),
+				'label' => esc_html__('Period', 'quixa-core'),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'month',
 				'label_block' => false,
@@ -101,7 +101,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'btn_text',
 			[
-				'label' => esc_html__('Button Text', 'newsfit-core'),
+				'label' => esc_html__('Button Text', 'quixa-core'),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Get Started',
 				'label_block' => false,
@@ -111,9 +111,9 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'link',
 			[
-				'label' => __('Link', 'newsfit-core'),
+				'label' => __('Link', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => __('https://your-link.com', 'newsfit-core'),
+				'placeholder' => __('https://your-link.com', 'quixa-core'),
 				'show_external' => true,
 				'default' => [
 					'url' => '',
@@ -128,9 +128,9 @@ class PricingTable extends ElementorBase {
 
 		$repeater->add_control(
 			'faature_title', [
-				'label' => __('Feature Title', 'newsfit-core'),
+				'label' => __('Feature Title', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('List Title', 'newsfit-core'),
+				'default' => __('List Title', 'quixa-core'),
 				'label_block' => true,
 			]
 		);
@@ -138,7 +138,7 @@ class PricingTable extends ElementorBase {
 		$repeater->add_control(
 			'list_icon',
 			[
-				'label' => __('Icon', 'newsfit-core'),
+				'label' => __('Icon', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'default' => [
@@ -151,7 +151,7 @@ class PricingTable extends ElementorBase {
 		$repeater->add_control(
 			'list_icon_color',
 			[
-				'label' => __('Icon Color', 'newsfit-core'),
+				'label' => __('Icon Color', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#53e092',
 				'selectors' => [
@@ -164,7 +164,7 @@ class PricingTable extends ElementorBase {
 		$repeater->add_control(
 			'list_title_color',
 			[
-				'label' => __('Title Color', 'newsfit-core'),
+				'label' => __('Title Color', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#646464',
 				'selectors' => [
@@ -177,48 +177,48 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'list',
 			[
-				'label' => __('Feature List', 'newsfit-core'),
+				'label' => __('Feature List', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'faature_title' => __('All Listing Access', 'newsfit-core'),
+						'faature_title' => __('All Listing Access', 'quixa-core'),
 						'list_icon' => 'fas fa-check-circle',
 						'list_icon_color' => '#53e092',
 						'list_title_color' => '#646464',
 					],
 					[
-						'faature_title' => __('Location Wise Map', 'newsfit-core'),
+						'faature_title' => __('Location Wise Map', 'quixa-core'),
 						'list_icon' => 'fas fa-check-circle',
 						'list_icon_color' => '#53e092',
 						'list_title_color' => '#646464',
 					],
 					[
-						'faature_title' => __('Free / Pro Ads', 'newsfit-core'),
+						'faature_title' => __('Free / Pro Ads', 'quixa-core'),
 						'list_icon' => 'fas fa-check-circle',
 						'list_icon_color' => '#53e092',
 						'list_title_color' => '#646464',
 					],
 					[
-						'faature_title' => __('Custom Map Setup', 'newsfit-core'),
+						'faature_title' => __('Custom Map Setup', 'quixa-core'),
 						'list_icon' => 'fas fa-check-circle',
 						'list_icon_color' => '#53e092',
 						'list_title_color' => '#646464',
 					],
 					[
-						'faature_title' => __('Apps Integrated', 'newsfit-core'),
+						'faature_title' => __('Apps Integrated', 'quixa-core'),
 						'list_icon' => 'fas fa-check-circle',
 						'list_icon_color' => '#53e092',
 						'list_title_color' => '#646464',
 					],
 					[
-						'faature_title' => __('Advanced Custom Field', 'newsfit-core'),
+						'faature_title' => __('Advanced Custom Field', 'quixa-core'),
 						'list_icon' => 'fas fa-check-circle',
 						'list_icon_color' => '#acb7c3',
 						'list_title_color' => '#788593',
 					],
 					[
-						'faature_title' => __('Pro Features', 'newsfit-core'),
+						'faature_title' => __('Pro Features', 'quixa-core'),
 						'list_icon' => 'fas fa-check-circle',
 						'list_icon_color' => '#acb7c3',
 						'list_title_color' => '#788593',
@@ -233,7 +233,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'additional_settings',
 			[
-				'label' => esc_html__('Additional Settings', 'newsfit-core'),
+				'label' => esc_html__('Additional Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -241,13 +241,13 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'icon_type',
 			[
-				'label' => __('Icon Type', 'newsfit-core'),
+				'label' => __('Icon Type', 'quixa-core'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'icon',
 				'options' => [
-					'icon' => __('Icon', 'newsfit-core'),
-					'image' => __('Image', 'newsfit-core'),
-					'none' => __('None', 'newsfit-core'),
+					'icon' => __('Icon', 'quixa-core'),
+					'image' => __('Image', 'quixa-core'),
+					'none' => __('None', 'quixa-core'),
 				],
 			]
 		);
@@ -255,7 +255,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'bgicon',
 			[
-				'label' => __('Choose Icon', 'newsfit-core'),
+				'label' => __('Choose Icon', 'quixa-core'),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'default' => [
@@ -271,7 +271,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'image',
 			[
-				'label' => __('Choose Image', 'newsfit-core'),
+				'label' => __('Choose Image', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -289,7 +289,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'title_settings',
 			[
-				'label' => esc_html__('Title Settings', 'newsfit-core'),
+				'label' => esc_html__('Title Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -298,7 +298,7 @@ class PricingTable extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'label' => esc_html__('Typography', 'newsfit-core'),
+				'label' => esc_html__('Typography', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .plan-name',
 			]
 		);
@@ -306,7 +306,7 @@ class PricingTable extends ElementorBase {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label' => __('Title Spacing', 'newsfit-core'),
+				'label' => __('Title Spacing', 'quixa-core'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'allowed_dimensions' => 'vertical',
@@ -323,7 +323,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'title_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -331,7 +331,7 @@ class PricingTable extends ElementorBase {
 			'title_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color', 'newsfit-core'),
+				'label' => esc_html__('Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .plan-name' => 'color: {{VALUE}}',
 				],
@@ -343,7 +343,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'title_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -351,7 +351,7 @@ class PricingTable extends ElementorBase {
 			'title_hover_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Hover Color', 'newsfit-core'),
+				'label' => esc_html__('Hover Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .plan-name' => 'color: {{VALUE}}',
 
@@ -370,7 +370,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'price_settings',
 			[
-				'label' => esc_html__('Price Settings', 'newsfit-core'),
+				'label' => esc_html__('Price Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -378,7 +378,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'pricing_heading',
 			[
-				'label' => __('Pricing Options', 'newsfit-core'),
+				'label' => __('Pricing Options', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				// 'separator' => 'before',
 			]
@@ -388,7 +388,7 @@ class PricingTable extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'price_typography',
-				'label' => esc_html__('Typography', 'newsfit-core'),
+				'label' => esc_html__('Typography', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .price-wrap .price',
 			]
 		);
@@ -400,7 +400,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'price_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -408,7 +408,7 @@ class PricingTable extends ElementorBase {
 			'price_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Price Color', 'newsfit-core'),
+				'label' => esc_html__('Price Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .price-wrap .price' => 'color: {{VALUE}}',
 
@@ -421,7 +421,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'price_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -429,7 +429,7 @@ class PricingTable extends ElementorBase {
 			'price_hover_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Price Color Hover', 'newsfit-core'),
+				'label' => esc_html__('Price Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .price-wrap .price' => 'color: {{VALUE}}',
 
@@ -444,7 +444,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'period_heading',
 			[
-				'label' => __('Period Options', 'newsfit-core'),
+				'label' => __('Period Options', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -454,7 +454,7 @@ class PricingTable extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'period_typography',
-				'label' => esc_html__('Typography', 'newsfit-core'),
+				'label' => esc_html__('Typography', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .price-wrap .period',
 			]
 		);
@@ -466,7 +466,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'period_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -474,7 +474,7 @@ class PricingTable extends ElementorBase {
 			'period_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Period Color', 'newsfit-core'),
+				'label' => esc_html__('Period Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .price-wrap .period' => 'color: {{VALUE}}',
 
@@ -487,7 +487,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'period_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -495,7 +495,7 @@ class PricingTable extends ElementorBase {
 			'period_hover_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Period Color Hover', 'newsfit-core'),
+				'label' => esc_html__('Period Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .price-wrap .period' => 'color: {{VALUE}}',
 
@@ -510,7 +510,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'pricing_separator',
 			[
-				'label' => __('Pricing Separator Options', 'newsfit-core'),
+				'label' => __('Pricing Separator Options', 'quixa-core'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -523,7 +523,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'separator_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -531,7 +531,7 @@ class PricingTable extends ElementorBase {
 			'separator_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Separator Color', 'newsfit-core'),
+				'label' => esc_html__('Separator Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .price-wrap .seperator' => 'color: {{VALUE}}',
 
@@ -544,7 +544,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'separator_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -552,7 +552,7 @@ class PricingTable extends ElementorBase {
 			'separator_color_hover',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Separator Color', 'newsfit-core'),
+				'label' => esc_html__('Separator Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .price-wrap .seperator' => 'color: {{VALUE}}',
 
@@ -567,7 +567,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'separator_size',
 			[
-				'label' => __('Separator Size', 'newsfit-core'),
+				'label' => __('Separator Size', 'quixa-core'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -594,7 +594,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'sub_title_settings',
 			[
-				'label' => esc_html__('Sub Title Settings', 'newsfit-core'),
+				'label' => esc_html__('Sub Title Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -603,7 +603,7 @@ class PricingTable extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'subtitle_typography',
-				'label' => esc_html__('Typography', 'newsfit-core'),
+				'label' => esc_html__('Typography', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .subtitle',
 			]
 		);
@@ -611,7 +611,7 @@ class PricingTable extends ElementorBase {
 		$this->add_responsive_control(
 			'subtitle_list_spacing',
 			[
-				'label' => __('Spacing', 'newsfit-core'),
+				'label' => __('Spacing', 'quixa-core'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'allowed_dimensions' => 'vertical',
@@ -628,7 +628,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'subtitle_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -636,7 +636,7 @@ class PricingTable extends ElementorBase {
 			'subtitle_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Sub Title Color', 'newsfit-core'),
+				'label' => esc_html__('Sub Title Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .subtitle' => 'color: {{VALUE}}',
 
@@ -649,7 +649,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'subtitle_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -657,7 +657,7 @@ class PricingTable extends ElementorBase {
 			'subtitle_hover_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Sub Title Color Hover', 'newsfit-core'),
+				'label' => esc_html__('Sub Title Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .subtitle' => 'color: {{VALUE}}',
 
@@ -676,7 +676,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'is_featured_settings',
 			[
-				'label' => esc_html__('Feature Badge Settings', 'newsfit-core'),
+				'label' => esc_html__('Feature Badge Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'is_featured' => 'is-featured',
@@ -688,7 +688,7 @@ class PricingTable extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'is_featured_typography',
-				'label' => esc_html__('Typography', 'newsfit-core'),
+				'label' => esc_html__('Typography', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .is-featured',
 			]
 		);
@@ -700,7 +700,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'is_featured_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -708,7 +708,7 @@ class PricingTable extends ElementorBase {
 			'is_featured_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color', 'newsfit-core'),
+				'label' => esc_html__('Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .is-featured' => 'color: {{VALUE}}',
 
@@ -720,7 +720,7 @@ class PricingTable extends ElementorBase {
 			'is_featured_bg_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Backgruond Color', 'newsfit-core'),
+				'label' => esc_html__('Backgruond Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .is-featured' => 'background-color: {{VALUE}}',
 
@@ -733,7 +733,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'is_featured_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -741,7 +741,7 @@ class PricingTable extends ElementorBase {
 			'is_featured_hover_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color Hover', 'newsfit-core'),
+				'label' => esc_html__('Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .is-featured' => 'color: {{VALUE}}',
 
@@ -753,7 +753,7 @@ class PricingTable extends ElementorBase {
 			'is_featured_bg_color_hover',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Backgruond Color Hover', 'newsfit-core'),
+				'label' => esc_html__('Backgruond Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .is-featured' => 'background-color: {{VALUE}}',
 
@@ -772,7 +772,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'feature_list_settings',
 			[
-				'label' => esc_html__('Feature List Settings', 'newsfit-core'),
+				'label' => esc_html__('Feature List Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -781,7 +781,7 @@ class PricingTable extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'feature_list_typography',
-				'label' => esc_html__('Typography', 'newsfit-core'),
+				'label' => esc_html__('Typography', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .feature-lists',
 			]
 		);
@@ -789,7 +789,7 @@ class PricingTable extends ElementorBase {
 		$this->add_responsive_control(
 			'feature_list_spacing',
 			[
-				'label' => __('Spacing', 'newsfit-core'),
+				'label' => __('Spacing', 'quixa-core'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'allowed_dimensions' => 'vertical',
@@ -806,7 +806,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'feature_list_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -814,11 +814,11 @@ class PricingTable extends ElementorBase {
 			'feature_list_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color', 'newsfit-core'),
+				'label' => esc_html__('Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .feature-lists li .list-item' => 'color: {{VALUE}}',
 				],
-				'description' => esc_html__('This color will work if you don\'t set color from the list', 'newsfit-core'),
+				'description' => esc_html__('This color will work if you don\'t set color from the list', 'quixa-core'),
 			]
 		);
 
@@ -826,12 +826,12 @@ class PricingTable extends ElementorBase {
 			'feature_icon_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('List Icon Color', 'newsfit-core'),
+				'label' => esc_html__('List Icon Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .feature-lists i' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .rt-pricing-box-wrapper .feature-lists svg path' => 'fill: {{VALUE}}',
 				],
-				'description' => esc_html__('This color will work if you don\'t set color from the list', 'newsfit-core'),
+				'description' => esc_html__('This color will work if you don\'t set color from the list', 'quixa-core'),
 			]
 		);
 
@@ -840,7 +840,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'feature_list_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -848,7 +848,7 @@ class PricingTable extends ElementorBase {
 			'feature_list_hover_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color Hover', 'newsfit-core'),
+				'label' => esc_html__('Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .feature-lists li .list-item' => 'color: {{VALUE}}',
 
@@ -860,7 +860,7 @@ class PricingTable extends ElementorBase {
 			'feature_icon_color_hover',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('List Icon Color Hover', 'newsfit-core'),
+				'label' => esc_html__('List Icon Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .feature-lists i' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .feature-lists svg path' => 'fill: {{VALUE}}',
@@ -879,7 +879,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'image_icon_settings',
 			[
-				'label' => esc_html__('Image / Icon Settings', 'newsfit-core'),
+				'label' => esc_html__('Image / Icon Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -888,7 +888,7 @@ class PricingTable extends ElementorBase {
 			'icon_size',
 			[
 				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__('Image/Icon Size', 'newsfit-core'),
+				'label' => esc_html__('Image/Icon Size', 'quixa-core'),
 				'size_units' => ['px'],
 				'range' => [
 					'px' => [
@@ -909,7 +909,7 @@ class PricingTable extends ElementorBase {
 			'icon_x_position',
 			[
 				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__('X Position', 'newsfit-core'),
+				'label' => esc_html__('X Position', 'quixa-core'),
 				'size_units' => ['px', '%'],
 				'range' => [
 					'px' => [
@@ -929,7 +929,7 @@ class PricingTable extends ElementorBase {
 			'icon_y_position',
 			[
 				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__('Y Position', 'newsfit-core'),
+				'label' => esc_html__('Y Position', 'quixa-core'),
 				'size_units' => ['px', '%'],
 				'range' => [
 					'px' => [
@@ -954,14 +954,14 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'icon_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 		$this->add_control(
 			'icon_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color', 'newsfit-core'),
+				'label' => esc_html__('Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .icon-holder i' => 'color: {{VALUE}}',
 				],
@@ -975,7 +975,7 @@ class PricingTable extends ElementorBase {
 			'icon_opacity',
 			[
 				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__('Image/Icon Opacity', 'newsfit-core'),
+				'label' => esc_html__('Image/Icon Opacity', 'quixa-core'),
 				'size_units' => ['px'],
 				'range' => [
 					'px' => [
@@ -996,7 +996,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'icon_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -1004,7 +1004,7 @@ class PricingTable extends ElementorBase {
 			'icon_hover_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color Hover', 'newsfit-core'),
+				'label' => esc_html__('Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper:hover .icon-holder i' => 'color: {{VALUE}}',
 				],
@@ -1018,7 +1018,7 @@ class PricingTable extends ElementorBase {
 			'icon_opacity_hover',
 			[
 				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__('Image/Icon Opacity Hover', 'newsfit-core'),
+				'label' => esc_html__('Image/Icon Opacity Hover', 'quixa-core'),
 				'size_units' => ['px'],
 				'range' => [
 					'px' => [
@@ -1045,7 +1045,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'button_settings',
 			[
-				'label' => esc_html__('Button Settings', 'newsfit-core'),
+				'label' => esc_html__('Button Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1054,7 +1054,7 @@ class PricingTable extends ElementorBase {
 			'button_border_radius',
 			[
 				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__('Border Radius', 'newsfit-core'),
+				'label' => esc_html__('Border Radius', 'quixa-core'),
 				'size_units' => ['px'],
 				'range' => [
 					'px' => [
@@ -1077,7 +1077,7 @@ class PricingTable extends ElementorBase {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'button_typography',
-				'label' => esc_html__('Button Typography', 'newsfit-core'),
+				'label' => esc_html__('Button Typography', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .button-el',
 			]
 		);
@@ -1085,7 +1085,7 @@ class PricingTable extends ElementorBase {
 		$this->add_responsive_control(
 			'button_padding',
 			[
-				'label' => __('Button Padding', 'newsfit-core'),
+				'label' => __('Button Padding', 'quixa-core'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1103,7 +1103,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'button_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -1111,7 +1111,7 @@ class PricingTable extends ElementorBase {
 			'button_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color', 'newsfit-core'),
+				'label' => esc_html__('Color', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .button-el' => 'color: {{VALUE}}',
 				],
@@ -1122,7 +1122,7 @@ class PricingTable extends ElementorBase {
 			'button_bg',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Background', 'newsfit-core'),
+				'label' => esc_html__('Background', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .button-el' => 'background-color: {{VALUE}}',
 				],
@@ -1133,7 +1133,7 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'button_box_shadow',
-				'label' => __('Box Shadow', 'newsfit-core'),
+				'label' => __('Box Shadow', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .button-el',
 			]
 		);
@@ -1142,7 +1142,7 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'button_border',
-				'label' => __('Border', 'newsfit-core'),
+				'label' => __('Border', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .button-el',
 			]
 		);
@@ -1153,7 +1153,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'button_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -1161,7 +1161,7 @@ class PricingTable extends ElementorBase {
 			'button_hover_color',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Color Hover', 'newsfit-core'),
+				'label' => esc_html__('Color Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .button-el:hover' => 'color: {{VALUE}}',
 				],
@@ -1172,7 +1172,7 @@ class PricingTable extends ElementorBase {
 			'button_bg_hover',
 			[
 				'type' => Controls_Manager::COLOR,
-				'label' => esc_html__('Background on Hover', 'newsfit-core'),
+				'label' => esc_html__('Background on Hover', 'quixa-core'),
 				'selectors' => [
 					'{{WRAPPER}} .rt-pricing-box-wrapper .button-el::after' => 'background-color: {{VALUE}}',
 				],
@@ -1183,7 +1183,7 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'button_box_shadow_hover',
-				'label' => __('Box Shadow Hover', 'newsfit-core'),
+				'label' => __('Box Shadow Hover', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .button-el:hover',
 			]
 		);
@@ -1192,7 +1192,7 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'button_border_hover',
-				'label' => __('Border', 'newsfit-core'),
+				'label' => __('Border', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper .button-el:hover',
 			]
 		);
@@ -1208,7 +1208,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_section(
 			'box_settings',
 			[
-				'label' => esc_html__('Box Settings', 'newsfit-core'),
+				'label' => esc_html__('Box Settings', 'quixa-core'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1217,7 +1217,7 @@ class PricingTable extends ElementorBase {
 			'box_min_height',
 			[
 				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__('Box Min Height', 'newsfit-core'),
+				'label' => esc_html__('Box Min Height', 'quixa-core'),
 				'size_units' => ['px'],
 				'range' => [
 					'px' => [
@@ -1235,7 +1235,7 @@ class PricingTable extends ElementorBase {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label' => __('Border Radius', 'newsfit-core'),
+				'label' => __('Border Radius', 'quixa-core'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1247,7 +1247,7 @@ class PricingTable extends ElementorBase {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __('Box Padding', 'newsfit-core'),
+				'label' => __('Box Padding', 'quixa-core'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1259,7 +1259,7 @@ class PricingTable extends ElementorBase {
 		$this->add_responsive_control(
 			'box_margin',
 			[
-				'label' => __('Box Margin', 'newsfit-core'),
+				'label' => __('Box Margin', 'quixa-core'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'default' => [
@@ -1282,7 +1282,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'box_style_normal_tab',
 			[
-				'label' => __('Normal', 'newsfit-core'),
+				'label' => __('Normal', 'quixa-core'),
 			]
 		);
 
@@ -1290,7 +1290,7 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'box_shadow',
-				'label' => __('Box Shadow', 'newsfit-core'),
+				'label' => __('Box Shadow', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper',
 			]
 		);
@@ -1299,10 +1299,10 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name' => 'box_bg',
-				'label' => __('Background', 'newsfit-core'),
+				'label' => __('Background', 'quixa-core'),
 				'fields_options'  => [
 					'background' => [
-						'label' => esc_html__( 'Background', 'newsfit-core' ),
+						'label' => esc_html__( 'Background', 'quixa-core' ),
 					],
 				],
 				'types' => ['classic', 'gradient'],
@@ -1314,7 +1314,7 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'box_border',
-				'label' => __('Border', 'newsfit-core'),
+				'label' => __('Border', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper',
 			]
 		);
@@ -1322,7 +1322,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'box_up',
 			[
-				'label' => __('Translate Y', 'newsfit-core'),
+				'label' => __('Translate Y', 'quixa-core'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -1347,7 +1347,7 @@ class PricingTable extends ElementorBase {
 		$this->start_controls_tab(
 			'box_style_hover_tab',
 			[
-				'label' => __('Hover', 'newsfit-core'),
+				'label' => __('Hover', 'quixa-core'),
 			]
 		);
 
@@ -1355,7 +1355,7 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'box_shadow_hover',
-				'label' => __('Box Shadow Hover', 'newsfit-core'),
+				'label' => __('Box Shadow Hover', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper:hover',
 			]
 		);
@@ -1364,10 +1364,10 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name' => 'box_bg_hover',
-				'label' => __('Background Hover', 'newsfit-core'),
+				'label' => __('Background Hover', 'quixa-core'),
 				'fields_options'  => [
 					'background' => [
-						'label' => esc_html__( 'Background - Hover', 'newsfit-core' ),
+						'label' => esc_html__( 'Background - Hover', 'quixa-core' ),
 					],
 				],
 				'types' => ['classic', 'gradient'],
@@ -1379,7 +1379,7 @@ class PricingTable extends ElementorBase {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'box_border_hover',
-				'label' => __('Border Hover', 'newsfit-core'),
+				'label' => __('Border Hover', 'quixa-core'),
 				'selector' => '{{WRAPPER}} .rt-pricing-box-wrapper:hover',
 			]
 		);
@@ -1387,7 +1387,7 @@ class PricingTable extends ElementorBase {
 		$this->add_control(
 			'box_up_hover',
 			[
-				'label' => __('Translate Y on Hover', 'newsfit-core'),
+				'label' => __('Translate Y on Hover', 'quixa-core'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [

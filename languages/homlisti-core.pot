@@ -1,7 +1,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: NewsFit Core\n"
+"Project-Id-Version: Quixa Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-28 09:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.5.5; wp-6.0.1\n"
-"X-Domain: newsfit-core"
+"X-Domain: quixa-core"
 
 #: elementor/rt-properties/class.php:2094
 msgid " Please choose 2 or more ( Ad Type ) first for showing posts"
@@ -1729,21 +1729,21 @@ msgid "Home Services"
 msgstr ""
 
 #. Name of the plugin
-msgid "NewsFit Core"
+msgid "Quixa Core"
 msgstr ""
 
 #. Description of the plugin
-msgid "NewsFit Theme Core Plugin"
+msgid "Quixa Theme Core Plugin"
 msgstr ""
 
 #. Base ID
 #: widgets/about.php:21 widgets/about.php:23
-msgid "NewsFit: About"
+msgid "Quixa: About"
 msgstr ""
 
 #. Base ID
 #: widgets/advanced-search.php:22
-msgid "NewsFit: Advanced Search"
+msgid "Quixa: Advanced Search"
 msgstr ""
 
 #: elementor/rt-slider/class.php:893

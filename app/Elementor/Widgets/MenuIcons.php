@@ -5,12 +5,12 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use RT\NewsFitCore\Abstracts\ElementorBase;
-use RT\NewsFitCore\Helper\Fns;
+use RT\QuixaCore\Abstracts\ElementorBase;
+use RT\QuixaCore\Helper\Fns;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class MenuIcons extends ElementorBase {
 
 	public function __construct( $data = [], $args = null ) {
-		$this->rt_name = __( 'RT Menu Icons', 'newsfit-core' );
+		$this->rt_name = __( 'RT Menu Icons', 'quixa-core' );
 		$this->rt_base = 'rt-menu-icons';
 		parent::__construct( $data, $args );
 	}
@@ -28,7 +28,7 @@ class MenuIcons extends ElementorBase {
 		$this->start_controls_section(
 			'sec_general',
 			[
-				'label' => esc_html__( 'General', 'newsfit-core' ),
+				'label' => esc_html__( 'General', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -36,47 +36,47 @@ class MenuIcons extends ElementorBase {
 		$this->add_control(
 			'hamburger',
 			[
-				'label'     => esc_html__( 'Hamburg menu', 'newsfit-core' ),
+				'label'     => esc_html__( 'Hamburg menu', 'quixa-core' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => esc_html__( 'On', 'newsfit-core' ),
-				'label_off' => esc_html__( 'Off', 'newsfit-core' ),
+				'label_on'  => esc_html__( 'On', 'quixa-core' ),
+				'label_off' => esc_html__( 'Off', 'quixa-core' ),
 				'default'   => 'yes',
 			]
 		);
 		$this->add_control(
 			'search',
 			[
-				'label'     => esc_html__( 'Search bar', 'newsfit-core' ),
+				'label'     => esc_html__( 'Search bar', 'quixa-core' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => esc_html__( 'On', 'newsfit-core' ),
-				'label_off' => esc_html__( 'Off', 'newsfit-core' ),
+				'label_on'  => esc_html__( 'On', 'quixa-core' ),
+				'label_off' => esc_html__( 'Off', 'quixa-core' ),
 				'default'   => 'yes',
 			]
 		);
 		$this->add_control(
 			'login',
 			[
-				'label'     => esc_html__( 'Login icon', 'newsfit-core' ),
+				'label'     => esc_html__( 'Login icon', 'quixa-core' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => esc_html__( 'On', 'newsfit-core' ),
-				'label_off' => esc_html__( 'Off', 'newsfit-core' ),
+				'label_on'  => esc_html__( 'On', 'quixa-core' ),
+				'label_off' => esc_html__( 'Off', 'quixa-core' ),
 				'default'   => 'yes',
 			]
 		);
 		$this->add_control(
 			'button',
 			[
-				'label'     => esc_html__( 'Button', 'newsfit-core' ),
+				'label'     => esc_html__( 'Button', 'quixa-core' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => esc_html__( 'On', 'newsfit-core' ),
-				'label_off' => esc_html__( 'Off', 'newsfit-core' ),
+				'label_on'  => esc_html__( 'On', 'quixa-core' ),
+				'label_off' => esc_html__( 'Off', 'quixa-core' ),
 				'default'   => 'yes',
 			]
 		);
 		$this->add_control(
 			'button_label',
 			[
-				'label'     => esc_html__( 'Button Label', 'newsfit-core' ),
+				'label'     => esc_html__( 'Button Label', 'quixa-core' ),
 				'type'      => Controls_Manager::TEXT,
 				'separator' => 'before',
 				'condition' => [
@@ -88,10 +88,10 @@ class MenuIcons extends ElementorBase {
 		$this->add_control(
 			'has_separator',
 			[
-				'label'       => esc_html__( 'Icon Separator', 'newsfit-core' ),
+				'label'       => esc_html__( 'Icon Separator', 'quixa-core' ),
 				'type'        => Controls_Manager::SWITCHER,
-				'label_on'    => esc_html__( 'On', 'newsfit-core' ),
-				'label_off'   => esc_html__( 'Off', 'newsfit-core' ),
+				'label_on'    => esc_html__( 'On', 'quixa-core' ),
+				'label_off'   => esc_html__( 'Off', 'quixa-core' ),
 				'default'     => 'yes',
 				'render_type' => 'template',
 			]
@@ -100,19 +100,19 @@ class MenuIcons extends ElementorBase {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label'     => __( 'Alignment', 'newsfit-core' ),
+				'label'     => __( 'Alignment', 'quixa-core' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'flex-start' => [
-						'title' => __( 'Left', 'newsfit-core' ),
+						'title' => __( 'Left', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'     => [
-						'title' => __( 'Center', 'newsfit-core' ),
+						'title' => __( 'Center', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'flex-end'   => [
-						'title' => __( 'Right', 'newsfit-core' ),
+						'title' => __( 'Right', 'quixa-core' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -128,7 +128,7 @@ class MenuIcons extends ElementorBase {
 		$this->start_controls_section(
 			'section_box',
 			[
-				'label' => __( 'Logo Style', 'newsfit-core' ),
+				'label' => __( 'Logo Style', 'quixa-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -141,14 +141,14 @@ class MenuIcons extends ElementorBase {
 		$this->start_controls_tab(
 			'style_normal_tab',
 			[
-				'label' => __( 'Normal', 'newsfit-core' ),
+				'label' => __( 'Normal', 'quixa-core' ),
 			]
 		);
 		$this->add_control(
 			'icon_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Icon Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Icon Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .menu-icon-wrapper svg'               => 'fill: {{VALUE}}',
 					'{{WRAPPER}} .menu-icon-wrapper .ham_burger .line' => 'stroke: {{VALUE}}',
@@ -159,7 +159,7 @@ class MenuIcons extends ElementorBase {
 			'button_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Button Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Button Color', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .menu-icon-wrapper .btn' => 'color: {{VALUE}}',
 				],
@@ -169,7 +169,7 @@ class MenuIcons extends ElementorBase {
 			'button_bg',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Button Background', 'newsfit-core' ),
+				'label'     => esc_html__( 'Button Background', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .menu-icon-wrapper .btn' => 'background-color: {{VALUE}};border-color: {{VALUE}};',
 				],
@@ -180,14 +180,14 @@ class MenuIcons extends ElementorBase {
 		$this->start_controls_tab(
 			'style_hover_tab',
 			[
-				'label' => __( 'Hover', 'newsfit-core' ),
+				'label' => __( 'Hover', 'quixa-core' ),
 			]
 		);
 		$this->add_control(
 			'icon_color_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Icon Color:hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Icon Color:hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .menu-icon-wrapper a:hover svg'               => 'fill: {{VALUE}}',
 					'{{WRAPPER}} .menu-icon-wrapper a:hover .ham_burger .line' => 'stroke: {{VALUE}}',
@@ -198,7 +198,7 @@ class MenuIcons extends ElementorBase {
 			'button_color_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Button Color:hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Button Color:hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .menu-icon-wrapper .btn:hover' => 'color: {{VALUE}}',
 				],
@@ -208,7 +208,7 @@ class MenuIcons extends ElementorBase {
 			'button_bg_hover',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Button Background:hover', 'newsfit-core' ),
+				'label'     => esc_html__( 'Button Background:hover', 'quixa-core' ),
 				'selectors' => [
 					'{{WRAPPER}} .menu-icon-wrapper .btn:hover' => 'background-color: {{VALUE}};border-color: {{VALUE}};',
 				],
@@ -222,7 +222,7 @@ class MenuIcons extends ElementorBase {
 			'separator_color',
 			[
 				'type'      => Controls_Manager::COLOR,
-				'label'     => esc_html__( 'Separator Color', 'newsfit-core' ),
+				'label'     => esc_html__( 'Separator Color', 'quixa-core' ),
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .has-separator li:not(:last-child):after' => 'background: {{VALUE}}',

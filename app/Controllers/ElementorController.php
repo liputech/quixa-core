@@ -5,29 +5,29 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Controllers;
+namespace RT\QuixaCore\Controllers;
 
 use Elementor\Plugin;
-use RT\NewsFitCore\Elementor\Controls\ImageSelectorControl;
-use RT\NewsFitCore\Elementor\Controls\Select2AjaxControl;
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Traits\SingletonTraits;
-use RT\NewsFitCore\Elementor\Core\ElementorCore;
-use RT\NewsFitCore\Elementor\Widgets\ContactForm;
-use RT\NewsFitCore\Elementor\Widgets\InfoBox;
-use RT\NewsFitCore\Elementor\Widgets\Parallax;
-use RT\NewsFitCore\Elementor\Widgets\Post;
-use RT\NewsFitCore\Elementor\Widgets\PricingTable;
-use RT\NewsFitCore\Elementor\Widgets\ProgressBar;
-use RT\NewsFitCore\Elementor\Widgets\SiteLogo;
-use RT\NewsFitCore\Elementor\Widgets\Slider;
-use RT\NewsFitCore\Elementor\Widgets\Team;
-use RT\NewsFitCore\Elementor\Widgets\Testimonial;
-use RT\NewsFitCore\Elementor\Widgets\Title;
-use RT\NewsFitCore\Elementor\Widgets\VideoIcon;
-use RT\NewsFitCore\Elementor\Widgets\SiteMenu;
-use RT\NewsFitCore\Elementor\Widgets\MenuIcons;
-use RT\NewsFitCore\Elementor\Widgets\SocialShare;
+use RT\QuixaCore\Elementor\Controls\ImageSelectorControl;
+use RT\QuixaCore\Elementor\Controls\Select2AjaxControl;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Traits\SingletonTraits;
+use RT\QuixaCore\Elementor\Core\ElementorCore;
+use RT\QuixaCore\Elementor\Widgets\ContactForm;
+use RT\QuixaCore\Elementor\Widgets\InfoBox;
+use RT\QuixaCore\Elementor\Widgets\Parallax;
+use RT\QuixaCore\Elementor\Widgets\Post;
+use RT\QuixaCore\Elementor\Widgets\PricingTable;
+use RT\QuixaCore\Elementor\Widgets\ProgressBar;
+use RT\QuixaCore\Elementor\Widgets\SiteLogo;
+use RT\QuixaCore\Elementor\Widgets\Slider;
+use RT\QuixaCore\Elementor\Widgets\Team;
+use RT\QuixaCore\Elementor\Widgets\Testimonial;
+use RT\QuixaCore\Elementor\Widgets\Title;
+use RT\QuixaCore\Elementor\Widgets\VideoIcon;
+use RT\QuixaCore\Elementor\Widgets\SiteMenu;
+use RT\QuixaCore\Elementor\Widgets\MenuIcons;
+use RT\QuixaCore\Elementor\Widgets\SocialShare;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -61,10 +61,10 @@ class ElementorController {
 	 * @return void
 	 */
 	public function editor_scripts() {
-		$version = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? time() : NEWSFIT_CORE;
+		$version = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? time() : QUIXA_CORE;
 
 		wp_enqueue_script(
-			'newsfit-editor-script',
+			'quixa-editor-script',
 			Fns::get_assets_url('js/editor.js'),
 			[
 				'jquery',
@@ -153,9 +153,9 @@ class ElementorController {
 	 * @return void
 	 */
 	public function widget_category( $elements_manager ) {
-		$id                = NEWSFIT_CORE_PREFIX . '-widgets';
+		$id                = QUIXA_CORE_PREFIX . '-widgets';
 		$categories[ $id ] = [
-			'title' => __( 'RadiusTheme Elements', 'newsfit-core' ),
+			'title' => __( 'RadiusTheme Elements', 'quixa-core' ),
 			'icon'  => 'fa fa-plug',
 		];
 
@@ -173,7 +173,7 @@ class ElementorController {
 		//wp_enqueue_script( 'imagesloaded' );
 		//wp_enqueue_script( 'isotope' );
 		wp_enqueue_script( 'select2' );
-		wp_enqueue_script( 'elementor-script', NEWSFIT_CORE_BASE_URL . 'elementor/assets/scripts.js', [ 'jquery' ], NEWSFIT_CORE, true );
+		wp_enqueue_script( 'elementor-script', QUIXA_CORE_BASE_URL . 'elementor/assets/scripts.js', [ 'jquery' ], QUIXA_CORE, true );
 	}
 
 
@@ -182,15 +182,15 @@ class ElementorController {
 	 */
 	public function flaticon_support( $tabs = [] ) {
 		// Append new icons
-		$flat_icons = newsfit_flaticon_icons();
+		$flat_icons = quixa_flaticon_icons();
 
-		$tabs['newsfit-flaticon-icons'] = [
-			'name'          => 'newsfit-flaticon-icons',
-			'label'         => esc_html__( 'Flat Icons', 'newsfit-core' ),
+		$tabs['quixa-flaticon-icons'] = [
+			'name'          => 'quixa-flaticon-icons',
+			'label'         => esc_html__( 'Flat Icons', 'quixa-core' ),
 			'labelIcon'     => 'fab fa-elementor',
 			'prefix'        => '',
 			'displayPrefix' => '',
-			'url'           => newsfit_get_css( 'flaticon' ),
+			'url'           => quixa_get_css( 'flaticon' ),
 			'icons'         => $flat_icons,
 			'ver'           => '1.0',
 		];

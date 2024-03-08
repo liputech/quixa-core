@@ -5,14 +5,14 @@
  * @package RadiusTheme\SB
  */
 
-namespace RT\NewsFitCore\Elementor\Widgets;
+namespace RT\QuixaCore\Elementor\Widgets;
 
 use RadiusTheme\SB\Helpers\Fns;
 use RadiusTheme\SB\Elementor\Render\WCRender;
 use RadiusTheme\SB\Elementor\Widgets\Controls;
 use RadiusTheme\SBPRO\Helpers\FnsPro;
 
-use RT\NewsFitCore\Abstracts\ElementorWidgetBase;
+use RT\QuixaCore\Abstracts\ElementorWidgetBase;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,13 +37,13 @@ class ProductsGrid extends ElementorWidgetBase {
 	 * @param mixed $args default arg.
 	 */
 	public function __construct( $data = [], $args = null ) {
-		$this->newsfit_name = esc_html__( 'Products - Grid Layouts', 'shopbuilder' );
-		$this->newsfit_base = 'newsfit-products-grid';
+		$this->quixa_name = esc_html__( 'Products - Grid Layouts', 'shopbuilder' );
+		$this->quixa_base = 'quixa-products-grid';
 
 		parent::__construct( $data, $args );
 
 		$this->pro_tab       = 'layout';
-		$this->newsfit_category = 'newsfit-shopbuilder-general';
+		$this->quixa_category = 'quixa-shopbuilder-general';
 	}
 
 	/**
@@ -82,7 +82,7 @@ class ProductsGrid extends ElementorWidgetBase {
 	 */
 	protected function layout_tab() {
 		$sections = apply_filters(
-			'newsfit/elements/elementor/grid_layout_tab',
+			'quixa/elements/elementor/grid_layout_tab',
 			array_merge(
 				Controls\LayoutFields::grid_layout( $this ),
 				Controls\LayoutFields::query( $this ),
@@ -104,7 +104,7 @@ class ProductsGrid extends ElementorWidgetBase {
 	 */
 	protected function settings_tab() {
 		$sections = apply_filters(
-			'newsfit/elements/elementor/grid_settings_tab',
+			'quixa/elements/elementor/grid_settings_tab',
 			array_merge(
 				Controls\SettingsFields::content_visibility( $this ),
 				Controls\SettingsFields::content_ordering( $this ),
@@ -147,7 +147,7 @@ class ProductsGrid extends ElementorWidgetBase {
 	 */
 	protected function style_tab() {
 		$sections = apply_filters(
-			'newsfit/elementor/grid_style_tab',
+			'quixa/elementor/grid_style_tab',
 			array_merge(
 				Controls\StyleFields::color_scheme( $this ),
 				Controls\StyleFields::layout_design( $this ),

@@ -5,10 +5,10 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Api\Widgets;
+namespace RT\QuixaCore\Api\Widgets;
 
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFit\Helpers\Fns as ThemeFns;
+use RT\QuixaCore\Helper\Fns;
+use RT\Quixa\Helpers\Fns as ThemeFns;
 use \WP_Widget;
 use \RT_Widget_Fields;
 
@@ -16,10 +16,10 @@ use \RT_Widget_Fields;
 class Post_Widget extends WP_Widget {
 
 	public function __construct() {
-		$id    = NEWSFIT_CORE_PREFIX . '_blog_post';
-		$title = __( 'NewsFit: Blog Post', 'newsfit-core' );
+		$id    = QUIXA_CORE_PREFIX . '_blog_post';
+		$title = __( 'Quixa: Blog Post', 'quixa-core' );
 		$args  = [
-			'description' => esc_html__( 'Displays Blog Post', 'newsfit-core' )
+			'description' => esc_html__( 'Displays Blog Post', 'quixa-core' )
 		];
 		parent::__construct( $id, $title, $args );
 	}
@@ -27,7 +27,7 @@ class Post_Widget extends WP_Widget {
 
 	public function form( $instance ) {
 		$defaults = [
-			'title'          => __( 'Latest Posts', 'newsfit-core' ),
+			'title'          => __( 'Latest Posts', 'quixa-core' ),
 			'posts_type'     => 'post',
 			'posts_per_page' => 5,
 			'orderby'        => 'date',
@@ -38,94 +38,78 @@ class Post_Widget extends WP_Widget {
 
 		$fields = [
 			'title'          => [
-				'label' => esc_html__( 'Title', 'newsfit-core' ),
+				'label' => esc_html__( 'Title', 'quixa-core' ),
 				'type'  => 'text',
 			],
 			'layout'         => [
-				'label'   => esc_html__( 'Layout Style', 'newsfit-core' ),
+				'label'   => esc_html__( 'Layout Style', 'quixa-core' ),
 				'type'    => 'select',
 				'options' => [
-					'blog-list-style'      => __( 'List', 'newsfit-core' ),
-					'blog-grid-style'      => __( 'Grid', 'newsfit-core' ),
-					'blog-big-first-style' => __( '1st Big Other\'s list - 1', 'newsfit-core' ),
-					'blog-big-first-style style2' => __( '1st Big Other\'s list - 2', 'newsfit-core' ),
+					'blog-list-style'      => __( 'List', 'quixa-core' ),
+					'blog-grid-style'      => __( 'Grid', 'quixa-core' ),
 				]
 			],
 			'query_title'    => [
-				'label' => esc_html__( 'QUERY', 'newsfit-core' ),
+				'label' => esc_html__( 'QUERY', 'quixa-core' ),
 				'type'  => 'heading',
 			],
 			'posts_type'     => [
-				'label'   => esc_html__( 'Post Type', 'newsfit-core' ),
+				'label'   => esc_html__( 'Post Type', 'quixa-core' ),
 				'type'    => 'select',
 				'options' => ThemeFns::get_post_types()
 			],
 			'posts_per_page' => [
-				'label' => esc_html__( 'Posts Per Page', 'newsfit-core' ),
+				'label' => esc_html__( 'Posts Per Page', 'quixa-core' ),
 				'type'  => 'number',
 			],
 			'orderby'        => [
-				'label'   => esc_html__( 'Order by', 'newsfit-core' ),
+				'label'   => esc_html__( 'Order by', 'quixa-core' ),
 				'type'    => 'select',
 				'options' => [
-					'date'          => __( 'Date', 'newsfit-core' ),
-					'author'        => __( 'Author', 'newsfit-core' ),
-					'title'         => __( 'Title', 'newsfit-core' ),
-					'modified'      => __( 'Last modified date', 'newsfit-core' ),
-					'parent'        => __( 'Post parent ID', 'newsfit-core' ),
-					'comment_count' => __( 'Number of comments', 'newsfit-core' ),
-					'menu_order'    => __( 'Menu order', 'newsfit-core' ),
-					'rand'          => __( 'Random order', 'newsfit-core' ),
-					'popular'       => __( 'Popular Post', 'newsfit-core' ),
+					'date'          => __( 'Date', 'quixa-core' ),
+					'author'        => __( 'Author', 'quixa-core' ),
+					'title'         => __( 'Title', 'quixa-core' ),
+					'modified'      => __( 'Last modified date', 'quixa-core' ),
+					'parent'        => __( 'Post parent ID', 'quixa-core' ),
+					'comment_count' => __( 'Number of comments', 'quixa-core' ),
+					'menu_order'    => __( 'Menu order', 'quixa-core' ),
+					'rand'          => __( 'Random order', 'quixa-core' ),
+					'popular'       => __( 'Popular Post', 'quixa-core' ),
 				]
 			],
 			'order'          => [
-				'label'   => esc_html__( 'Order', 'newsfit-core' ),
+				'label'   => esc_html__( 'Order', 'quixa-core' ),
 				'type'    => 'select',
 				'options' => [
-					'ASC'  => __( 'ASC', 'newsfit-core' ),
-					'DESC' => __( 'DESC', 'newsfit-core' ),
+					'ASC'  => __( 'ASC', 'quixa-core' ),
+					'DESC' => __( 'DESC', 'quixa-core' ),
 				]
 			],
 			'post_id'        => [
-				'label' => esc_html__( 'Post by ID', 'newsfit-core' ),
+				'label' => esc_html__( 'Post by ID', 'quixa-core' ),
 				'type'  => 'text',
-				'desc'  => esc_html__( 'Enter post id by comma (,) separator.', 'newsfit-core' ),
+				'desc'  => esc_html__( 'Enter post id by comma (,) separator.', 'quixa-core' ),
 			],
 
 			'meta_title'         => [
-				'label' => esc_html__( 'Choose Meta', 'newsfit-core' ),
+				'label' => esc_html__( 'Choose Meta', 'quixa-core' ),
 				'type'  => 'heading',
 			],
 			'category'           => [
-				'label' => esc_html__( 'Category', 'newsfit-core' ),
-				'type'  => 'checkbox',
-			],
-			'tag'                => [
-				'label' => esc_html__( 'Tags', 'newsfit-core' ),
+				'label' => esc_html__( 'Category', 'quixa-core' ),
 				'type'  => 'checkbox',
 			],
 			'author'             => [
-				'label' => esc_html__( 'Author', 'newsfit-core' ),
+				'label' => esc_html__( 'Author', 'quixa-core' ),
 				'type'  => 'checkbox',
 			],
 			'date'               => [
-				'label' => esc_html__( 'Date', 'newsfit-core' ),
+				'label' => esc_html__( 'Date', 'quixa-core' ),
 				'type'  => 'checkbox',
 			],
-			'content_visibility' => [
-				'label'   => esc_html__( 'Content Visibility', 'newsfit-core' ),
-				'type'    => 'select',
-				'options' => [
-					'first' => __( 'Only First Post', 'newsfit-core' ),
-					'all'   => __( 'All Posts', 'newsfit-core' ),
-					'hide'  => __( 'Hide for all', 'newsfit-core' ),
-				]
-			],
-			'meta_style'         => [
-				'label'   => esc_html__( 'Meta Style', 'newsfit-core' ),
-				'type'    => 'select',
-				'options' => [ 'default' => __( __( "Default from Theme" ), "newsfit-core" ) ] + ThemeFns::meta_style()
+			'content'               => [
+				'label' => esc_html__( 'Content', 'quixa-core' ),
+				'type'  => 'checkbox',
 			],
 		];
 
@@ -135,20 +119,17 @@ class Post_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 
 		$instance = $old_instance;
-
-		$instance['title']              = $new_instance['title'] ?? __( 'Latest Post', 'newsfit-core' );
+		$instance['title']              = $new_instance['title'] ?? __( 'Latest Post', 'quixa-core' );
 		$instance['layout']             = $new_instance['layout'] ?? 'blog-list-style';
 		$instance['posts_type']         = $new_instance['posts_type'] ?? 'post';
 		$instance['posts_per_page']     = $new_instance['posts_per_page'] ?? 5;
 		$instance['orderby']            = $new_instance['orderby'] ?? 'date';
 		$instance['order']              = $new_instance['order'] ?? 'DESC';
 		$instance['post_id']            = $new_instance['post_id'] ?? '';
-		$instance['content_visibility'] = $new_instance['content_visibility'] ?? 'first';
-		$instance['category']           = $new_instance['category'] ?? 'category';
-		$instance['tag']                = $new_instance['tag'] ?? '';
+		$instance['category']           = $new_instance['category'] ?? '';
 		$instance['author']             = $new_instance['author'] ?? '';
 		$instance['date']               = $new_instance['date'] ?? '';
-		$instance['meta_style']         = $new_instance['meta_style'] ?? 'default';
+		$instance['content']            = $new_instance['content'] ?? '';
 
 		return $instance;
 	}
@@ -184,7 +165,7 @@ class Post_Widget extends WP_Widget {
 		$query = new \WP_Query( $postArgs );
 
 		$meta_list  = [];
-		$_meta_list = newsfit_option( 'rt_blog_meta', false, true );
+		$_meta_list = quixa_option( 'rt_blog_meta', false, true );
 		foreach ( $_meta_list as $meta ) {
 			if ( ! empty( $instance[ $meta ] ) ) {
 				$meta_list[] = $meta;
@@ -192,14 +173,13 @@ class Post_Widget extends WP_Widget {
 		}
 
 		$data       = [
-			'content_visibility' => $instance['content_visibility'] ?? 'first',
 			'meta_list'          => $meta_list,
-			'meta_style'         => $instance['meta_style'] !== 'default' ? $instance['meta_style'] : '',
+			'content' => $instance['content'],
 		];
 		$layout     = $instance['layout'] ?? 'blog-list-style';
 		$post_count = 1;
 		if ( $query->have_posts() ) :
-			echo "<div class='newsfit-widdget-post " . esc_attr( $layout ) . "'>";
+			echo "<div class='quixa-widdget-post " . esc_attr( $layout ) . "'>";
 			while ( $query->have_posts() ) : $query->the_post();
 				set_query_var( 'post_count', $post_count );
 				Fns::get_template( "widgets/latest-posts", $data );

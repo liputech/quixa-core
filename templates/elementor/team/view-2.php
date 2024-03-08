@@ -38,7 +38,7 @@
                 <div class="item-contact">
                     <div class="item-icon"><i class="fas fa-phone-alt"></i></div>
                     <div class="item-phn-no">
-                        <?php printf( "%s %s", esc_html__( 'Call:', 'newsfit-core' ), esc_html( $data['agent_phone'] ) ); ?>
+                        <?php printf( "%s %s", esc_html__( 'Call:', 'quixa-core' ), esc_html( $data['agent_phone'] ) ); ?>
                     </div>
                 </div>
                 <?php endif; ?>

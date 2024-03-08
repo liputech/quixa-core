@@ -5,7 +5,7 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Elementor\Controls;
+namespace RT\QuixaCore\Elementor\Controls;
 
 use Elementor\Base_Data_Control;
 
@@ -28,13 +28,13 @@ class Select2AjaxControl extends Base_Data_Control {
 	}
 
 	public function enqueue() {
-		wp_enqueue_script( 'newsfit-editor-script' );
+		wp_enqueue_script( 'quixa-editor-script' );
 		wp_localize_script(
-			'newsfit-editor-script',
+			'quixa-editor-script',
 			'rtSelect2Obj',
 			[
 				'ajaxurl'     => esc_url( admin_url( 'admin-ajax.php' ) ),
-				'search_text' => esc_html__( 'Please Select', 'newsfit-core' ),
+				'search_text' => esc_html__( 'Please Select', 'quixa-core' ),
 			]
 		);
 		?>

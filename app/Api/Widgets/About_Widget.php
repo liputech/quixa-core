@@ -5,7 +5,7 @@
  * @version 1.0
  */
 
-namespace RT\NewsFitCore\Api\Widgets;
+namespace RT\QuixaCore\Api\Widgets;
 
 use \WP_Widget;
 use \RT_Widget_Fields;
@@ -13,10 +13,10 @@ use \RT_Widget_Fields;
 class About_Widget extends WP_Widget {
 
 	public function __construct() {
-		$id    = NEWSFIT_CORE_PREFIX . '_about';
-		$title = __( 'NewsFit: About', 'newsfit-core' );
+		$id    = QUIXA_CORE_PREFIX . '_about';
+		$title = __( 'Quixa: About', 'quixa-core' );
 		$args  = [
-			'description' => __( 'Displays Contact Info', 'newsfit-core' ),
+			'description' => __( 'Displays Contact Info', 'quixa-core' ),
 		];
 		parent::__construct( $id, $title, $args );
 	}
@@ -31,16 +31,16 @@ class About_Widget extends WP_Widget {
 			if ( ! empty( $instance['logo'] ) ) {
 				echo wp_get_attachment_image( $instance['logo'], 'full' );
 			} else {
-				echo newsfit_site_logo();
+				echo quixa_site_logo();
 			}
 			?>
         </div>
 
 		<?php
 		if ( ! empty( $instance['description'] ) ) {
-			echo "<p>" . newsfit_html( $instance['description'] ) . "</p>";
+			echo "<p>" . quixa_html( $instance['description'] ) . "</p>";
 		}
-		newsfit_about_social( $instance );
+		quixa_about_social( $instance );
 		echo wp_kses_post( $args['after_widget'] );
 	}
 
@@ -81,52 +81,52 @@ class About_Widget extends WP_Widget {
 
 		$fields = [
 			'title'       => [
-				'label' => esc_html__( 'Title', 'newsfit-core' ),
+				'label' => esc_html__( 'Title', 'quixa-core' ),
 				'type'  => 'text',
 			],
 			'logo'        => [
-				'label' => esc_html__( 'Logo', 'newsfit-core' ),
+				'label' => esc_html__( 'Logo', 'quixa-core' ),
 				'type'  => 'image',
-				'desc'  => esc_html__( 'Conditionally display the light or dark logo based on the chosen footer style; refrain from preselecting any logo. ', 'newsfit-core' ),
+				'desc'  => esc_html__( 'Conditionally display the light or dark logo based on the chosen footer style; refrain from preselecting any logo. ', 'quixa-core' ),
 			],
 			'description' => [
-				'label' => esc_html__( 'Description', 'newsfit-core' ),
+				'label' => esc_html__( 'Description', 'quixa-core' ),
 				'type'  => 'textarea',
 			],
 			'facebook'    => [
-				'label' => esc_html__( 'Facebook URL', 'newsfit-core' ),
+				'label' => esc_html__( 'Facebook URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 			'twitter'     => [
-				'label' => esc_html__( 'Twitter URL', 'newsfit-core' ),
+				'label' => esc_html__( 'Twitter URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 			'linkedin'    => [
-				'label' => esc_html__( 'Linkedin URL', 'newsfit-core' ),
+				'label' => esc_html__( 'Linkedin URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 			'pinterest'   => [
-				'label' => esc_html__( 'Pinterest URL', 'newsfit-core' ),
+				'label' => esc_html__( 'Pinterest URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 			'instagram'   => [
-				'label' => esc_html__( 'Instagram URL', 'newsfit-core' ),
+				'label' => esc_html__( 'Instagram URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 			'youtube'     => [
-				'label' => esc_html__( 'YouTube URL', 'newsfit-core' ),
+				'label' => esc_html__( 'YouTube URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 			'rss'         => [
-				'label' => esc_html__( 'Rss Feed URL', 'newsfit-core' ),
+				'label' => esc_html__( 'Rss Feed URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 			'zalo'        => [
-				'label' => esc_html__( 'Zalo Feed URL', 'newsfit-core' ),
+				'label' => esc_html__( 'Zalo Feed URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 			'telegram'    => [
-				'label' => esc_html__( 'Telegram Feed URL', 'newsfit-core' ),
+				'label' => esc_html__( 'Telegram Feed URL', 'quixa-core' ),
 				'type'  => 'url',
 			],
 		];

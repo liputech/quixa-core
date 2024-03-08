@@ -2,14 +2,14 @@
 /**
  * Elmentor Header Footer Builder Controller
  *
- * @package newsfit-core
+ * @package quixa-core
  */
 
-namespace RT\NewsFitCore\Controllers;
+namespace RT\QuixaCore\Controllers;
 
-use RT\NewsFitCore\Helper\Fns;
-use RT\NewsFitCore\Traits\SingletonTraits;
-use RT\NewsFitCore\Builder\Builder;
+use RT\QuixaCore\Helper\Fns;
+use RT\QuixaCore\Traits\SingletonTraits;
+use RT\QuixaCore\Builder\Builder;
 
 class ElmentorBuilderController {
 	use SingletonTraits;
@@ -17,7 +17,7 @@ class ElmentorBuilderController {
 	public $nonce_action = 'rt_metabox_nonce';
 	public $nonce_field = 'rt_metabox_nonce_secret';
 
-	public static $post_type = 'elementor-newsfit';
+	public static $post_type = 'elementor-quixa';
 
 	/**
 	 * register default hooks and actions for WordPress
@@ -25,7 +25,7 @@ class ElmentorBuilderController {
 	 */
 	public function __construct() {
 		add_action( 'init', [ $this, 'header_footer_posttype' ] );
-		//add_action( "save_post_{self::$post_type}", [ $this, 'save_el_newsfit' ] );
+		//add_action( "save_post_{self::$post_type}", [ $this, 'save_el_quixa' ] );
 		add_filter( 'single_template', [ $this, 'load_canvas_template' ] );
 		add_action( 'wp', [ $this, 'header_footer_builder_init' ] );
 		//Overwrite header and footer template
@@ -54,20 +54,20 @@ class ElmentorBuilderController {
 	 */
 	public function header_footer_posttype() {
 		$labels = [
-			'name'               => __( 'Header & Footer Builder', 'newsfit-core' ),
-			'singular_name'      => __( 'Header & Footer Builder', 'newsfit-core' ),
-			'menu_name'          => __( 'Header & Footer Builder', 'newsfit-core' ),
-			'name_admin_bar'     => __( 'Header & Footer Builder', 'newsfit-core' ),
-			'add_new'            => __( 'Add New', 'newsfit-core' ),
-			'add_new_item'       => __( 'Add New Header or Footer', 'newsfit-core' ),
-			'new_item'           => __( 'New Template', 'newsfit-core' ),
-			'edit_item'          => __( 'Edit Template', 'newsfit-core' ),
-			'view_item'          => __( 'View Template', 'newsfit-core' ),
-			'all_items'          => __( 'All Templates', 'newsfit-core' ),
-			'search_items'       => __( 'Search Templates', 'newsfit-core' ),
-			'parent_item_colon'  => __( 'Parent Templates:', 'newsfit-core' ),
-			'not_found'          => __( 'No Templates found.', 'newsfit-core' ),
-			'not_found_in_trash' => __( 'No Templates found in Trash.', 'newsfit-core' ),
+			'name'               => __( 'Header & Footer Builder', 'quixa-core' ),
+			'singular_name'      => __( 'Header & Footer Builder', 'quixa-core' ),
+			'menu_name'          => __( 'Header & Footer Builder', 'quixa-core' ),
+			'name_admin_bar'     => __( 'Header & Footer Builder', 'quixa-core' ),
+			'add_new'            => __( 'Add New', 'quixa-core' ),
+			'add_new_item'       => __( 'Add New Header or Footer', 'quixa-core' ),
+			'new_item'           => __( 'New Template', 'quixa-core' ),
+			'edit_item'          => __( 'Edit Template', 'quixa-core' ),
+			'view_item'          => __( 'View Template', 'quixa-core' ),
+			'all_items'          => __( 'All Templates', 'quixa-core' ),
+			'search_items'       => __( 'Search Templates', 'quixa-core' ),
+			'parent_item_colon'  => __( 'Parent Templates:', 'quixa-core' ),
+			'not_found'          => __( 'No Templates found.', 'quixa-core' ),
+			'not_found_in_trash' => __( 'No Templates found in Trash.', 'quixa-core' ),
 		];
 
 		$args = [
@@ -87,7 +87,7 @@ class ElmentorBuilderController {
 
 	}
 
-	public function save_el_newsfit( $post_id ) {
+	public function save_el_quixa( $post_id ) {
 		if ( empty( $_POST[ $this->nonce_field ] ) || ! check_admin_referer( $this->nonce_action, $this->nonce_field ) ) {
 			return $post_id;
 		}
@@ -187,7 +187,7 @@ class ElmentorBuilderController {
 	}
 
 	public function override_header() {
-		require NEWSFIT_CORE_BASE_DIR . 'templates/builder/header.php';
+		require QUIXA_CORE_BASE_DIR . 'templates/builder/header.php';
 		$templates   = [];
 		$templates[] = 'header.php';
 		// Avoid running wp_head hooks again.
@@ -198,7 +198,7 @@ class ElmentorBuilderController {
 	}
 
 	public function override_footer() {
-		require NEWSFIT_CORE_BASE_DIR . 'templates/builder/footer.php';
+		require QUIXA_CORE_BASE_DIR . 'templates/builder/footer.php';
 		$templates   = [];
 		$templates[] = 'footer.php';
 		// Avoid running wp_footer hooks again.
@@ -209,12 +209,12 @@ class ElmentorBuilderController {
 	}
 
 	function hfe_render_header() {
-		if ( false == apply_filters( 'newsfit_header_builder_enable', true ) ) {
+		if ( false == apply_filters( 'quixa_header_builder_enable', true ) ) {
 			return;
 		}
 
 		?>
-        <header id="masthead" class="site-header newsfit-header-builder" role="banner">
+        <header id="masthead" class="site-header quixa-header-builder" role="banner">
 			<?php Builder::get_elementor_content( 'header' ); ?>
         </header>
 
@@ -224,11 +224,11 @@ class ElmentorBuilderController {
 
 	function hfe_render_footer() {
 
-		if ( false == apply_filters( 'newsfit_footer_builder_enable', true ) ) {
+		if ( false == apply_filters( 'quixa_footer_builder_enable', true ) ) {
 			return;
 		}
 		?>
-        <footer class="site-footer newsfit-footer-builder" role="contentinfo">
+        <footer class="site-footer quixa-footer-builder" role="contentinfo">
 			<?php Builder::get_elementor_content( 'footer' ); ?>
         </footer>
 		<?php

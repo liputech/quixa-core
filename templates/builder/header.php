@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package newsfit
+ * @package quixa
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -19,7 +19,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('newsfit-header-footer'); ?>>
+<body <?php body_class('quixa-header-footer'); ?>>
 <?php wp_body_open(); ?>
 
 <div id="page" class="site">

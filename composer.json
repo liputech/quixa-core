@@ -1,5 +1,5 @@
 {
-	"name": "radiustheme/newsfit-core",
+	"name": "radiustheme/quixa-core",
 	"description": "RadiusTheme WordPress core plugin",
 	"keywords": [
 		"WordPress",
@@ -19,7 +19,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"RT\\NewsFitCore\\": "./app"
+			"RT\\QuixaCore\\": "./app"
 		},
 		"files": [
 			"./app\/Helpers.php"

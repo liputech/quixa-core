@@ -17,4 +17,4 @@ if ( $button_label ) {
 	$args['button_label'] = $button_label;
 }
 
-newsfit_menu_icons_group( $args );
+quixa_menu_icons_group( $args );

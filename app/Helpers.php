@@ -3,45 +3,45 @@
  * Helpers methods
  * List all your static functions you wish to use globally on your theme
  *
- * @package newsfit-core
+ * @package quixa-core
  */
 
 
-if ( ! function_exists( 'newsfit_about_social' ) ) {
+if ( ! function_exists( 'quixa_about_social' ) ) {
 	/**
 	 * Get about social icon list
 	 * @return void
 	 */
-	function newsfit_about_social( $instance ) {
-		$icon_style = newsfit_option( 'rt_social_icon_style' ) ?? '';
+	function quixa_about_social( $instance ) {
+		$icon_style = quixa_option( 'rt_social_icon_style' ) ?? '';
 		?>
 		<ul class="footer-social">
 			<?php if ( ! empty( $instance['facebook'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['facebook'] ); ?>" target="_blank"><?php echo newsfit_get_svg( 'facebook' . $icon_style ) ?></a>
+				<a href="<?php echo esc_url( $instance['facebook'] ); ?>" target="_blank"><?php echo quixa_get_svg( 'facebook' . $icon_style ) ?></a>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['twitter'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['twitter'] ); ?>" target="_blank"><?php echo newsfit_get_svg( 'twitter' . $icon_style ) ?></a>
+				<a href="<?php echo esc_url( $instance['twitter'] ); ?>" target="_blank"><?php echo quixa_get_svg( 'twitter' . $icon_style ) ?></a>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['linkedin'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['linkedin'] ); ?>" target="_blank"><?php echo newsfit_get_svg( 'linkedin' . $icon_style ) ?></a>
+				<a href="<?php echo esc_url( $instance['linkedin'] ); ?>" target="_blank"><?php echo quixa_get_svg( 'linkedin' . $icon_style ) ?></a>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['pinterest'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['pinterest'] ); ?>" target="_blank"><?php echo newsfit_get_svg( 'pinterest' . $icon_style ) ?></a>
+				<a href="<?php echo esc_url( $instance['pinterest'] ); ?>" target="_blank"><?php echo quixa_get_svg( 'pinterest' . $icon_style ) ?></a>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['instagram'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['instagram'] ); ?>" target="_blank"><?php echo newsfit_get_svg( 'instagram' . $icon_style ) ?></a>
+				<a href="<?php echo esc_url( $instance['instagram'] ); ?>" target="_blank"><?php echo quixa_get_svg( 'instagram' . $icon_style ) ?></a>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['youtube'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['youtube'] ); ?>" target="_blank"><?php echo newsfit_get_svg( 'youtube' . $icon_style ) ?></a>
+				<a href="<?php echo esc_url( $instance['youtube'] ); ?>" target="_blank"><?php echo quixa_get_svg( 'youtube' . $icon_style ) ?></a>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['rss'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['rss'] ); ?>" target="_blank"><?php echo newsfit_get_svg( 'rss' . $icon_style ) ?></a>
+				<a href="<?php echo esc_url( $instance['rss'] ); ?>" target="_blank"><?php echo quixa_get_svg( 'rss' . $icon_style ) ?></a>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['zalo'] ) ) : ?>
@@ -56,7 +56,7 @@ if ( ! function_exists( 'newsfit_about_social' ) ) {
 			<?php endif; ?>
 
 			<?php if ( ! empty( $instance['telegram'] ) ) : ?>
-				<a href="<?php echo esc_url( $instance['telegram'] ); ?>" target="_blank"><?php echo newsfit_get_svg( 'telegram' . $icon_style ) ?></a>
+				<a href="<?php echo esc_url( $instance['telegram'] ); ?>" target="_blank"><?php echo quixa_get_svg( 'telegram' . $icon_style ) ?></a>
 			<?php endif; ?>
 
 		</ul>
@@ -64,37 +64,30 @@ if ( ! function_exists( 'newsfit_about_social' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_contact_render' ) ) {
-	function newsfit_contact_render( $instance ) {
+if ( ! function_exists( 'quixa_contact_render' ) ) {
+	function quixa_contact_render( $instance ) {
 		ob_start();
 		?>
-		<div class="newsfit-contact-widget-wrapper">
+		<div class="quixa-contact-widget-wrapper">
 			<ul>
 				<?php if ( ! empty( $instance['address'] ) ) : ?>
 					<li>
-						<?php echo newsfit_get_svg( 'map-pin' ) ?>
 						<p><?php echo esc_html( $instance['address'] ); ?></p>
 					</li>
 				<?php endif; ?>
 
-				<?php if ( ! empty( $instance['mail'] ) ) : ?>
-					<li>
-						<?php echo newsfit_get_svg( 'email' ) ?>
-						<p><a target="_blank" href="mailto:<?php echo esc_html( $instance['mail'] ); ?>"><?php echo esc_html( $instance['mail'] ); ?></a></p>
+				<?php if ( ! empty( $instance['phone'] ) ) : ?>
+					<li class="phone-no"><p><a target="_blank" href="tel:<?php echo esc_attr( $instance['phone'] ); ?>"><?php echo esc_html( $instance['phone'] ); ?></a></p>
 					</li>
 				<?php endif; ?>
 
-				<?php if ( ! empty( $instance['phone'] ) ) : ?>
-					<li>
-						<?php echo newsfit_get_svg( 'phone' ) ?>
-						<p><a target="_blank" href="tel:<?php echo esc_attr( $instance['phone'] ); ?>"><?php echo esc_html( $instance['phone'] ); ?></a></p>
-					</li>
+				<?php if ( ! empty( $instance['mail'] ) ) : ?>
+                    <li><p><a target="_blank" href="mailto:<?php echo esc_html( $instance['mail'] ); ?>"><?php echo esc_html( $instance['mail'] ); ?></a></p>
+                    </li>
 				<?php endif; ?>
 
 				<?php if ( ! empty( $instance['website'] ) ) : ?>
-					<li>
-						<?php echo newsfit_get_svg( 'globe' ) ?>
-						<p><a target="_blank" href="<?php echo esc_url( $instance['website'] ); ?>"><?php echo esc_html( $instance['website'] ); ?></a></p>
+					<li><p><a target="_blank" href="<?php echo esc_url( $instance['website'] ); ?>"><?php echo esc_html( $instance['website'] ); ?></a></p>
 					</li>
 				<?php endif; ?>
 			</ul>
@@ -105,7 +98,7 @@ if ( ! function_exists( 'newsfit_contact_render' ) ) {
 }
 
 
-function newsfit_flaticon_icons(){
+function quixa_flaticon_icons(){
 	return [
 		"flaticon-user",
 		"flaticon-user-1",
@@ -171,11 +164,11 @@ function rt_tag_list() {
 //Get all thumbnail size
 function rt_get_all_image_sizes() {
 	global $_wp_additional_image_sizes;
-	$image_sizes = [ '0' => __( 'Default Image Size', 'newsfit-core' ) ];
+	$image_sizes = [ '0' => __( 'Default Image Size', 'quixa-core' ) ];
 	foreach ( $_wp_additional_image_sizes as $index => $item ) {
-		$image_sizes[ $index ] = __( ucwords( $index . ' - ' . $item['width'] . 'x' . $item['height'] ), 'newsfit-core' );
+		$image_sizes[ $index ] = __( ucwords( $index . ' - ' . $item['width'] . 'x' . $item['height'] ), 'quixa-core' );
 	}
-	$image_sizes['full'] = __( "Full Size", 'newsfit-core' );
+	$image_sizes['full'] = __( "Full Size", 'quixa-core' );
 
 	return $image_sizes;
 }
