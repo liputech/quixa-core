@@ -28,7 +28,7 @@ class PostMetaController {
 		$this->postmeta->add_meta_box(
 			"rt_page_settings",
 			__( 'Layout Settings', 'quixa-core' ),
-			[ 'page', 'post', 'rt-team' ],
+			[ 'page', 'post', 'rt-team', 'rt-service' ],
 			'',
 			'',
 			'high',

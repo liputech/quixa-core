@@ -31,6 +31,16 @@ class PostTypeController {
 				'menu_position' => 18,
 				'supports'      => [ 'title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments' ],
 				'description'   => 'Teams Custom Post Type',
+			],
+			[
+				'id'            => 'rt-service',
+				'slug'          => 'service',
+				'singular'      => 'Service',
+				'plural'        => 'Services',
+				'menu_icon'     => 'dashicons-admin-customizer',
+				'menu_position' => 19,
+				'supports'      => [ 'title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments' ],
+				'description'   => 'Service Custom Post Type',
 			]
 		];
 
@@ -49,6 +59,13 @@ class PostTypeController {
 				'slug'      => 'team-department',
 				'singular'  => 'Department',
 				'plural'    => 'Departments',
+			],
+			[
+				'id'        => 'rt-service-category',
+				'post_type' => [ 'rt-service' ],
+				'slug'      => 'service-category',
+				'singular'  => 'Category',
+				'plural'    => 'Categories',
 			]
 		];
 
